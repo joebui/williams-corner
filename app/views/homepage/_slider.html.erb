@@ -1,0 +1,51 @@
+<html>
+  <body>
+    <div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#slider-carousel" data-slide-to="0" class=""></li>
+							<li data-target="#slider-carousel" data-slide-to="1" class=""></li>
+							<li data-target="#slider-carousel" data-slide-to="2" class="active"></li>
+						</ol>
+						
+						
+						<div class="carousel-inner">
+							<% @ran_products.each do |product| %>
+							  <% if product = @ran_products.first %>
+    							<div class="item active">
+    								<div class="col-sm-6">
+    									<h1><span>mini</span>-SHOP</h1>
+    									<h2><%= product.name %></h2>
+    									<p><%= product.des %></p>
+    									<button type="button" class="btn btn-default get">Get it now</button>
+    								</div>
+    								<div class="col-sm-6">
+    									<img src="<%= product.img %>" class="girl img-responsive" alt="">
+    									<img src="/assets/pricing.png" class="pricing" alt="">
+    								</div>
+    							</div>
+							  <% else %>
+    							<div class="item">
+    								<div class="col-sm-6">
+    									<h1><span>mini</span>-SHOP</h1>
+    									<h2><%= product.name %></h2>
+    									<p><%= product.des %></p>
+    									<button type="button" class="btn btn-default get">Get it now</button>
+    								</div>
+    								<div class="col-sm-6">
+    									<img src="<%= product.img %>" class="girl img-responsive" alt="">
+    									<img src="/assets/pricing.png" class="pricing" alt="">
+    								</div>
+    							</div>
+    						<% end %>
+    					<% end %>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+<p>
+  <strong>Image:</strong> <br>
+  <img src=<%= @product.img %> alt="img" height="10%" width="10%" >
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+<p>
+  <strong>Genre:</strong>
+  <%= @product.genre %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @product.des %>
+</p>
+
+<%= link_to 'Back', products_path %>

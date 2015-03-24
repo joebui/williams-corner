@@ -1,0 +1,27 @@
+  <h1>Listing articles</h1>
+
+  <% if logged_in? %>
+    <strong>Hello <%= current_user.name %> </strong>
+    <%= link_to "Log out", logout_path, method: "delete" %>
+  <% else %>
+    <%= link_to "Log in", login_path %>
+  <% end %>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+   
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.name %></td>
+        <td><%= account.email %></td>
+        <td><%= account.password %></td>
+        <td><%= link_to 'Show', account_path(account) %> </td>
+        <td><%= link_to 'Edit', edit_account_path(account) %> </td>
+        <td><%= link_to 'Delete', account_path(account), method: :delete, data: {confirm: 'Are you sure? '} %> </td>
+      </tr>
+    <% end %>
+  </table>

@@ -11,7 +11,7 @@ class AccountsController < ApplicationController
 		@account = Account.new(account_params)
 		if @account.save
 			log_in @account
-			redirect_to @account
+			redirect_to root_url
 		else
 			render 'new'
 		end	

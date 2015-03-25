@@ -41805,3 +41805,96 @@ Processing by HomepageController#show as HTML
   Rendered homepage/_footer.html.erb (0.5ms)
   Rendered homepage/show.html.erb within layouts/application (3.3ms)
 Completed 200 OK in 141ms (Views: 130.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-25 14:14:30 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomepageController#index as HTML
+  [1m[35mProduct Load (0.9ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 4
+  Rendered homepage/_header.html.erb (2.2ms)
+  Rendered homepage/_slider.html.erb (1.2ms)
+  [1m[36mGenre Load (0.5ms)[0m  [1mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "products" WHERE "products"."genre" = $1  [["genre", "Arcade"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "products" WHERE "products"."genre" = $1[0m  [["genre", "Strategy"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "products" WHERE "products"."genre" = $1  [["genre", "Combat"]]
+  Rendered homepage/_leftcatetab.html.erb (12.4ms)
+  Rendered homepage/_catetab.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products" WHERE "products"."genre" = $1[0m  [["genre", "Arcade"]]
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."genre" = $1  ORDER BY RANDOM() LIMIT 4  [["genre", "Arcade"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products" WHERE "products"."genre" = $1[0m  [["genre", "Strategy"]]
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."genre" = $1  ORDER BY RANDOM() LIMIT 4  [["genre", "Strategy"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products" WHERE "products"."genre" = $1[0m  [["genre", "Combat"]]
+  Rendered homepage/_soldout.html.erb (0.5ms)
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."genre" = $1  ORDER BY RANDOM() LIMIT 4  [["genre", "Combat"]]
+  Rendered homepage/_tab.html.erb (8.2ms)
+  Rendered homepage/_footer.html.erb (0.4ms)
+  Rendered homepage/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 1535ms (Views: 1495.4ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/genres.css?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/genres.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/homepage.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/jquery.scrollUp.min.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/price-range.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/homepage.css?body=1" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/logo_homepage.png" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/soldout.png" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/assets/pricing.png" for 127.0.0.1 at 2015-03-25 14:14:32 +0700
+
+
+Started GET "/homepage/category.Arcade" for 127.0.0.1 at 2015-03-25 14:14:34 +0700
+Processing by HomepageController#category as 
+  Rendered homepage/_header.html.erb (0.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "products" WHERE "products"."genre" = $1[0m  [["genre", "Arcade"]]
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered homepage/_footer.html.erb (0.3ms)
+  Rendered homepage/category.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 113ms (Views: 111.9ms | ActiveRecord: 0.7ms)

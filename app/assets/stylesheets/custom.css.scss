@@ -1,5 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.cart_product img {
+  height: 256px;
+  width: 256px;
+}
+
 .boss_body
 {
 background:url('/assets/bg.jpg') no-repeat center top #310b28;

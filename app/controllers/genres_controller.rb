@@ -1,7 +1,10 @@
 class GenresController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "password"
-  def index
-    @genres = Genre.all
+  def index    
+    if logged_in? && current_user.name == "admin"
+      @genres = Genre.all
+    else
+      redirect_to login_path
+    end
   end
  
   def show

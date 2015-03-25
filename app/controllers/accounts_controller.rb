@@ -32,7 +32,11 @@ class AccountsController < ApplicationController
 	end
 
 	def index
-		@accounts = Account.all
+		if logged_in? && current_user.name == "admin"
+			@accounts = Account.all			
+		else
+			redirect_to login_path
+		end
 	end	
 
 	def destroy

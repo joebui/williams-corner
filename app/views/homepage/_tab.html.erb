@@ -1,11 +1,14 @@
 <html>
-  
-
 <body>
   <% @genres.each do |genre| %>
+  	<% number =  @products.where(genre:genre.name).count %>
 		<% if genre == @genres.first %>
 			<div class="tab-pane fade active in" id="<%= genre.name %>">
-				<% @products.each do |product| %>
+				<% @ran_products= Product.where(genre:genre.name).order("RANDOM()").limit(4)%>
+				<% if number == 0 %>
+					<%= render 'soldout' %>
+				<% end %>
+				<% @ran_products.each do |product| %>
 					<% if product.genre == genre.name %>
 						<div class="col-sm-3">
 							<div class="product-image-wrapper">
@@ -14,7 +17,7 @@
 										<img src="<%= product.img %>" alt="image">
 										<h2>$ <%= product.price %></h2>
 										<p><%= product.name %></p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Detail</a>
+										<%= link_to 'Show', homepage_path(product) , class: "btn btn-primary"%>
 									</div>
 								</div>
 							</div>
@@ -24,7 +27,11 @@
 			</div>
 		<% else %>
 			<div class="tab-pane fade" id="<%= genre.name %>">
-				<% @products.each do |product| %>
+				<% @ran_products= Product.where(genre:genre.name).order("RANDOM()").limit(4)%>
+				<% if number == 0 %>
+					<%= render 'soldout' %>
+				<% end %>
+				<% @ran_products.each do |product| %>
 					<% if product.genre == genre.name %>
 						<div class="col-sm-3">
 							<div class="product-image-wrapper">
@@ -33,7 +40,7 @@
 										<img src="<%= product.img %>" alt="image">
 										<h2>$ <%= product.price %></h2>
 										<p><%= product.name %></p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Detail</a>
+										<%= link_to 'Show', homepage_path(product) , class: "btn btn-primary"%>
 									</div>
 								</div>
 							</div>

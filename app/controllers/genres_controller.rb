@@ -1,4 +1,5 @@
 class GenresController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "password"
   def index
     @genres = Genre.all
   end

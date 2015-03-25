@@ -1,0 +1,17 @@
+<div class="col-sm-3">
+	<div class="left-sidebar">
+		<!--/category-products-->
+		<div class="brands_products"><!--brands_products-->
+			<h2>Genres</h2>
+			<div class="brands-name">
+				<ul class="nav nav-pills nav-stacked">
+					<% @genres.each do |genre| %> 
+						<% @current = genre.name %>
+						<% @count =  @products.where(genre:genre.name).count %>
+						<li><span><%= link_to @current, homepage_category_path(genre.name)%></span><span class="pull-right">(<%= @count %>)&nbsp&nbsp&nbsp</span></li>
+					<%end%>
+				</ul>
+			</div>
+		</div><!--/brands_products-->
+	</div>
+</div>

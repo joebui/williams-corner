@@ -1,16 +1,16 @@
 class ProductsController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "password"
   def index
-    if logged_in? && current_user.name == "admin"
-      @genres = Genre.all.pluck(:name)
-      @products = Product.all
-    else
-      redirect_to login_path
-    end
+    @genres = Genre.all.pluck(:name)
+    @products = Product.all
   end
  
   def show
     @product = Product.find(params[:id])
-    @genres = Genre.all.pluck(:name)
+    @products = Product.all
+    @genres = Genre.all
+    @current = nil
+    @count = nil
   end
  
   def new

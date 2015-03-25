@@ -1,22 +1,107 @@
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-<p>
-  <strong>Image:</strong> <br>
-  <img src=<%= @product.img %> alt="img" height="10%" width="10%" >
-</p>
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-<p>
-  <strong>Genre:</strong>
-  <%= @product.genre %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @product.des %>
-</p>
+<body>
+	<header id="header"><!--header-->
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left" style="padding-left: 30px">
+							<a href="/index.html"><img src="/assets/logo_homepage.png" alt="logo_homepage"></a>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+              	<li>
+              		<select style="margin-top: 6px">
+                  	<option value="vietnamese">Vietnamese</option>
+                   	<option value="english">English</option>
+                  </select>
+                </li>                
+								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
+								<li><a href=""><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href=""><i class="fa fa-lock"></i> Login</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	</header><!--/header-->
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Genres</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<% @genres.each do |genre| %> 
+										<% @current = genre.name %>
+										<% @count =  @products.where(genre:genre.name).count %>
+										<li><a href="javascript:void(0);"><span class="pull-right">(<%= @count %>)</span> <%= @current %></a> </li>
+									<%end%>
+								</ul>
+							</div>		
+					</div>
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="product-details"><!--product-details-->
+						<div class="col-sm-5">
+							<div class="view-product">
+								<img src="<%= @product.img %>" alt="" />
+							</div>
+						</div>
+						<div class="col-sm-7">
+							<div class="product-information"><!--/product-information-->
+								<h2><%= @product.name %></h2>
+								<span>
+									<span>US $ <%= @product.price %></span>
+									<label>Quantity:</label>
+									<input type="text" value="3" />
+									<button type="button" class="btn btn-fefault cart">
+										<i class="fa fa-shopping-cart"></i>
+										Add to cart
+									</button>
+								</span>
+								<p><b>Availability:</b> In Stock</p>
+								<p><b>Condition:</b> New</p>
+								<p><b>Brand:</b> E-SHOPPER</p>
+							</div><!--/product-information-->
+						</div>
+					</div><!--/product-details-->
+					
+					<div class="category-tab shop-details-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li><a href="#details" data-toggle="tab">Details</a></li>
+							</ul>
+						</div>
+	
+							<div class="tab-pane fade active in" id="reviews" >
+								<div class="col-sm-12">
+									<p><%= @product.des %></p>		
+								</div>
+							</div>
+							
+						</div>
+					</div><!--/category-tab-->
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer id="footer"><!--Footer-->
+		<%= render 'footer' %>
+		
+	</footer><!--/Footer-->
+    <script src="/assets/jquery.js"></script>
+	<script src="/assets/bootstrap.min.js"></script>
+	<script src="/assets/jquery.scrollUp.min.js"></script>
+	<script src="/assets/price-range.js"></script>
+    <script src="/assets/jquery.prettyPhoto.js"></script>
+    <script src="/assets/main.js"></script>
 
-<%= link_to 'Back', products_path %>
+<a id="scrollUp" href="/index.html#top" style="position: fixed; z-index: 2147483647; display: none;"></a></body></html>

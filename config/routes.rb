@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   
   get 'homepage/index'
 
-  get 'homepage/product_detail'
-
   get 'homepage/cart'
 
   get 'homepage/login'
+  
+  get 'homepage/category'
 
   get 'genres/index'
 
@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  resources :products, :genres, :accounts, :orders
+  resources :products, :genres, :accounts, :orders, :homepage
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

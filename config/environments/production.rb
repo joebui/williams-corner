@@ -74,4 +74,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.assets.compile = ['*.js', '*.css']
+  config.active_support.deprecation = :silence
 end

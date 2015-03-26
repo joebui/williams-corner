@@ -21,10 +21,14 @@ Your app should now be running on [localhost:5000](http://localhost:5000/).
 ## Deploying to Heroku
 
 ```sh
+$ heroku create
 $ git push heroku master
 $ heroku run rake db:migrate
 $ heroku open
 ```
+
+## Link to the website on Heroku 
+https://williams-corner.herokuapp.com
 
 ## Documentation
 

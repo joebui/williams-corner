@@ -8,9 +8,9 @@
     <div class="main_content">    
       <div class="menu">
         <ul>
-          <li><%= link_to 'Manage Products', products_path %></li>
-          <li><%= link_to 'Manage Genres', genres_path %></li>
-          <li><%= link_to 'Manage Accounts', accounts_path %></li>
+          <li><%= link_to 'Products', products_path %></li>
+          <li><%= link_to 'Genres', genres_path %></li>
+          <li><%= link_to 'Accounts', accounts_path %></li>
           <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
         </ul>
       </div>          
@@ -36,15 +36,20 @@
           <td><%= account.name %></td>
           <td><%= account.email %></td>
           <td><%= account.password %></td>          
-          <td><%= link_to 'Edit', edit_account_path(account) %> </td>
-          <td><%= link_to 'Delete', account_path(account), method: :delete, data: {confirm: 'Are you sure? '} %> </td>
+          <td><%= link_to 'Edit', edit_account_path(account), class: "btn btn-primary" %> </td>
+          <% if account.name == 'admin' %>
+            <td> Cannot be deleted </td>
+          <% else %>          
+            <td><%= link_to 'Delete', account_path(account), method: :delete, data: {confirm: 'Are you sure? '},
+              class: "btn btn-primary" %> </td>
+          <% end %>
         </tr>
     <% end %>
     </tbody>
     
     </table>
     <br>
-    <%= link_to 'New Account', new_account_path , class: "btn btn-primary" %>
+    
     </div><!-- end of right content-->
     </div>   <!--end of center content -->               
     <div class="clear"></div>

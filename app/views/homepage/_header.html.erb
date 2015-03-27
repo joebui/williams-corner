@@ -19,10 +19,11 @@
 								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href=""><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><%= link_to 'Sign Up', new_account_path , class: "fa fa-shopping-cart" %></li>
 								<% if logged_in? %>
 									<li> Hello <strong> <%= current_user.name %> </strong> <%= link_to " (Log out)", logout_path, method: "delete" %> </li>
 								<% else %>
-								    <li> <%= link_to "Log in", login_path %> </li>
+								    <li> <%= link_to "Sign In", login_path %> </li>
 								<% end %>
 							</ul>
 						</div>

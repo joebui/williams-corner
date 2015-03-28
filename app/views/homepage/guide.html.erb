@@ -1,0 +1,75 @@
+<body class='home_body'>
+	<%= render 'header' %>
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div style="margin-bottom: 20px; padding-bottom: 20px;">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">User guide</h2>
+					</div><!--features_items-->
+				 
+					<div class="category-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+							  <li class="active"><a href="#loginsignup" data-toggle="tab">Login/Sign up</a></li>
+								<li><a href="#genres" data-toggle="tab">List products by genre</a></li>
+								<li><a href="#featuredgame" data-toggle="tab">Featured games</a></li>
+								<li><a href="#lastestgame" data-toggle="tab">Lastest games</a></li>
+								<li><a href="#gamedetail" data-toggle="tab">Game detail</a></li>
+							</ul>
+						
+						<div class="tab-content">
+							<div class="tab-pane fade active in" id="loginsignup" >
+							  <p>Login and signup functions are located at navigation bar</p>
+							  <img src="/assets/loginsignup.png"><br>
+							  <p>If you do not have account , click signup to register a new account. The website will automatically link to register page, you will need to fill out user name, email, password and confirmation.</p><br>
+							  
+							  <img src="/assets/signup.png"><br>
+							  <p>If you already have account, click Login at nav bar then enter your user name and password.</p><br>
+							  <img src="/assets/login.png"><br>
+							</div>
+							
+							<div class="tab-pane fade" id="genres" >
+							  <p>To list products by genres , you need to click on the genre on list first</p><br>
+							  <img src="/assets/genres.png"><br>
+							  <p>then a list of games corresponsed to that genre will be listed on the tab.</p>
+							  <img src="/assets/listproducts.png"><br>
+							  <p>If you are interested in any games, just click <span style="color: red">Show</span> button then the game detail will be shown <span style="color: red">Game Detail</span> tab.</p>
+							</div>
+							
+							<div class="tab-pane fade" id="featuredgame" >
+							  <p>This tab shows randomly 4 featured games in each genre</p>
+							  <img src="/assets/featuredgame.png"><br>
+							  <img src="/assets/listproducts.png"><br>
+							  <p>If you are interested in any games, just click <span style="color: red">Show</span> button then the game detail will be shown <span style="color: red">Game Detail</span> tab.</p>
+							</div>
+							
+							<div class="tab-pane fade" id="lastestgame" >
+							  <p>This slider shows 4 lastest games in our shop.</p>
+							  <img src="/assets/lastestgame.png"><br>
+							  <p>If you are interested in any games, just click <span style="color: red">Get it now</span> button then the game detail will be shown at <span style="color: red">Game Detail</span> tab.</p>
+							  
+							</div>
+							
+							<div class="tab-pane fade" id="gamedetail" >
+							  <p>This page shows the detail of game such name, genre, image and description.</p>
+							  <img src="/assets/gamedetail.png"><br>
+							  <p>If you are interested in purchasing this game, click <span style="color: red">Add to cart</span></p>
+							</div>
+						</div>
+						</div>
+					</div><!--/category-tab-->
+				
+					<!--/recommended_items-->
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer id="footer"><!--Footer-->
+		<%= render 'footer' %>
+		
+	</footer><!--/Footer-->
+</body>

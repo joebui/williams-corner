@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'homepage/cart'
 
   get 'homepage/login'
-  
+ 
+  get 'homepage/guide'
+ 
   get 'homepage/category'
 
   get 'genres/index'

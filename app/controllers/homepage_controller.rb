@@ -19,6 +19,10 @@ class HomepageController < ApplicationController
   def cart
   end
 
+  def guide
+    
+  end
+
   def login
   end
   

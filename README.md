@@ -1,16 +1,16 @@
-# ruby-getting-started
+# Team members
 
-A barebones Rails app, which can easily be deployed to Heroku.
-
-This application support the [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby) article - check it out.
+Bui Quang Dien - s3445846
+Doan Thien Phuc - s3463827
+Nguyen Nhat Quang - s3461485
+Nguyen Vu Hoang - s3445816
 
 ## Running Locally
 
 Make sure you have Ruby installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
 ```sh
-$ git clone git@github.com:heroku/ruby-getting-started.git
-$ cd ruby-getting-started
+$ cd williams-corner
 $ bundle install
 $ rake db:create db:migrate
 $ foreman start web
@@ -27,12 +27,23 @@ $ heroku run rake db:migrate
 $ heroku open
 ```
 
+## Limitations
+Currently this is the first set of features of the projects. Therefore, users can only apply CRUD (create, read, update and delete) 
+user accounts and products at this stage.
+
+## Known bugs and workaround
+- CSS files and JS files cannot be compiled when running on Heroku
+- Bootstrap does not work on Heroku
+
+All of the mentioned bugs are successfully fixed.
+
 ## Link to the website on Heroku 
 https://williams-corner.herokuapp.com
+To login as admin, type username as "admin" and password as "aaa". Only admin can access the page to administrate the user accounts and products
+(https://williams-corner.herokuapp.com/products)
 
-## Documentation
 
-For more information about using Ruby on Heroku, see these Dev Center articles:
+## References
+http://demo.themeum.com/html/eshopper/#
 
-- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
 

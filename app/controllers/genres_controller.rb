@@ -1,7 +1,11 @@
 class GenresController < ApplicationController
   def index    
     if logged_in? && current_user.name == "admin"
-      @genres = Genre.all
+      if params[:search]
+        @genres = Genre.search(params[:search])
+      else
+        @genres = Genre.all
+      end
     else
       redirect_to login_path
     end

@@ -3,4 +3,8 @@ class Product < ActiveRecord::Base
   validates :price, presence: true, :numericality => {:only_integer => true}
   validates :img, presence: true
   validates :genre, presence: true
+
+  def self.search(search)	  
+	    where("name LIKE ?", "%#{search}%")	  
+	end
 end

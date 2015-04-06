@@ -7,13 +7,13 @@ class SessionsController < ApplicationController
     pass = Account.find_by(password: params[:session][:password])
     if name && pass
       log_in name
-      if current_user.name == "admin"
+      if current_user.name == "admin"        
         redirect_to products_path
       else
         redirect_to root_url
       end
     else
-      flash[:danger] = 'Invalid email/password combination'
+      flash[:alert] = "Invalid email/password combination"
       render 'new'
     end
   end

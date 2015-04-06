@@ -22,7 +22,13 @@
     <div class="center_content">
     <div class="right_content">  
 
-    <h2> List of User Account </h2>                      
+    <h2> List of User Account </h2>     
+    <%= form_tag(accounts_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
+        <%= text_field_tag :search, params[:search], placeholder: "Search by name" %>
+        <%= submit_tag "Search", :name => nil %>
+    <% end %>                 
+    <%= yield %>
+    <br/>
  
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <thead>

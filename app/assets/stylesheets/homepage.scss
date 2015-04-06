@@ -10,62 +10,92 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 #space{
-  padding-top: 200px;
+    padding-top: 200px;
 }
 
 .home_body {
-  font-family: 'Roboto', sans-serif;
-  position: relative;
-  font-weight:400px;
-  
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    font-weight:400px;
+}
+
+.shop-menu ul li a {
+    background: #FFFFFF;
+    color: #696763;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding:0;
+    padding-right: 0;
+    margin-top: 10px;
+}
+
+ul.nav.navbar-nav, ul.nav.navbar-nav ul {
+    list-style:none;
+    margin:0; padding:0;
+    position: relative;
+}
+
+ul.nav.navbar-nav ul {
+    display: none;
+    position: absolute;
+}
+ul.nav.navbar-nav li#fa-user:hover > ul {
+    background-color: #E74C3C;
+    display: block;
+}
+
+ul.dropdown li a {
+    background-color: #E74C3C;
+    color: white;
 }
 
 ul li {
-  list-style: none;
+    list-style: none;
 }
+
 a:hover {
-outline: none;
-text-decoration:none;
+    outline: none;
+    text-decoration:none;
 }
 
 a:focus {
-  outline:none;
-  outline-offset: 0;
+    outline:none;
+    outline-offset: 0;
 }
 
 a {
-  -webkit-transition: 300ms;
-  -moz-transition: 300ms;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
     -o-transition: 300ms;
     transition: 300ms;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-.btn:hover, 
-.btn:focus{
-  outline: none;
-  box-shadow: none;
+.btn:hover, .btn:focus{
+    outline: none;
+     box-shadow: none;
 }
 
 .navbar-toggle {
-  background-color: #000;
+     background-color: #000;
 }
 
 a#scrollUp {
-  bottom: 0px;
-  right: 10px;
-  padding: 5px 10px;
-  background: #E74C3C;
-  color: #FFF;
-  -webkit-animation: bounce 2s ease infinite;
-  animation: bounce 2s ease infinite;
+    bottom: 0px;
+    right: 10px;
+    padding: 5px 10px;
+    background: #E74C3C;
+    color: #FFF;
+    -webkit-animation: bounce 2s ease infinite;
+    animation: bounce 2s ease infinite;
 }
 
 a#scrollUp i{
-  font-size: 30px;
+    font-size: 30px;
 }
 
 
@@ -74,7 +104,7 @@ a#scrollUp i{
 **************************/
 
 .header_top {
-  background: none repeat scroll 0 0 #F0F0E9;
+    background: none repeat scroll 0 0 #F0F0E9;
 }
 
 .contactinfo ul li:first-child{
@@ -82,9 +112,9 @@ a#scrollUp i{
 }
 
 .contactinfo ul li a{
-  font-size: 12px;
-  color: #696763;
-  font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #696763;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -94,10 +124,10 @@ a#scrollUp i{
 
 
 .social-icons ul li a {
-  border: 0 none;
-  border-radius: 0;
-  color: #696763;
-  padding:0px;
+    border: 0 none;
+    border-radius: 0;
+    color: #696763;
+    padding:0px;
 }
 
 
@@ -106,24 +136,24 @@ a#scrollUp i{
 }
 
 .social-icons ul li a i {
-  padding: 11px 15px;
-   transition: all 0.9s ease 0s;
-  -moz-transition: all 0.9s ease 0s;
-  -webkit-transition: all 0.9s ease 0s;
-  -o-transition: all 0.9s ease 0s;
+    padding: 11px 15px;
+     transition: all 0.9s ease 0s;
+    -moz-transition: all 0.9s ease 0s;
+     -webkit-transition: all 0.9s ease 0s;
+     -o-transition: all 0.9s ease 0s;
 }
 
 .social-icons ul li a i:hover{
-  color: #fff;
-   transition: all 0.9s ease 0s;
-  -moz-transition: all 0.9s ease 0s;
-  -webkit-transition: all 0.9s ease 0s;
-  -o-transition: all 0.9s ease 0s;
+    color: #fff;
+    transition: all 0.9s ease 0s;
+    -moz-transition: all 0.9s ease 0s;
+    -webkit-transition: all 0.9s ease 0s;
+    -o-transition: all 0.9s ease 0s;
 }
 
 
 .fa-facebook:hover {
-  background: #0083C9;
+    background: #0083C9;
 }
 
 .fa-twitter:hover  {
@@ -143,11 +173,11 @@ a#scrollUp i{
 }
 
 .header-middle .container .row {
-  border-bottom: 1px solid #333333;
-  margin-left: 0;
-  margin-right: 0;
-  padding-bottom: 20px;
-  padding-top: 20px;
+    border-bottom: 1px solid #333333;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .header-middle .container .row .col-sm-4{
@@ -193,25 +223,13 @@ a#scrollUp i{
 
 
 .shop-menu ul li {
-	display:inline-block;
+	display:list-item;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .shop-menu ul li:last-child {
   padding-right: 0;
-}
-
-
-.shop-menu ul li a {
-  background: #FFFFFF;
-  color: #696763;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  padding:0;
-  padding-right: 0;
-  margin-top: 10px;
 }
 
 

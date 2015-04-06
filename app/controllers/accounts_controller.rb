@@ -20,11 +20,19 @@ class AccountsController < ApplicationController
 	def update
 		@account = Account.find(params[:id])
 
-		if @account.update(account_params)
-		    redirect_to accounts_path
+		if current_user.name == @account.name || current_user.name == "admin"
+			if @account.update(account_params)
+				if current_user.name == "admin"
+			    	redirect_to accounts_path
+			    else
+					redirect_to root_url
+				end    	
+			else
+			    render 'edit'
+		    end
 		else
-		    render 'edit'
-	    end
+			redirect_to root_url
+		end
 	end
 
 	def show
@@ -33,7 +41,11 @@ class AccountsController < ApplicationController
 
 	def index
 		if logged_in? && current_user.name == "admin"
-			@accounts = Account.all			
+			if params[:search]
+				@accounts = Account.search(params[:search])
+			else
+				@accounts = Account.all
+			end
 		else
 			redirect_to login_path
 		end

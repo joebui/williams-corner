@@ -12,8 +12,15 @@
 		      	<%= f.label :password %>
 		      	<%= f.password_field :password, class: 'form-control', :style=>"width:100%" %>
 
-		      	<%= f.submit "Log in", class: "btn btn-primary" %>
+		      	<%= f.submit "Log in", class: "btn btn-primary" %>		      			     			      
 		    <% end %>    
+		    <br/>
+		    <% flash.each do |key, value| %>
+			    <div class="<%= flash_class(key) %>">
+			          <%= value %>
+			    </div>
+			<% end %>				
+		    <%= link_to "<< Home Page", root_url %>
 	  	</div>
 	</div>
 </div>

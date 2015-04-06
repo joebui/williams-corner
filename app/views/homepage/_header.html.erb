@@ -1,34 +1,42 @@
 <header id="header"><!--header-->
-		<div class="header-middle"><!--header-middle-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="logo pull-left" style="padding-left: 30px">
-							<a href="/"><img src="<%= asset_path('logo_homepage.png') %>" alt="logo_homepage"></a>
-						</div>
+	<div class="header-middle"><!--header-middle-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="logo pull-left" style="padding-left: 30px">
+						<a href="/"><img src="<%= asset_path('logo_homepage.png') %>" alt="logo_homepage"></a>
 					</div>
-					<div class="col-sm-8">
-						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">
-              	<li>
-              		<select style="margin-top: 10px">
-              			<option value="english">English</option>
-                  	<option value="vietnamese">Vietnamese</option>
-                  </select>
-                </li>                
-								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href=""><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><%= link_to 'Sign Up', new_account_path , class: "fa fa-shopping-cart" %></li>
-								<% if logged_in? %>
-									<li> Hello <strong> <%= current_user.name %> </strong> <%= link_to " (Log out)", logout_path, method: "delete" %> </li>
-								<% else %>
-								    <li> <%= link_to "Sign In", login_path %> </li>
-								<% end %>
-							</ul>
-						</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="shop-menu pull-right">
+						<ul class="nav navbar-nav">
+    			          	<li>
+              					<select style="margin-top: 10px">
+              						<option value="english">English</option>
+                  					<option value="vietnamese">Vietnamese</option>
+                  				</select>
+                			</li>                
+							<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
+							<li><a href=""><i class="fa fa-crosshairs"></i> Checkout</a></li>
+							<!-- <li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
+							<li><%= link_to 'Sign Up', new_account_path , class: "fa fa-shopping-cart" %></li>
+
+							<% if logged_in? %>	<!-- check if user logged in -->							
+								<li id="fa-user"><a href="#"> Welcome, <strong> <%= current_user.name %> </strong> </a>									
+							        <ul class="dropdown" style="width: 100%; height: 60px;"> 
+							            <li><%= link_to 'Manage', edit_account_path(current_user) %></li>
+							            <li><a href="#"> Cart </a></li>
+							            <li><%= link_to "Logout", logout_path, method: "delete" %></li>
+							        </ul>
+							    </li>
+							<% else %>
+							    <li> <%= link_to "Sign In", login_path %> </li>				    								    					
+							<% end %>
+
+						</ul>
 					</div>
 				</div>
 			</div>
-		</div><!--/header-middle-->
-	</header><!--/header-->
+		</div>
+	</div><!--/header-middle-->
+</header><!--/header-->

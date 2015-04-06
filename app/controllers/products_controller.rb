@@ -1,8 +1,13 @@
 class ProductsController < ApplicationController
   def index
     if logged_in? && current_user.name == "admin"
-      @genres = Genre.all.pluck(:name)
-      @products = Product.all
+      if params[:search]
+        @genres = Genre.all.pluck(:name)
+        @products = Product.search(params[:search])
+      else
+        @genres = Genre.all.pluck(:name)
+        @products = Product.all
+      end
     else
       redirect_to login_path
     end

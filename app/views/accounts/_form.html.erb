@@ -1,18 +1,5 @@
 <h2>Account details</h2> 
-<%= form_for :account, url: accounts_path do |f| %>
-  <% if @account.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@account.errors.count, "error") %> prohibited
-        this account from being created:
-      </h2>
-      <ul>
-        <% @account.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for :account, url: accounts_path do |f| %>  
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name, :style=>"width:100%" %>
@@ -36,4 +23,18 @@
   <p>
     <%= f.submit class: "btn btn-primary" %>
   </p>
+
+  <% if @account.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@account.errors.count, "error") %> prohibited
+        this account from being created:
+      </h2>
+      <ul>
+        <% @account.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <% end %>

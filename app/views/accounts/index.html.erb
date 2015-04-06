@@ -34,8 +34,7 @@
     <thead>
       <tr>
             <th scope="col" class="rounded-company">Name</th>
-            <th scope="col" class="rounded">Email</th>
-            <th scope="col" class="rounded">Password</th>  
+            <th scope="col" class="rounded">Email</th>            
             <th scope="col" class="rounded">Edit</th>
             <th scope="col" class="rounded-q4">Delete</th>          
       </tr>
@@ -45,8 +44,7 @@
         <% @accounts.each do |account| %>
         <tr>
           <td><%= account.name %></td>
-          <td><%= account.email %></td>
-          <td><%= account.password %></td>          
+          <td><%= account.email %></td>          
           <td><%= link_to 'Edit', edit_account_path(account), class: "btn btn-primary" %> </td>
           <% if account.name == 'admin' %>
             <td> Cannot be deleted </td>

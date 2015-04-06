@@ -11,26 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320073130) do
+ActiveRecord::Schema.define(version: 20150406071518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "accounts", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password",        limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "password_digest"
   end
 
-  create_table "genres", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "genres", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  create_table "orders", force: true do |t|
+  create_table "orders", force: :cascade do |t|
     t.integer  "account_id"
     t.datetime "order_date"
     t.integer  "product_id"
@@ -40,26 +41,26 @@ ActiveRecord::Schema.define(version: 20150320073130) do
 
   add_index "orders", ["account_id"], name: "index_orders_on_account_id", using: :btree
 
-  create_table "products", force: true do |t|
-    t.string   "name"
+  create_table "products", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.text     "des"
-    t.string   "img"
-    t.string   "genre"
-    t.string   "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "img",        limit: 255
+    t.string   "genre",      limit: 255
+    t.string   "price",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  create_table "tests", force: true do |t|
-    t.string   "name"
-    t.string   "password"
-    t.string   "password_confirmation"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+  create_table "tests", force: :cascade do |t|
+    t.string   "name",                  limit: 255
+    t.string   "password",              limit: 255
+    t.string   "password_confirmation", limit: 255
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
-  create_table "widgets", force: true do |t|
-    t.string   "name"
+  create_table "widgets", force: :cascade do |t|
+    t.string   "name",        limit: 255
     t.text     "description"
     t.integer  "stock"
     t.datetime "created_at"

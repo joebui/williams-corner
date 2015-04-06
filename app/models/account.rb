@@ -6,6 +6,8 @@ class Account < ActiveRecord::Base
 	validates :password, confirmation: true, presence: true, length: {minimum: 3}
 	validates :password_confirmation, presence: true
 
+	has_secure_password
+	
 	def self.search(search)	  
 	    where("name LIKE ?", "%#{search}%")	  
 	end

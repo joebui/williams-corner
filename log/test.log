@@ -1,0 +1,76 @@
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (118.7ms)[0m  [1mDROP DATABASE IF EXISTS "ruby-getting-started_test"[0m
+  [1m[35m (321.6ms)[0m  CREATE DATABASE "ruby-getting-started_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.9ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (12.7ms)[0m  CREATE TABLE "accounts" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "password" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying) 
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.6ms)[0m  CREATE TABLE "orders" ("id" serial primary key, "account_id" integer, "order_date" timestamp, "product_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_orders_on_account_id" ON "orders" USING btree ("account_id")[0m
+  [1m[35m (3.6ms)[0m  CREATE TABLE "products" ("id" serial primary key, "name" character varying(255), "des" text, "img" character varying(255), "genre" character varying(255), "price" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "tests" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "password_confirmation" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "widgets" ("id" serial primary key, "name" character varying(255), "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150406071518')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150318014316')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150319162525')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150320072821')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150320073130')
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "tests" DISABLE TRIGGER ALL;ALTER TABLE "widgets" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "accounts"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-06 07:35:00', '2015-04-06 07:35:00', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-06 07:35:00', '2015-04-06 07:35:00', 298486374)[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "orders"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "orders" ("order_date", "product_id", "created_at", "updated_at", "id") VALUES ('2015-03-19 23:25:25.000000', 1, '2015-04-06 07:35:00', '2015-04-06 07:35:00', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "orders" ("order_date", "product_id", "created_at", "updated_at", "id") VALUES ('2015-03-19 23:25:25.000000', 1, '2015-04-06 07:35:00', '2015-04-06 07:35:00', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "widgets"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "widgets" ("name", "description", "stock") VALUES ('MyString', 'MyText', 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "widgets" ("name", "description", "stock") VALUES ('MyString', 'MyText', 1)[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "tests" ENABLE TRIGGER ALL;ALTER TABLE "widgets" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+SessionsControllerTest: test_should_get_new
+-------------------------------------------
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------
+WidgetsControllerTest: test_should_create_widget
+------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+WidgetsControllerTest: test_should_destroy_widget
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+WidgetsControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+WidgetsControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------
+WidgetsControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+WidgetsControllerTest: test_should_show_widget
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------
+WidgetsControllerTest: test_should_update_widget
+------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m

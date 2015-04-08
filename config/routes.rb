@@ -39,12 +39,14 @@ Rails.application.routes.draw do
 
   get 'products/destroy'
 
+  get 'ratings/new'
+
   get 'sessions/new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  resources :products, :genres, :accounts, :orders, :homepage
+  resources :ratings, :products, :genres, :accounts, :orders, :homepage
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

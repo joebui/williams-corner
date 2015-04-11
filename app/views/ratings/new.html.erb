@@ -11,14 +11,20 @@
 		<div class="tab-pane fade active in" id="comment" >
 			<%= form_for :rating, url: ratings_path do |f| %>  
 				<div class="col-sm-12">										
-					<%= f.text_area :comment, placeholder: "Comment", rows: "6", id: "comment" %>
+					<p>
+						<%= f.text_area :comment, placeholder: "Comment", rows: "6", id: "comment" %>
+					</p>					
+					<p>						
+						<%= f.select :stars, options_for_select(["1 star", "2 stars", "3 stars", "4 stars", "5 stars"]), :prompt => 'Your Rating' %>
+					</p>					
+					<p>
+						<%= f.submit class: "btn btn-primary"%>
+					</p>
 				</div>
-			<% end %>
-			<div id="14284645245934" class="wE">
-				<script src="http://widget-engine.com/w:0:003:14284645245934:1:ffffff:40" type="text/javascript"/>
-			</div>
+			<% end %>			
 		</div>
-	</div>
+	</div>	
+</ul>
 </div><!--/category-tab-->
 </body>
 </html>

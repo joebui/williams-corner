@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> All Ratings </title>
+</head>
+<body class="boss_body">
+<div id="main_container">
+
+  <div class="header">
+    <div class="logo"><a href="/"><img src="<%= asset_path('logo.png') %>" alt="" title="" border="0" /></a></div>
+    </div>
+    
+    <div class="main_content">    
+      <div class="menu">
+        <ul>
+          <li><%= link_to 'Games', products_path %></li>
+          <li><%= link_to 'Genres', genres_path %></li>
+          <li><%= link_to 'Ratings', ratings_path %></li>
+          <li><%= link_to 'Accounts', accounts_path %></li>
+          <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
+        </ul>
+      </div>          
+    <div class="center_content">
+    <div class="right_content">  
+
+    <h2> List of Ratings </h2>     
+    <%= form_tag(ratings_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
+        <%= text_field_tag :search, params[:search], placeholder: "Search by username" %>
+        <%= submit_tag "Search", :name => nil %>
+    <% end %>                 
+    <%= yield %>
+    <br/>
+ 
+    <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
+    <thead>
+      <tr>
+      		<th scope="col" class="rounded-company">ID</th>
+          <th scope="col" class="rounded-company">User</th>
+          <th scope="col" class="rounded">Product ID</th>            
+          <th scope="col" class="rounded">Rate</th>            
+          <th scope="col" class="rounded">Comment</th>                        
+          <th scope="col" class="rounded-q4">Delete</th>          
+      </tr>
+    </thead>
+        
+    <tbody>
+        <% @ratings.each do |rating| %>
+        	<tr>
+        		<td><%= rating.id %></td>
+        		<td><%= rating.account_name %></td>
+        		<td><%= rating.product_id %></td>
+        		<td><%= rating.stars %></td>
+        		<td><%= rating.comment %></td>
+				<td><%= link_to 'Delete', rating_path(rating), method: :delete, data: {confirm: 'Are you sure? '},
+              		class: "btn btn-primary" %> </td>
+        	</tr>			
+		<% end %>
+    </tbody>
+    
+    </table>
+    <br>
+    
+    </div><!-- end of right content-->
+    </div>   <!--end of center content -->               
+    <div class="clear"></div>
+    </div> <!--end of main content-->
+    <div class="footer">
+    </div>
+</div>    
+</body>
+</html>

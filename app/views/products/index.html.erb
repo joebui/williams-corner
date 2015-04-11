@@ -12,9 +12,10 @@
     
     <div class="main_content">
         <div class="menu">
-            <ul>
+            <ul>                
                 <li><%= link_to 'Games', products_path %></li>
                 <li><%= link_to 'Genres', genres_path %></li>
+                <li><%= link_to 'Ratings', ratings_path %></li>
                 <li><%= link_to 'Accounts', accounts_path %></li>
                 <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
             </ul>
@@ -22,23 +23,26 @@
     <div class="center_content">
     <div class="right_content">            
         
-    <h2>List of Products</h2> 
+    <h2>List of Products</h2>     
 
-    <%= form_tag(products_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
+    <%= form_tag(products_path, :method => "get", class: "navbar-form") do %>      
         <%= text_field_tag :search, params[:search], placeholder: "Search by name" %>
         <%= submit_tag "Search", :name => nil %>
     <% end %>                 
     <%= yield %>
-    <br/>
+
+    <%= link_to 'New', new_product_path , class: "btn btn-primary" %>
+    <br/><br/>
  
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <thead>
         <tr>
-            <th scope="col" class="rounded-company">Product</th>
+            <th scope="col" class="rounded-company">ID</th>
+            <th scope="col" class="rounded-company">Name</th>
             <th scope="col" class="rounded">Image</th>
             <th scope="col" class="rounded">Price</th>
-                  <th scope="col" class="rounded">Genre</th>
-                <th scope="col" class="rounded">Description</th>
+            <th scope="col" class="rounded">Genre</th>
+            <th scope="col" class="rounded">Description</th>
             <th scope="col" class="rounded">Edit</th>
             <th scope="col" class="rounded-q4">Delete</th>
         </tr>
@@ -47,13 +51,14 @@
     <tbody>
         <% @products.each do |product| %>
         <tr>
+            <td><%= product.id %></td>
             <td><%= product.name %></td>
             <td><img src=<%= product.img %> alt="img" height="100dp" width="100dp" ></td>
             <td><%= product.price %></td>
             <td><%= product.genre %></td>
             <td><%= product.des %></td>
                   <td><%= link_to 'Edit', edit_product_path(product) , class: "btn btn-primary"%></td>
-                  <td><%= link_to 'Destroy', product_path(product),
+                  <td><%= link_to 'Remove', product_path(product),
               method: :delete,
               data: { confirm: 'Are you sure?' } , class: "btn btn-primary"%></td>
         </tr>    
@@ -62,7 +67,7 @@
     
     </table>
     <br>
-    <%= link_to 'New product', new_product_path , class: "btn btn-primary" %>
+    
     </div><!-- end of right content-->
     </div>   <!--end of center content -->               
     <div class="clear"></div>

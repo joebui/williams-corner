@@ -24,8 +24,8 @@
 							<% if logged_in? %>	<!-- check if user logged in -->							
 								<li id="fa-user"><a href="#"> Welcome, <strong> <%= current_user.name %> </strong> </a>									
 							        <ul class="dropdown" style="width: 100%; height: 60px;"> 
-							            <li><%= link_to 'Manage', edit_account_path(current_user) %></li>
-							            <li><a href="#"> Cart </a></li>
+							        	<li><%= link_to "My Cart" %></li>
+							            <li><%= link_to 'Manage', products_path %></li>							            
 							            <li><%= link_to "Logout", logout_path, method: "delete" %></li>
 							        </ul>
 							    </li>

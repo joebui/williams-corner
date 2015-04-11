@@ -1,3 +1,5 @@
+$product = nil;
+
 class HomepageController < ApplicationController
   def index
     @products = Product.all
@@ -12,8 +14,9 @@ class HomepageController < ApplicationController
     @genres = Genre.all
     @current = nil
     @count = nil
-    @products = Product.all
+    @products = Product.all    
     @product = Product.find(params[:id])
+    $product = @product
   end
 
   def cart

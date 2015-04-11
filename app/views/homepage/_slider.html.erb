@@ -17,8 +17,14 @@
 								<div class="col-sm-6">
 									<h1><span>william's</span>CORNER</h1>
 									<h2><%= product.name %></h2>
-									<p><%= product.des %></p>
-									<%= link_to 'Get it now', homepage_path(product) , class: "btn btn-primary"%>
+									
+									<% if product.des.size > 200 %>
+										<p><%= product.des[0, 200] + "..." %></p>
+									<% else %>
+										<p><%= product.des %></p>
+									<% end %>
+
+									<%= link_to 'Get it now', homepage_path(product), class: "btn btn-primary"%>
 								</div>
 								<div class="col-sm-6">
 									<img src="<%= product.img %>" class="girl img-responsive" alt="">
@@ -30,7 +36,13 @@
 									<div class="col-sm-6">
 										<h1><span>william's</span>-CORNER</h1>
 										<h2><%= product.name %></h2>
-										<p><%= product.des %></p>
+
+										<% if product.des.size > 200 %>
+											<p><%= product.des[0, 200] + "..." %></p>
+										<% else %>
+											<p><%= product.des %></p>
+										<% end %>
+
 										<%= link_to 'Get it now', homepage_path(product) , class: "btn btn-primary"%>
 									</div>
 									<div class="col-sm-6">

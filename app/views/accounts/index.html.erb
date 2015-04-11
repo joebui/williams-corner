@@ -12,9 +12,10 @@
     
     <div class="main_content">    
       <div class="menu">
-        <ul>
+        <ul>          
           <li><%= link_to 'Games', products_path %></li>
           <li><%= link_to 'Genres', genres_path %></li>
+          <li><%= link_to 'Ratings', ratings_path %></li>
           <li><%= link_to 'Accounts', accounts_path %></li>
           <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
         </ul>
@@ -33,6 +34,7 @@
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <thead>
       <tr>
+            <th scope="col" class="rounded-company">ID</th>
             <th scope="col" class="rounded-company">Name</th>
             <th scope="col" class="rounded">Email</th>            
             <th scope="col" class="rounded">Edit</th>
@@ -43,6 +45,7 @@
     <tbody>
         <% @accounts.each do |account| %>
         <tr>
+          <td><%= account.id %></td>
           <td><%= account.name %></td>
           <td><%= account.email %></td>          
           <td><%= link_to 'Edit', edit_account_path(account), class: "btn btn-primary" %> </td>

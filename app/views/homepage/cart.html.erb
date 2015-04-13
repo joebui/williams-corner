@@ -1,2 +1,120 @@
-<h1>Homepage#cart</h1>
-<p>Find me in app/views/homepage/cart.html.erb</p>
+<head>
+	<title> Cart page </title>
+</head>
+<body>
+	<%= render 'header' %>
+	<section id="cart_items">
+		<div class="container">
+			<div class="breadcrumbs">
+				<ol class="breadcrumb">
+				  <li><a href="/">Home</a></li>
+				  <li class="active">Shopping Cart</li>
+				</ol>
+			</div>
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Item</td>
+							<td class="description"> Description</td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td class="total"></td>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<% @order_items.each do |order_item| %>
+							<% product =  Product.find_by_id(order_item.product_id) %>
+							<% @items = @items + 1 %>
+							<% @total = @total + order_item.total_price %>
+							<tr>
+								<td class="cart_product">
+									<img src="<%= product.img %>" alt="">
+								</td>
+								<td class="cart_description">
+									<h4>Name :<%= product.name %></h4>
+									<p>Order ID: <%= order_item.id %></p>
+									<p>Status: <%= order_item.status %></p>
+								</td>
+								<td class="cart_price">
+									<p class="cart_total_price"><%= number_to_currency(product.price) %></p>
+								</td>
+								<td class="cart_quantity">
+									<p class="cart_quantity"><%= order_item.quantity %></p>
+								</td>
+								<td class="cart_total">
+									<p class="cart_total_price"><%= number_to_currency(order_item.total_price) %></p>
+								</td>
+								<td><%= link_to 'Destroy', order_item ,
+		              method: :delete,
+		              data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%>
+	              </td>
+							</tr>
+							
+						<% end %>
+						<% @vat = 0.1 * @total %>
+						<% @total = @total + @vat %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+	<section id="do_action">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="chose_area">
+						<ul class="user_option">
+							<li>
+								<input type="checkbox">
+								<label>Use Coupon Code</label>
+							</li>
+							<li>
+								<input type="checkbox">
+								<label>Use Gift Voucher</label>
+							</li>
+							<li>
+								<input type="checkbox">
+								<label>Estimate Shipping & Taxes</label>
+							</li>
+						</ul>
+						<ul class="user_info">
+							<li class="single_field">
+								<label>City:</label>
+								<select>
+									<option>Ho Chi Minh city</option>
+									<option>Ha Noi</option>
+									<option>Hai Phong</option>
+								</select>
+							
+							</li>
+							<li class="single_field zip-field">
+								<label>Coupon Code:</label>
+								<input type="text">
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="total_area">
+						<ul>
+							<li>Total orders <span><%= @items %></span></li>
+							<li>VAT 10% <span><%= number_to_currency(@vat)   %></span></li>
+							<li>Shipping Cost <span>Free</span></li>
+							<li>Total <span><%= number_to_currency(@total)  %></span></li>
+						</ul>
+							<a class="btn btn-default update" href="/">Continue shopping</a>
+							<a class="btn btn-default check_out" href="">Check Out</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/#do_action-->
+
+	<footer id="footer"><!--Footer-->
+		<%= render 'footer' %>
+		
+	</footer><!--/Footer-->

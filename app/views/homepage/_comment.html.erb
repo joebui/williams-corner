@@ -1,9 +1,10 @@
 <% @product_ratings.each do |rating| %>
-    <tr>    	
-    	<td><%= rating.account_name %></td>   		
-    	<td><%= rating.created_at.strftime("%b %d. %Y") %></td>
-    	<td><%= rating.stars %></td>
-  		<td><%= rating.comment %></td>	 
-  		<br>   
-    </tr>			
+
+
+<td id ="comment_head">By <%= rating.account_name %> on </td><%= rating.created_at.strftime("%b %d. %Y") %></td><br>
+<td id ="comment_star">Rating: <%= rating.stars %></td></br>
+<td id="comment_comment"><%= rating.comment %></td><br>	
+<br>   
+   
+
 <% end %>

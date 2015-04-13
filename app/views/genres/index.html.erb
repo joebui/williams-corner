@@ -17,13 +17,14 @@
                 <li><%= link_to 'Genres', genres_path %></li>
                 <li><%= link_to 'Ratings', ratings_path %></li>
                 <li><%= link_to 'Accounts', accounts_path %></li>
+                <li><%= link_to 'Orders', order_items_path %></li>
                 <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
             </ul>
         </div> 
     <div class="center_content">
     <div class="right_content">            
         
-    <h2>List of Products</h2> 
+    <h2>List of Genres</h2> 
     
     <%= form_tag(genres_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
         <%= text_field_tag :search, params[:search], placeholder: "Search by name" %>

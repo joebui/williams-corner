@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   root "homepage#index"
+
+  get 'order_items/index'
+  
+  get 'order_items/create'
+
+  get 'order_items/update'
+
+  get 'order_items/destroy'
   
   get 'homepage/index'
 
@@ -10,6 +18,8 @@ Rails.application.routes.draw do
   get 'homepage/guide'
  
   get 'homepage/category'
+
+  get 'homepage/search_result'
 
   get 'genres/index'
 
@@ -46,7 +56,12 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  resources :ratings, :products, :genres, :accounts, :orders, :homepage
+  resources :ratings, :products, :genres, :accounts, :homepage
+  resources :order_items
+  
+  resources :accounts do
+    resources :order_items
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

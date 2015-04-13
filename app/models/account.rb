@@ -1,5 +1,5 @@
 class Account < ActiveRecord::Base
-	has_many :orders, dependent: :destroy
+	has_many :order_items, dependent: :destroy
 
 	validates :name, presence: true, uniqueness: true, uniqueness: {case_sensitive: false} 
 	validates :email, presence: true

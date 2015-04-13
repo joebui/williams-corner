@@ -22,18 +22,10 @@
 						<div class="col-sm-8">
 							<div class="product-information"><!--/product-information-->
 								<h2><%= @product.name %></h2>
-								<span>
-									<span>Price: $ <%= @product.price %></span>
-									<label>Quantity:</label>
-									<input type="text" value="3" />
-									<button type="button" class="btn btn-fefault cart">
-										<i class="fa fa-shopping-cart"></i>
-										Add to cart
-									</button>
-								</span>
+								<%= render "product_row", product: @product, order_item: @order_item %>
 								<p><b>Availability:</b> In Stock</p>
 								<p><b>Condition:</b> New</p>
-								<p><b>Brand:</b>william'sCORNER</p>
+								<p><b>Brand:</b> william'sCORNER</p>
 							</div><!--/product-information-->
 						</div>
 					</div><!--/product-details-->
@@ -53,8 +45,17 @@
 							
 					</div>
 					<!--review-->
+
 					<%= render template: 'ratings/new' %>
-					<%= render 'comment' %>
+
+					<div class ="category-tab shop-details-tab">
+						<div class ="col-sm-12">
+							<ul class ="nav nav-tabs">
+								<li><a href="" data-toggle="tab">Comment</a></li>
+							</ul>
+						</div>
+						<%= render 'comment' %>
+					</div>
 				</div>
 			</div>
 		</div>

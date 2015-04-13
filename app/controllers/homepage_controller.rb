@@ -1,4 +1,4 @@
-$product = nil;
+$product = nil; # store the current viewed product
 
 class HomepageController < ApplicationController
   def index
@@ -17,6 +17,9 @@ class HomepageController < ApplicationController
     @products = Product.all    
     @product = Product.find(params[:id])
     $product = @product
+
+    # get all the comments of a product
+    @product_ratings = Rating.where(product_id: @product.id).order(:created_at).reverse_order
   end
 
   def cart

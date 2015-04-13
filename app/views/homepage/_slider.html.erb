@@ -18,8 +18,8 @@
 									<h1><span>william's</span>CORNER</h1>
 									<h2><%= product.name %></h2>
 									
-									<% if product.des.size > 200 %>
-										<p><%= product.des[0, 200] + "..." %></p>
+									<% if product.des.size > 130 %>
+										<p><%= product.des[0, 130] + "..." %></p>
 									<% else %>
 										<p><%= product.des %></p>
 									<% end %>
@@ -37,8 +37,8 @@
 										<h1><span>william's</span>-CORNER</h1>
 										<h2><%= product.name %></h2>
 
-										<% if product.des.size > 200 %>
-											<p><%= product.des[0, 200] + "..." %></p>
+										<% if product.des.size > 130 %>
+											<p><%= product.des[0, 130] + "..." %></p>
 										<% else %>
 											<p><%= product.des %></p>
 										<% end %>

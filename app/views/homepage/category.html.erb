@@ -39,7 +39,11 @@
 											<h4><%= product.name %></h4>
 										</td>
 										<td class="cart_description">
-											<h4><%= product.des %></h4>
+											<% if product.des.size > 50 %>
+												<h4><%= product.des[0, 50] + "..." %></h4>
+											<% else %>
+												<h4><%= product.des %></h4>
+											<% end %>
 										</td>
 										<td class="cart_price">
 											<h4>$ <%= product.price %></h4>

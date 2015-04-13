@@ -22,13 +22,16 @@
 							<li><%= link_to 'Sign Up', new_account_path , class: "fa fa-shopping-cart" %></li>
 
 							<% if logged_in? %>	<!-- check if user logged in -->							
+								<% if current_user.name != "admin" %>
+							    	<li><%= link_to "My Cart" %></li>
+							    <% end %>
+							    
 								<li id="fa-user"><a href="#"> Welcome, <strong> <%= current_user.name %> </strong> </a>									
-							        <ul class="dropdown" style="width: 100%; height: 60px;"> 
-							        	<li><%= link_to "My Cart" %></li>
+							        <ul class="dropdown" style="width: 70%; height: 40px;"> 							        	
 							            <li><%= link_to 'Manage', products_path %></li>							            
 							            <li><%= link_to "Logout", logout_path, method: "delete" %></li>
 							        </ul>
-							    </li>
+							    </li>							    
 							<% else %>
 							    <li> <%= link_to "Sign In", login_path %> </li>				    								    					
 							<% end %>

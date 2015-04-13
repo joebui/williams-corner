@@ -51,10 +51,10 @@
         		<td><%= rating.product_id %></td>
         		<td><%= rating.stars %></td>
         		<td><%= rating.comment %></td>
-				<td><%= link_to 'Delete', rating_path(rating), method: :delete, data: {confirm: 'Are you sure? '},
+				    <td><%= link_to 'Delete', rating_path(rating), method: :delete, data: {confirm: 'Are you sure? '},
               		class: "btn btn-primary" %> </td>
         	</tr>			
-		<% end %>
+		    <% end %>
     </tbody>
     
     </table>

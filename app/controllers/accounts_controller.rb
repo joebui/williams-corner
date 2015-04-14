@@ -3,8 +3,12 @@ class AccountsController < ApplicationController
 		@account = Account.new
 	end
 
-	def edit
-		@account = Account.find(params[:id])
+	def edit				
+		if current_user.name == Account.find(params[:id]).name || current_user.name == "admin"
+			@account = Account.find(params[:id])
+		else
+			redirect_to root_url
+		end
 	end
 
 	def create
@@ -35,10 +39,6 @@ class AccountsController < ApplicationController
 		end
 	end
 
-	def show
-		@account = Account.find(params[:id])
-	end
-
 	def index
 		if logged_in? && current_user.name == "admin"
 			if params[:search]
@@ -47,15 +47,19 @@ class AccountsController < ApplicationController
 				@accounts = Account.all
 			end
 		else
-			redirect_to login_path
+			redirect_to root_url
 		end
 	end	
 
 	def destroy
-		@account = Account.find(params[:id])
-		@account.destroy
+		if logged_in? && current_user.name == "admin"
+			@account = Account.find(params[:id])
+			@account.destroy
 
-		redirect_to accounts_path		
+			redirect_to accounts_path		
+		else
+			redirect_to root_url
+		end
 	end
 
 	private

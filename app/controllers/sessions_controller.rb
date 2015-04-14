@@ -4,9 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     user = Account.find_by(name: params[:session][:name])
-    # pass = Account.find_by(password: )
+    
     if user && user.authenticate(params[:session][:password])
       log_in user
+      remember user
       if current_user.name == "admin"        
         redirect_to products_path
       else

@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413065825) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20150414143925) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150413065825) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
+    t.string   "remember_digest"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -43,8 +41,8 @@ ActiveRecord::Schema.define(version: 20150413065825) do
     t.string   "status"
   end
 
-  add_index "order_items", ["account_id"], name: "index_order_items_on_account_id", using: :btree
-  add_index "order_items", ["product_id"], name: "index_order_items_on_product_id", using: :btree
+  add_index "order_items", ["account_id"], name: "index_order_items_on_account_id"
+  add_index "order_items", ["product_id"], name: "index_order_items_on_product_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -65,8 +63,6 @@ ActiveRecord::Schema.define(version: 20150413065825) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "ratings", ["product_id"], name: "index_ratings_on_product_id", using: :btree
+  add_index "ratings", ["product_id"], name: "index_ratings_on_product_id"
 
-  add_foreign_key "order_items", "accounts"
-  add_foreign_key "order_items", "products"
 end

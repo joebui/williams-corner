@@ -47,7 +47,7 @@
 								<td class="cart_total">
 									<p class="cart_total_price"><%= number_to_currency(order_item.total_price) %></p>
 								</td>
-								<td><%= link_to 'Destroy', order_item ,
+								<td><%= link_to 'Remove', order_item ,
 		              method: :delete,
 		              data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%>
 	              </td>

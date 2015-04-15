@@ -34,6 +34,7 @@
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <thead>
         <tr>
+            <th scope="col" class="rounded-company">ID</th>
             <th scope="col" class="rounded-company">Owner</th>
             <th scope="col" class="rounded">Game</th>
             <th scope="col" class="rounded">Quantity</th>
@@ -46,6 +47,7 @@
         <% @order_items.each do |order| %>
         <tr>
             <% product =  Product.find_by_id(order.product_id) %>
+            <td><%= order.id %></td>
             <td><%= order.owner %></td>
             <td><%= product.name%></td>
             <td><%= order.quantity %></td>

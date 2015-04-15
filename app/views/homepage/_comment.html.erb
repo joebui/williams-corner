@@ -1,10 +1,22 @@
-<% @product_ratings.each do |rating| %>
+<!DOCTYPE html>
+<html>
+<body>
+	<div class ="category-tab shop-details-tab">
+		<div class ="col-sm-12">
+			<ul class ="nav nav-tabs">
+				<li><a href="#details" data-toggle="tab">Comments</a></li>
+			</ul>
+		</div>
 
+		<div class="tab-pane fade active in" id="comment" >
+			<% @product_ratings.each do |rating| %>
+				<p style="color:blue; margin-left:25px; font-size: 20px; font-weight:bold;">By <%= rating.account_name %> on <%= rating.created_at.strftime("%b %d. %Y") %></p>
+				<p style="color:red; margin-left:27px; font-size 15px; font-weight:bold">Rating: <%= rating.stars %></p>
+				<p style="margin-left:50px; font-size: 15px;"><%= rating.comment %></p>	
+				<br>   
+	   		<% end %>
+	   	</div>
+	</div>
+</body>
+</html>
 
-<td id ="comment_head">By <%= rating.account_name %> on </td><%= rating.created_at.strftime("%b %d. %Y") %></td><br>
-<td id ="comment_star">Rating: <%= rating.stars %></td></br>
-<td id="comment_comment"><%= rating.comment %></td><br>	
-<br>   
-   
-
-<% end %>

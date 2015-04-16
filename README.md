@@ -12,7 +12,7 @@ Make sure you have Ruby installed.  Also, install the [Heroku Toolbelt](https://
 ```sh
 $ cd williams-corner
 $ bundle install
-$ rake db:create db:migrate
+$ bundle exec rake db:create db:migrate
 $ foreman start web
 ```
 

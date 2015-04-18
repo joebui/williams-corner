@@ -15,9 +15,7 @@
               						<option value="english">English</option>
                   					<option value="vietnamese">Vietnamese</option>
                   				</select>
-                			</li>                
-							<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-							<li><a href=""><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                			</li>                							
 							<!-- <li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
 							<li><%= link_to 'Sign Up', new_account_path , class: "fa fa-shopping-cart" %></li>
 
@@ -30,6 +28,7 @@
 								        </ul>
 								    </li>							    
 							    <% else %>	
+							    	<li> <%= link_to "History", homepage_history_path %> </li>	
 							    	<li> <%= link_to "My Cart", homepage_cart_path %> </li>	
 							    	<li id="fa-user"><a href="#"> Welcome, <strong> <%= current_user.name %> </strong> </a>								
 								        <ul class="dropdown" style="width: 70%; height: 40px;"> 							        	

@@ -6,7 +6,7 @@ class Account < ActiveRecord::Base
 	validates :email, presence: true
 	validates :password, confirmation: true, presence: true, length: {minimum: 3}
 	validates :password_confirmation, presence: true
-
+  
 	has_secure_password
 	
 	def self.search(search)	  
@@ -17,7 +17,7 @@ class Account < ActiveRecord::Base
     	cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     	BCrypt::Password.create(string, cost: cost)
-  	end
+	end
 
 	def Account.new_token
     	SecureRandom.urlsafe_base64

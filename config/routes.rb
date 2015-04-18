@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'homepage/cart'
 
+  get 'homepage/history'
+  
   get 'homepage/login'
  
   get 'homepage/guide'
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
   get 'homepage/category'
 
   get 'homepage/search_result'
+
+  get 'homepage/checkout'
 
   get 'genres/index'
 

@@ -30,11 +30,21 @@ class HomepageController < ApplicationController
     @vat = 0;
   end
 
-  def guide
-    
+  def history
+    @order_items = current_user.order_items 
+    @items = 0;
+    @total = 0;
+    @vat = 0;
   end
 
-  def login
+  def checkout
+    @order_items = current_user.order_items
+    @order_items.each do |item|
+      if item.status == "pending"
+        item.update_attributes(:status => 'in process' )
+      end
+    end
+    redirect_to homepage_cart_path
   end
   
   def category

@@ -15,7 +15,6 @@
             <ul>
                 <li><%= link_to 'Games', products_path %></li>
                 <li><%= link_to 'Genres', genres_path %></li>
-                <li><%= link_to 'Ratings', ratings_path %></li>
                 <li><%= link_to 'Accounts', accounts_path %></li>
                 <li><%= link_to 'Orders', order_items_path %></li>
                 <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
@@ -24,7 +23,7 @@
     <div class="center_content">
     <div class="right_content">            
         
-    <h2>List of Orders</h2>  
+    <h2>List of Orders <%= @name %> </h2>  
     <%= form_tag(order_items_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
         <%= text_field_tag :search, params[:search], placeholder: "Search by owner " %>
         <%= submit_tag "Search", :name => nil %>
@@ -32,33 +31,33 @@
     <%= yield %>
     <br/>
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
-    <thead>
-        <tr>
-            <th scope="col" class="rounded-company">ID</th>
-            <th scope="col" class="rounded-company">Owner</th>
-            <th scope="col" class="rounded">Game</th>
-            <th scope="col" class="rounded">Quantity</th>
-            <th scope="col" class="rounded">Total Price</th>
-            <th scope="col" class="rounded-q4">Delete</th>
-        </tr>
-    </thead>
-        
-    <tbody>
-        <% @order_items.each do |order| %>
-        <tr>
-            <% product =  Product.find_by_id(order.product_id) %>
-            <td><%= order.id %></td>
-            <td><%= order.owner %></td>
-            <td><%= product.name%></td>
-            <td><%= order.quantity %></td>
-            <td><%= number_to_currency(order.total_price) %></td>
-                  <td><%= link_to 'Delete', order,
-              method: :delete,
-              data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%></td>
-        </tr>    
-        <% end %>
-    </tbody>
+        <thead>
+            <tr>
+                <th scope="col" class="rounded-company">Owner</th>
+                <th scope="col" class="rounded">Game</th>
+                <th scope="col" class="rounded">Total Price</th>
+                <th scope="col" class="rounded">Status</th>
+                <th scope="col" class="rounded-q4">Update</th>
+            </tr>
+        </thead>
+   
     
+        <% @order_items.each do |order| %>
+            <%= form_for order do |f| %>
+                <tbody>
+                    <tr>
+                        <% product =  Product.find_by_id(order.product_id) %>
+                        <td scope="col" class="rounded-company"><%= order.owner %></td>
+                        <td scope="col" class="rounded"><%= product.name%></td>
+                        <td scope="col" class="rounded"><%= number_to_currency(order.total_price) %></td>
+                        <td scope="col" class="rounded">
+                        <%= f.select :status, @status,  :value => order.status.to_str %>
+                        </td>
+                        <td scope="col" class="rounded-q4"><%= f.submit "Update", class: "btn btn-danger" %></td>
+                    </tr>
+                </tbody>
+            <% end %>
+        <% end %>
     </table>
     <br>
     </div><!-- end of right content-->

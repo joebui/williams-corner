@@ -4,7 +4,7 @@ class AccountsController < ApplicationController
 	end
 
 	def edit				
-		if current_user.name == Account.find(params[:id]).name || current_user.name == "admin"
+		if logged_in? && (current_user.name == Account.find(params[:id]).name || current_user.name == "admin")
 			@account = Account.find(params[:id])
 		else
 			redirect_to root_url
@@ -24,7 +24,7 @@ class AccountsController < ApplicationController
 	def update
 		@account = Account.find(params[:id])
 
-		if current_user.name == @account.name || current_user.name == "admin"
+		if logged_in? && (current_user.name == @account.name || current_user.name == "admin")
 			if @account.update(account_params)
 				if current_user.name == "admin"
 			    	redirect_to accounts_path

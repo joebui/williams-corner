@@ -24,17 +24,25 @@ class HomepageController < ApplicationController
   end
 
   def cart
-    @order_items = current_user.order_items 
-    @items = 0;
-    @total = 0;
-    @vat = 0;
+    if logged_in?
+      @order_items = current_user.order_items 
+      @items = 0;
+      @total = 0;
+      @vat = 0;
+    else
+      redirect_to login_path
+    end
   end
 
   def history
-    @order_items = current_user.order_items 
-    @items = 0;
-    @total = 0;
-    @vat = 0;
+    if logged_in?
+      @order_items = current_user.order_items 
+      @items = 0;
+      @total = 0;
+      @vat = 0;
+    else
+      redirect_to login_path
+    end
   end
 
   def checkout

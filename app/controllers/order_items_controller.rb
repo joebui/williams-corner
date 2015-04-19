@@ -16,24 +16,16 @@ class OrderItemsController < ApplicationController
     end
   end
   
-  def update
-    if logged_in? && current_user.name == "admin"
-      @order_item = OrderItem.find(params[:id])
+  def update                
+      @order_item = OrderItem.find(params[:id])            
       @order_item.update_attributes(order_item_params)
-      redirect_to order_items_path
-    else
-      redirect_to root_url
-    end
+      redirect_to order_items_path    
   end
 
-  def destroy
-    if logged_in?
+  def destroy    
       @order_item = current_user.order_items.find(params[:id])
       @order_item.destroy
-      redirect_to homepage_cart_path
-    else
-      redirect_to root_url
-    end
+      redirect_to homepage_history_path    
   end
   
   def create

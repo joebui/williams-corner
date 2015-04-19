@@ -16,8 +16,7 @@
                   					<option value="vietnamese">Vietnamese</option>
                   				</select>
                 			</li>                							
-							<!-- <li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
-							<li><%= link_to 'Sign Up', new_account_path , class: "fa fa-shopping-cart" %></li>
+							<!-- <li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li> -->							
 
 							<% if logged_in? %>	<!-- check if user logged in -->							
 								<% if current_user.name == "admin" %>							    	
@@ -38,6 +37,7 @@
 								    </li>			
 								<% end %>			
 							<% else %>
+								<li><%= link_to 'Sign Up', new_account_path , class: "fa fa-shopping-cart" %></li>
 							    <li> <%= link_to "Sign In", login_path %> </li>				    								    					
 							<% end %>
 

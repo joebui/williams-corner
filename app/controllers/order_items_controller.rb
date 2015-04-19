@@ -25,7 +25,7 @@ class OrderItemsController < ApplicationController
   def destroy    
       @order_item = current_user.order_items.find(params[:id])
       @order_item.destroy
-      redirect_to homepage_history_path    
+      redirect_to :back    
   end
   
   def create

@@ -45,12 +45,14 @@
    
     
         <% @order_items.each do |order| %>
+            <% account = Account.find_by_id(order.owner_id) %>
+            <% product = Product.find_by_id(order.product_id) %>
+
             <%= form_for order do |f| %>
                 <tbody>
-                    <tr>
-                        <% product =  Product.find_by_id(order.product_id) %>
+                    <tr>                        
                         <td scope="col" class="rounded-company"><%= order.id %></td>
-                        <td scope="col" class="rounded-company"><%= order.owner %></td>
+                        <td scope="col" class="rounded-company"><%= account.name %></td>
                         <td scope="col" class="rounded"><%= product.name%></td>
                         <td scope="col" class="rounded"><%= number_to_currency(order.total_price) %></td>
                         <td scope="col" class="rounded">

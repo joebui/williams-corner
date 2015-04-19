@@ -9,7 +9,7 @@ class RatingsController < ApplicationController
 
 	def create
 		if logged_in?
-			@rating = $product.ratings.create(account_name: current_user.name, comment: params[:rating][:comment], 
+			@rating = $product.ratings.create(account_id: current_user.id, comment: params[:rating][:comment], 
 				stars: params[:rating][:stars])
 			redirect_to :back
 		else

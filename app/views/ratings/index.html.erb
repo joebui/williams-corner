@@ -46,10 +46,12 @@
         
     <tbody>
         <% @ratings.each do |rating| %>
+          <% account = Account.find_by_id(rating.account_id) %>
+          <% product = Product.find_by_id(rating.product_id) %>
         	<tr>
         		<td><%= rating.id %></td>
-        		<td><%= rating.account_name %></td>
-        		<td><%= rating.product_id %></td>
+        		<td><%= account.name %></td>
+        		<td><%= product.name %></td>
         		<td><%= rating.stars %></td>
         		<td><%= rating.comment %></td>
 				    <td><%= link_to 'Delete', rating_path(rating), method: :delete, data: {confirm: 'Are you sure? '},

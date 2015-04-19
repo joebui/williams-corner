@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20150418035106) do
   create_table "order_items", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "account_id"
-    t.string   "owner"
+    t.integer  "owner_id"
     t.integer  "unit_price"
     t.integer  "quantity"
     t.string   "total_price"
@@ -59,11 +59,11 @@ ActiveRecord::Schema.define(version: 20150418035106) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "product_id"
-    t.string   "account_name"
+    t.integer  "account_id"
     t.string   "stars"
     t.text     "comment"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "ratings", ["product_id"], name: "index_ratings_on_product_id", using: :btree

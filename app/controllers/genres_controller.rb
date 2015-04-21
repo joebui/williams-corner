@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
     def index    
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             if params[:search]
                 @genres = Genre.search(params[:search])
             else 
@@ -12,7 +12,7 @@ class GenresController < ApplicationController
     end    
  
     def new
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             @genre = Genre.new
         else
             redirect_to root_url
@@ -20,7 +20,7 @@ class GenresController < ApplicationController
     end
  
     def edit
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             @genre = Genre.find(params[:id])
         else
             redirect_to root_url
@@ -28,7 +28,7 @@ class GenresController < ApplicationController
     end
  
     def create
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             @genre = Genre.new(genre_params)
      
             if @genre.save
@@ -42,7 +42,7 @@ class GenresController < ApplicationController
     end
  
     def update
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             @genre = Genre.find(params[:id])
             old_genre = @genre.name
             if @genre.update(genre_params)
@@ -62,7 +62,7 @@ class GenresController < ApplicationController
     end
  
     def destroy
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             @genre = Genre.find(params[:id])
             genre = @genre
             @products = Product.all

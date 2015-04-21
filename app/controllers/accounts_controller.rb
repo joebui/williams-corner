@@ -4,7 +4,7 @@ class AccountsController < ApplicationController
 	end
 
 	def edit				
-		if logged_in? && (current_user.name == Account.find(params[:id]).name || current_user.name == "admin")
+		if logged_in? && (current_user.name == Account.find(params[:id]).name || current_user.is_admin == true)
 			@account = Account.find(params[:id])
 		else
 			redirect_to root_url
@@ -13,6 +13,7 @@ class AccountsController < ApplicationController
 
 	def create
 		@account = Account.new(account_params)
+		@account.is_admin = false;
 		if @account.save
 			log_in @account
 			redirect_to root_url
@@ -24,9 +25,9 @@ class AccountsController < ApplicationController
 	def update
 		@account = Account.find(params[:id])
 
-		if logged_in? && (current_user.name == @account.name || current_user.name == "admin")
+		if logged_in? && (current_user.name == @account.name || current_user.is_admin == true)
 			if @account.update(account_params)
-				if current_user.name == "admin"
+				if current_user.is_admin == true
 			    	redirect_to accounts_path
 			    else
 					redirect_to root_url
@@ -40,7 +41,7 @@ class AccountsController < ApplicationController
 	end
 
 	def index
-		if logged_in? && current_user.name == "admin"
+		if logged_in? && current_user.is_admin == true
 			if params[:search]
 				@accounts = Account.search(params[:search])
 			else
@@ -52,7 +53,7 @@ class AccountsController < ApplicationController
 	end	
 
 	def destroy
-		if logged_in? && current_user.name == "admin"
+		if logged_in? && current_user.is_admin == true
 			@account = Account.find(params[:id])
 			@account.destroy
 
@@ -64,6 +65,6 @@ class AccountsController < ApplicationController
 
 	private
 	def account_params
-		params.require(:account).permit(:name, :email, :password, :password_confirmation)
+		params.require(:account).permit(:name, :email, :is_admin, :password, :password_confirmation)
 	end
 end

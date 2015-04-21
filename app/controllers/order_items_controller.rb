@@ -3,7 +3,7 @@ class OrderItemsController < ApplicationController
     @status = ['pending','in process','delivered']
     @url = request.original_fullpath
     @name = @url.split('/').last
-    if logged_in? && current_user.name == "admin"
+    if logged_in? && current_user.is_admin == true
       if params[:search]
         #@genres = Genre.all.pluck(:name)
         @order_items = OrderItem.search(params[:search])

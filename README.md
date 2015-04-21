@@ -12,7 +12,7 @@ Make sure you have Ruby installed.  Also, install the [Heroku Toolbelt](https://
 ```sh
 $ cd williams-corner
 $ bundle install
-$ rake db:create db:migrate
+$ bundle rake db:create db:migrate
 $ foreman start web
 ```
 
@@ -28,19 +28,21 @@ $ heroku open
 ```
 
 ## Limitations
-Currently this is the first set of features of the projects. Therefore, users can only apply CRUD (create, read, update and delete) 
-user accounts and products at this stage.
+Currently this is the sencond phase of the project. Therefore, there are only five domain objects: accounts, products, genres, ratings, order_items.
+Users are not able to change the language to be displayed of the website and to get the coupon. 
 
 ## Known bugs and workaround
-- CSS files and JS files cannot be compiled when running on Heroku
-- Bootstrap does not work on Heroku
+- In the search function of homepage and admin page, users are still not able to perform case-insensitive searching. For example, 
+if user wants to search for something named "Abc", he/she has to type "Abc" to get the result, typing "abc" won't display the expected result.
+- In the Order page of the admin, in order to update the status of order(s) successfully, the admin has to refresh the page after opening it for 
+the first time.
 
-All of the mentioned bugs are successfully fixed.
+We are not able to solve the problems by the end of phase 2. The team will be working diligently to solve the problems in phase 3.
 
 ## Link to the website on Heroku 
 https://williams-corner.herokuapp.com
-To login as admin, type username as "admin" and password as "aaa". Only admin can access the page to administrate the user accounts and products
-(https://williams-corner.herokuapp.com/products)
+
+To login as admin, type username as "admin" and password as "aaa". Only admin can access the page to administrate the domian objects listed above.
 
 
 ## References

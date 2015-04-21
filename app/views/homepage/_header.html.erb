@@ -19,7 +19,7 @@
 							<!-- <li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li> -->							
 
 							<% if logged_in? %>	<!-- check if user logged in -->							
-								<% if current_user.name == "admin" %>							    	
+								<% if current_user.is_admin == true %>							    	
 								    <li id="fa-user"><a href="#"> Welcome, <strong> <%= current_user.name %> </strong> </a>								
 								        <ul class="dropdown" style="width: 70%; height: 40px;"> 							        	
 								            <li><%= link_to 'Manage', products_path %></li>							            

@@ -37,7 +37,8 @@
       <tr>
             <th scope="col" class="rounded-company">ID</th>
             <th scope="col" class="rounded-company">Name</th>
-            <th scope="col" class="rounded">Email</th>            
+            <th scope="col" class="rounded">Email</th>  
+            <th scope="col" class="rounded">Admin</th>            
             <th scope="col" class="rounded">Edit</th>
             <th scope="col" class="rounded-q4">Delete</th>          
       </tr>
@@ -48,14 +49,11 @@
         <tr>
           <td><%= account.id %></td>
           <td><%= account.name %></td>
-          <td><%= account.email %></td>          
-          <td><%= link_to 'Edit', edit_account_path(account), class: "btn btn-primary" %> </td>
-          <% if account.name == 'admin' %>
-            <td> Cannot be deleted </td>
-          <% else %>          
-            <td><%= link_to 'Delete', account_path(account), method: :delete, data: {confirm: 'Are you sure? '},
-              class: "btn btn-primary" %> </td>
-          <% end %>
+          <td><%= account.email %></td>     
+          <td><%= account.is_admin %></td>     
+          <td><%= link_to 'Edit', edit_account_path(account), class: "btn btn-primary" %> </td>      
+          <td><%= link_to 'Delete', account_path(account), method: :delete, data: {confirm: 'Are you sure? '},
+            class: "btn btn-primary" %> </td>
         </tr>
     <% end %>
     </tbody>

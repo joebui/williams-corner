@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
     def index
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             if params[:search]
                 @genres = Genre.all.pluck(:name)
                 @products = Product.search(params[:search])
@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
     end
  
     def new
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             @product = Product.new
             @genres = Genre.all.pluck(:name)
         else
@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
     end
  
     def edit
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             @product = Product.find(params[:id])
             @genres = Genre.all.pluck(:name)
         else
@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
     end
  
     def create
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             @product = Product.new(product_params)
             @genres = Genre.all.pluck(:name)
             if @product.save
@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
     end
  
     def update
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             @product = Product.find(params[:id])
             @genres = Genre.all.pluck(:name)
             if @product.update(product_params)
@@ -68,7 +68,7 @@ class ProductsController < ApplicationController
     end
  
     def destroy
-        if logged_in? && current_user.name == "admin"
+        if logged_in? && current_user.is_admin == true
             @product = Product.find(params[:id])
             @product.destroy
             redirect_to products_path

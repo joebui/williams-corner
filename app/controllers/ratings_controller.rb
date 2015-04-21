@@ -18,7 +18,7 @@ class RatingsController < ApplicationController
 	end	
 
 	def index
-		if logged_in? && current_user.name == "admin"
+		if logged_in? && current_user.is_admin == true
 			if params[:search]
 				@ratings = Rating.search(params[:search])
 			else
@@ -30,7 +30,7 @@ class RatingsController < ApplicationController
 	end
 
 	def destroy
-		if logged_in? && current_user.name == "admin"
+		if logged_in? && current_user.is_admin == true
 			@rating = Rating.find(params[:id])
 			@rating.destroy
 			redirect_to ratings_path		

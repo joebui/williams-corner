@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       remember user
-      if current_user.name == "admin"        
+      if current_user.is_admin == true
         redirect_to products_path
       else
         redirect_to root_url

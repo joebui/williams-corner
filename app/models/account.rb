@@ -4,7 +4,7 @@ class Account < ActiveRecord::Base
 
 	validates :name, presence: true, uniqueness: true, uniqueness: {case_sensitive: false} 
 	validates :email, presence: true
-	validates :password, confirmation: true, presence: true, length: {minimum: 5}
+	validates :password, confirmation: true, presence: true, length: {minimum: 5}, allow_blank: false
 	validates :password_confirmation, presence: true
   
 	has_secure_password

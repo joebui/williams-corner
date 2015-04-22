@@ -25,13 +25,15 @@ class AccountsController < ApplicationController
 	def update
 		@account = Account.find(params[:id])
 
-		if logged_in? && (current_user.name == @account.name || current_user.is_admin == true)
-			if @account.update(account_params)
-				if current_user.is_admin == true
-			    	redirect_to accounts_path
-			    else
-					redirect_to root_url
-				end    	
+		if logged_in? && current_user.is_admin == false
+			if @account.update_attributes(account_params)				
+				redirect_to root_url				
+			else
+			    render 'edit'
+		    end
+		elsif logged_in? && current_user.is_admin == true			
+			if @account.update_attribute(account_params)				
+				redirect_to accounts_path				
 			else
 			    render 'edit'
 		    end
@@ -67,4 +69,10 @@ class AccountsController < ApplicationController
 	def account_params
 		params.require(:account).permit(:name, :email, :is_admin, :password, :password_confirmation)
 	end
+
+	private	
+ 	def update_resource(resource, params)
+ 		params.require(:account).permit(:is_admin)
+    	resource.update_without_password(params)
+  	end
 end

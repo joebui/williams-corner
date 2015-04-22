@@ -46,15 +46,28 @@
             </ul>
           </div>
         <% end %>
-        <p>
-          <%= f.label :name %><br>
-          <%= f.text_field :name, :style=>"width:100%" %>
-        </p>
-       
-        <p>
-          <%= f.label :email %><br>
-          <%= f.email_field :email, :style=>"width:100%" %>
-        </p>
+
+        <% if current_user.name == @account.name %>
+          <p>
+            <%= f.label :name %><br>
+            <%= f.text_field :name, :style=>"width:100%" %>
+          </p>
+         
+          <p>
+            <%= f.label :email %><br>
+            <%= f.email_field :email, :style=>"width:100%" %>
+          </p>        
+        
+          <p>
+            <%= f.label :password %>
+            <%= f.password_field :password, :style=>"width:100%" %>
+          </p>
+
+          <p>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, :style=>"width:100%" %>
+          </p>
+        <% end %>
 
         <% if current_user.is_admin == true %>
           <p>
@@ -62,16 +75,6 @@
             <%= f.select :is_admin, options_for_select(["true", "false"]), :prompt => 'Select one' %>
           </p>
         <% end %>
-
-        <p>
-          <%= f.label :password %>
-          <%= f.password_field :password, :style=>"width:100%" %>
-        </p>
-
-        <p>
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, :style=>"width:100%" %>
-        </p>
        
         <p>
           <%= f.submit class: "btn btn-primary" %>

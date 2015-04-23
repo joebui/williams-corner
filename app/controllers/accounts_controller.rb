@@ -15,7 +15,9 @@ class AccountsController < ApplicationController
 		@account = Account.new(account_params)
 		@account.is_admin = false;
 		if @account.save
-			log_in @account
+			@account.send_activation_email
+      		flash[:info] = "Please check your email to activate your account."      
+			# log_in @account
 			redirect_to root_url
 		else
 			render 'new'
@@ -32,7 +34,7 @@ class AccountsController < ApplicationController
 			    render 'edit'
 		    end
 		elsif logged_in? && current_user.is_admin == true			
-			if @account.update_attribute(account_params)				
+			if @account.update_attribute(:is_admin, params[:account][:is_admin])				
 				redirect_to accounts_path				
 			else
 			    render 'edit'
@@ -74,5 +76,10 @@ class AccountsController < ApplicationController
  	def update_resource(resource, params)
  		params.require(:account).permit(:is_admin)
     	resource.update_without_password(params)
+  	end
+
+  	private
+	def create_activation_digest
+    	# Create the token and digest.
   	end
 end

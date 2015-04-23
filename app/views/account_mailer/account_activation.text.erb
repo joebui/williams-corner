@@ -1,0 +1,7 @@
+AccountMailer#account_activation
+
+Hi <%= @account.name %>,
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+<%= edit_account_activation_url(@account.activation_token, email: @account.email) %>

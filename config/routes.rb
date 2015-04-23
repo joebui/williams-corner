@@ -62,6 +62,7 @@ Rails.application.routes.draw do
   
   resources :ratings, :products, :genres, :accounts, :homepage
   resources :order_items
+  resources :account_activations, only: [:edit]
   
   resources :accounts do
     resources :order_items

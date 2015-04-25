@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         remember user
         redirect_to products_path
       else        
-        flash[:warning] = "Account not activated. Check your email for the activation link."
+        flash[:alert] = "Account not activated. Check your email for the activation link."
         render 'new'
       end
     else

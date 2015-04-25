@@ -38,6 +38,8 @@
             <th scope="col" class="rounded-company">ID</th>
             <th scope="col" class="rounded-company">Name</th>
             <th scope="col" class="rounded">Email</th>  
+            <th scope="col" class="rounded">Activated</th>  
+            <th scope="col" class="rounded">Activated At</th>  
             <th scope="col" class="rounded">Admin</th>            
             <th scope="col" class="rounded">Edit</th>
             <th scope="col" class="rounded-q4">Delete</th>          
@@ -50,6 +52,8 @@
           <td><%= account.id %></td>
           <td><%= account.name %></td>
           <td><%= account.email %></td>     
+          <td><%= account.activated %></td>     
+          <td><%= account.activated_at %></td>     
           <td><%= account.is_admin %></td>     
           <td><%= link_to 'Edit', edit_account_path(account), class: "btn btn-primary" %> </td>      
           <td><%= link_to 'Delete', account_path(account), method: :delete, data: {confirm: 'Are you sure? '},

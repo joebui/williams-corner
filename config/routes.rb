@@ -59,12 +59,9 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-
-  get '/auth/:provider/callback' => 'authentications#create'
-  # devise_for :accounts  
   
   resources :ratings, :products, :genres, :accounts, :homepage
-  resources :order_items, :authentications
+  resources :order_items
   resources :account_activations, only: [:edit]
   
   resources :accounts do

@@ -4,12 +4,6 @@ class Account < ActiveRecord::Base
 	before_create :create_activation_digest
 
 	has_many :order_items, dependent: :destroy
-  has_many :authentications
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :lockable, :timeoutable and :activatable
-  # :confirmable,
-  # devise :database_authenticatable, :registerable, 
-  #        :recoverable, :rememberable, :trackable, :validatable  
 
 	validates :name, presence: true, uniqueness: true, uniqueness: {case_sensitive: false} 
 	validates :email, presence: true

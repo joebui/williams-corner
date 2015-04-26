@@ -4,7 +4,6 @@ class Account < ActiveRecord::Base
 	before_create :create_activation_digest
 
 	has_many :order_items, dependent: :destroy
-  has_many :authorizations
 
 	validates :name, presence: true, uniqueness: true, uniqueness: {case_sensitive: false} 
 	validates :email, presence: true
@@ -57,9 +56,5 @@ class Account < ActiveRecord::Base
   # Sends activation email.
   def send_activation_email
     AccountMailer.account_activation(self).deliver_now
-  end
-
-  def self.create_from_hash!(hash)
-    create(:name => hash['user_info']['name'])
   end
 end

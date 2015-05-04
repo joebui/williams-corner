@@ -47,6 +47,13 @@
           </div>
         <% end %>
 
+        <% if current_user.is_admin == true %>
+          <p>
+            <%= f.label :is_admin, "Admin rights" %><br>
+            <%= f.select :is_admin, options_for_select(["true", "false"]), :prompt => 'Select one' %>
+          </p>
+        <% end %>
+
         <% if current_user.name == @account.name %>
           <p>
             <%= f.label :name %><br>
@@ -67,14 +74,7 @@
             <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, :style=>"width:100%" %>
           </p>
-        <% end %>
-
-        <% if current_user.is_admin == true %>
-          <p>
-            <%= f.label :is_admin, "Admin rights" %><br>
-            <%= f.select :is_admin, options_for_select(["true", "false"]), :prompt => 'Select one' %>
-          </p>
-        <% end %>
+        <% end %>        
        
         <p>
           <%= f.submit class: "btn btn-primary" %>

@@ -1,0 +1,14 @@
+<h1>William's Corner - Your check-out games</h1>
+
+<p> Hello <%= @account.name %>, you have just checked out the following games </p>
+
+<ul>
+	<% @check_out.each do |co| %>
+		<li> <%= co %> </li>
+	<% end %>
+</ul>
+
+<p> 
+	You will need to wait for the admin to confirm your purchase. When your game is delivered, it will be moved 
+	to the history page.
+</p>

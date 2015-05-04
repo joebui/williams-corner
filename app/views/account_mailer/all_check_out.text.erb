@@ -1,0 +1,10 @@
+William's Corner - Your check-out games
+
+Hello <%= @account.name %>, you have just checked out the following games
+
+<% @check_out.each do |co| %>
+	<%= co %>
+<% end %>
+
+You will need to wait for the admin to confirm your purchase. When your game is delivered, 
+it will be moved to the history page.

@@ -52,9 +52,9 @@
           <td><%= account.id %></td>
           <td><%= account.name %></td>
           <td><%= account.email %></td>     
-          <td><%= account.activated %></td>     
+          <td><b> <%= account.activated %> </b></td>     
           <td><%= account.activated_at %></td>     
-          <td><%= account.is_admin %></td>     
+          <td><b> <%= account.is_admin %> </b></td>     
           <td><%= link_to 'Edit', edit_account_path(account), class: "btn btn-primary" %> </td>      
           <td><%= link_to 'Delete', account_path(account), method: :delete, data: {confirm: 'Are you sure? '},
             class: "btn btn-primary" %> </td>

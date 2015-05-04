@@ -1,7 +1,6 @@
 AccountMailer#account_activation
 
-Hi <%= @account.name %>,
+Hello <%= @account.name %>,
 
-Welcome to the Sample App! Click on the link below to activate your account:
-
-<%= edit_account_activation_url(@account.activation_token, email: @account.email) %>
+Thank you for using William's Corner online game shopping. Please click on this <%= link_to "link", edit_account_activation_url(@account.activation_token, email: @account.email), class: "btn btn-primary" %>
+ to activate your account.

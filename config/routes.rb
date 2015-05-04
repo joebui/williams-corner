@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'all_check_outs/new'
+
+  get 'all_check_outs/edit'
+
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   root "homepage#index"
 
   get 'order_items/index'
@@ -24,6 +32,8 @@ Rails.application.routes.draw do
   get 'homepage/search_result'
 
   get 'homepage/checkout'
+
+  get 'homepage/message'
 
   get 'genres/index'
 
@@ -63,7 +73,9 @@ Rails.application.routes.draw do
   resources :ratings, :products, :genres, :accounts, :homepage
   resources :order_items
   resources :account_activations, only: [:edit]
-  
+ 
+  resources :password_resets,     only: [:new, :create, :edit, :update]
+ 
   resources :accounts do
     resources :order_items
   end

@@ -25,14 +25,14 @@
   </p>
 
   <% if @account.errors.any? %>
-    <div id="error_explanation">
+    <div>
       <h2>
         <%= pluralize(@account.errors.count, "error") %> prohibited
         this account from being created:
       </h2>
       <ul>
         <% @account.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+          <li>+ <%= msg %></li>
         <% end %>
       </ul>
     </div>

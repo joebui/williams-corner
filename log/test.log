@@ -348,3 +348,344 @@ LINE 1: DELETE FROM "orders"
 : DELETE FROM "orders"
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36m (0.9ms)[0m  [1mALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (6.6ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (1.3ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:37:08', '2015-04-27 06:37:08', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:37:08', '2015-04-27 06:37:08', 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:37:08', '2015-04-27 06:37:08', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:37:08', '2015-04-27 06:37:08', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 06:38:26', '2015-04-27 06:38:26', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.0ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:25:51', '2015-04-27 09:25:51', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:27:50', '2015-04-27 09:27:50', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:27:50', '2015-04-27 09:27:50', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:27:50', '2015-04-27 09:27:50', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:27:50', '2015-04-27 09:27:50', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:29:01', '2015-04-27 09:29:01', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:29:01', '2015-04-27 09:29:01', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "genres" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "accounts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:29:01', '2015-04-27 09:29:01', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "accounts" ("name", "email", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-04-27 09:29:01', '2015-04-27 09:29:01', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "orders"[0m
+PG::UndefinedTable: ERROR:  relation "orders" does not exist
+LINE 1: DELETE FROM "orders"
+                    ^
+: DELETE FROM "orders"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "genres" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "accounts" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m

@@ -46,12 +46,19 @@ class HomepageController < ApplicationController
   end
 
   def checkout
+    all_check_out = ""
     @order_items = current_user.order_items
     @order_items.each do |item|
       if item.status == "pending"
         item.update_attributes(:status => 'in process' )
       end
+
+      prod = Product.find_by_id(item.product_id)
+      data = "" + prod.name + " - Quantity: " + item.quantity.to_s + " - Price: " + item.total_price.to_s + ";"
+      all_check_out.concat data
     end
+
+    current_user.send_check_out_email(all_check_out)
     redirect_to homepage_cart_path
   end
   

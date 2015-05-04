@@ -16,9 +16,8 @@ class AccountsController < ApplicationController
 		@account.is_admin = false;
 		if @account.save
 			@account.send_activation_email
-      		flash[:info] = "Please check your email to activate your account."      
-			# log_in @account
-			redirect_to root_url
+      		flash[:notice] = "Please check your email to activate your account."      
+			redirect_to homepage_message_path			
 		else
 			render 'new'
 		end	
@@ -27,7 +26,7 @@ class AccountsController < ApplicationController
 	def update
 		@account = Account.find(params[:id])
 
-		if logged_in? && current_user.is_admin == false
+		if logged_in? && current_user.name == @account.name
 			if @account.update_attributes(account_params)				
 				redirect_to root_url				
 			else

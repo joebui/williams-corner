@@ -3,12 +3,19 @@ class AccountMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/account_mailer/account_activation
   def account_activation
-    AccountMailer.account_activation
+    user = Account.first
+    user.activation_token = Account.new_token
+    AccountMailer.account_activation(user)
   end
 
-  # Preview this email at http://localhost:3000/rails/mailers/account_mailer/password_reset
   def password_reset
-    AccountMailer.password_reset
+    user = Account.first
+    user.reset_token = Account.new_token
+    AccountMailer.password_reset(user)
   end
 
+  def all_check_out
+    user = Account.first    
+    AccountMailer.all_check_out(user, "AC IV - Quantity: 1;AC Unity - Quantity: 3")
+  end
 end

@@ -12,12 +12,12 @@
 						<ul class="nav navbar-nav">
 							<li>								
 								<%= form_tag(homepage_search_result_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
-									<div class="input-group">
-							        	<%= text_field_tag :search, params[:search], placeholder: "Search games", class: "form-control" %>	
-							        	<span class="input-group-btn">
-							        		<%= submit_tag "Search", :name => nil, class: "btn btn-default"%>								        
-									    </span>							        	
-								    </div>
+									<!-- <div class="input-group"> -->
+							        	<%= text_field_tag :search, params[:search], placeholder: "Search games" %>	
+							        	<!-- <span class="input-group-btn"> -->
+							        		<%= submit_tag "Search", :name => nil %>								        
+									    <!-- </span> -->
+								    <!-- </div> -->
 				    			<% end %>                 
 				    			<%= yield %>							
 							</li>

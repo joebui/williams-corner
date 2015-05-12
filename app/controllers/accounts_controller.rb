@@ -13,7 +13,7 @@ class AccountsController < ApplicationController
 
 	def create
 		@account = Account.new(account_params)
-		@account.is_admin = false;
+		@account.is_admin = false
 		if @account.save
 			@account.send_activation_email
       		flash[:notice] = "Please check your email to activate your account."      

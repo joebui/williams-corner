@@ -1,39 +1,1 @@
-<!DOCTYPE html>
-<html> 
-<head>
-	<title> Login </title>
-</head>
-<body>	
-	<div class="row">
-	  	<div class="col-md-6 col-md-offset-3">
-		  	<h1>Login</h1>
-		    <%= form_for(:session, url: login_path) do |f| %>
-
-		      	<%= f.label :name %>
-		      	<%= f.text_field :name, class: 'form-control', :style=>"width:100%" %>
-
-		      	<br/>
-
-		      	<%= f.label :password %> <%= link_to "(Forgot your password)", new_password_reset_path %>
-		      	<%= f.password_field :password, class: 'form-control', :style=>"width:100%" %>
-
-		      	<br>
-
-				<%= f.label :remember_me do %>
-			        <%= f.check_box :remember_me %>
-			        <span> Remember me </span>
-			    <% end %>
-			    <br>
-		      	<%= f.submit "Log in", class: "btn btn-primary" %>		      			     			      
-		    <% end %>    
-		    <br/>
-		    <% flash.each do |key, value| %>
-			    <div class="<%= flash_class(key) %>">
-			          <%= value %>
-			    </div>
-			<% end %>				
-		    <%= link_to "<< Home Page", root_url %>
-	  	</div>
-	</div>	
-</body>
-</html>
+<!DOCTYPE html><html> <head>	<title> Login </title></head><body>		<div class="row">	  	<div class="col-md-6 col-md-offset-3">		  	<h1>Login</h1>		    <%= form_for(:session, url: login_path) do |f| %>		      	<%= f.label :name %>		      	<%= f.text_field :name, class: 'form-control', :style=>"width:100%" %>		      	<br/>		      	<%= f.label :password %> <%= link_to "(Forgot your password)", new_password_reset_path %>		      	<%= f.password_field :password, class: 'form-control', :style=>"width:100%" %>		      	<br>				<%= f.label :remember_me do %>			        <%= f.check_box :remember_me %>			        <span> Remember me </span>			    <% end %>			    <br>		      	<%= f.submit "Log in", class: "btn btn-primary" %>		      			     			      		    <% end %>    		    <br/>		    <% flash.each do |key, value| %>			    <div class="<%= flash_class(key) %>">			          <%= value %>			    </div>			<% end %>						    <%= link_to "<< Home Page", root_url %>	  	</div>	</div>	</body></html>

@@ -5,7 +5,7 @@ class Account < ActiveRecord::Base
 
   has_many :order_items, dependent: :destroy
 
-  validates :name, presence: true, uniqueness: true, uniqueness: {case_sensitive: false} 
+  validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :password, confirmation: true, presence: true, length: {minimum: 5}, allow_blank: false
   validates :password_confirmation, presence: true

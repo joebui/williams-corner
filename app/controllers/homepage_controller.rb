@@ -72,11 +72,9 @@ class HomepageController < ApplicationController
 
   def search_result
     @search = params[:search]
-    if params[:search]
-      #@genres = Genre.all.pluck(:name)
+    if params[:search]      
       @products = Product.search(params[:search])
-    else
-      #@genres = Genre.all.pluck(:name)
+    else      
       @products = Product.all
     end
   end

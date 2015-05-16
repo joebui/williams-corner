@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+    get 'coupons/new'
+    
+    get 'coupons/create'
+    
+    get 'coupons/destroy'
+    
+    get 'coupons/index'
+    
+    get 'coupons/show'
+    
   get 'all_check_outs/new'
 
   get 'all_check_outs/edit'
@@ -16,6 +26,8 @@ Rails.application.routes.draw do
   get 'order_items/update'
 
   get 'order_items/destroy'
+
+  get 'order_items/report'
   
   get 'homepage/index'
 
@@ -66,11 +78,14 @@ Rails.application.routes.draw do
   get 'ratings/new'
 
   get 'sessions/new'
+
+  get 'accounts/guide'
+
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  resources :ratings, :products, :genres, :accounts, :homepage
+  resources :ratings, :products, :genres, :accounts, :homepage, :coupons
   resources :order_items
   resources :account_activations, only: [:edit]
  

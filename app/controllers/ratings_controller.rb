@@ -20,7 +20,7 @@ class RatingsController < ApplicationController
 	def index
 		if logged_in? && current_user.is_admin == true
 			if params[:search]
-				@ratings = Rating.search(params[:search])
+				@ratings = Rating.search(params[:search], params[:type])
 			else
 				@ratings = Rating.all
 			end		

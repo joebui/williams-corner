@@ -2,6 +2,13 @@ $product = nil; # store the current viewed product
 
 class HomepageController < ApplicationController
   def index
+    if params[:language]
+      $language = params[:language]
+      if current_user
+        current_user.update_attribute(:language,params[:language])
+      end
+      redirect_to :back
+    end
     @products = Product.all
     @genres = Genre.all
     @current = nil
@@ -14,52 +21,73 @@ class HomepageController < ApplicationController
     @genres = Genre.all
     @current = nil
     @count = nil
-    @products = Product.all    
+    @products = Product.all   
     @product = Product.find(params[:id])
     $product = @product
     @orders = OrderItem.all
+    @url = "https://williams-corner.herokuapp.com/homepage/6"
 
+    # update number of views
+    @product.update_attributes(:viewed => @product.viewed += 1)
     # get all the comments of a product
     @product_ratings = Rating.where(product_id: @product.id).order(:created_at).reverse_order
   end
 
   def cart
-    if logged_in?
-      @order_items = current_user.order_items 
-      @items = 0;
-      @total = 0;
-      @vat = 0;
-    else
-      redirect_to login_path
+    @order_items = current_user.order_items 
+    if current_user.valid_coupon == true
+      @order_items.each do |item|
+        item.update_attributes(:discount => '0.5')
+      end
     end
+    @items = 0;
+    @total = 0;
+    @vat = 0;
   end
 
   def history
-    if logged_in?
-      @order_items = current_user.order_items 
-      @items = 0;
-      @total = 0;
-      @vat = 0;
-    else
-      redirect_to login_path
+    @order_items = current_user.order_items
+    @items = 0;
+    @total = 0;
+    @vat = 0;
+    @current_order = @order_items.find_by_id(params[:order_id])
+    if @current_order != nil
+      @current_order.update_attribute(:hide,true)
+      redirect_to :back
     end
   end
 
   def checkout
-    all_check_out = ""
+    
+    @coupons = Coupon.all
+    @coupon = Coupon.find_by_code(params[:code])
     @order_items = current_user.order_items
-    @order_items.each do |item|
-      if item.status == "pending"
-        item.update_attributes(:status => 'in process' )
+    if params[:code] == nil
+      @order_items.each do |item|
+        if item.status == "pending"
+          item.update_attributes(:status => 'in process',:tran_date => Date.today)
+        end
       end
-
-      prod = Product.find_by_id(item.product_id)
-      data = "" + prod.name + " - Quantity: " + item.quantity.to_s + " - Price: " + item.total_price.to_s + ";"
-      all_check_out.concat data
+      current_user.update_attribute(:valid_coupon, false)
+    else 
+      if @coupon
+        if Date.parse(@coupon.date) == Date.today
+          current_user.update_attribute(:valid_coupon, true)
+        else
+          flash[:alert] = "Invalid coupon code"
+          current_user.update_attribute(:valid_coupon, false)
+        end
+        @coupon.destroy
+      else
+        flash[:alert] = "Invalid coupon code"
+      end
     end
-
-    current_user.send_check_out_email(all_check_out)
     redirect_to homepage_cart_path
+    # prod = Product.find_by_id(item.product_id)
+      # data = "" + prod.name + " - Quantity: " + item.quantity.to_s + " - Price: " + item.total_price.to_s + ";"
+      # all_check_out.concat data
+    # current_user.send_check_out_email(all_check_out)
+    # redirect_to homepage_cart_path
   end
   
   def category
@@ -70,12 +98,11 @@ class HomepageController < ApplicationController
     @name = @url.split('.').last
   end
 
-  def search_result
-    @search = params[:search]
+  def search_result    
     if params[:search]      
-      @products = Product.search(params[:search])
+      @products = Product.search(params[:search], "Random").order(:viewed).reverse_order
     else      
-      @products = Product.all
+      @products = Product.all.order(:viewed).reverse_order
     end
   end
 end

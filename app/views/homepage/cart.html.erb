@@ -1,5 +1,5 @@
 <head>
-	<title> Cart page </title>
+	<title> <%=t :cart_title %> </title>
 </head>
 <body>
 	<%= render 'header' %>
@@ -7,62 +7,58 @@
 		<div class="container">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="/">Home</a></li>
-				  <li class="active">Shopping cart <%= @name %> </li>
+				  <li><a href="/"><%=t :home_tag %></a></li>
+				  <li class="active"><%=t :cart_tag %> <%= @name %> </li>
 				</ol>
 			</div>
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Item</td>
-							<td class="description"> Description</td>
-							<td class="price">Unit price</td>
-							<td class="quantity">Quantity</td>
-							<td class="total">Total</td>
-							<td class="total">Delete</td>
+							<td class="image"><%=t :item %></td>
+							<td class="description"><%=t :description %></td>
+							<td class="price"><%=t :unit_price %></td>
+							<td class="quantity"><%=t :quantity %></td>
+							<td class="total"><%=t :total %></td>
+							<td class="total"><%=t :delete %></td>
 						</tr>
 					</thead>
 					
 					<tbody>
 						<% @order_items.each do |order_item| %>
-							<% if order_item.status.to_str != "delivered" %>
+							<% if order_item.status.to_str == "pending" %>
 								<% product =  Product.find_by_id(order_item.product_id) %>
 								<% @items = @items + 1 %>
 								<% @total = @total + order_item.total_price %>
 								<tr>
 									<td class="cart_product">
-										<img src="<%= product.img %>" alt="">
+										<img src="<%= product.img %>" alt=""> &nbsp;&nbsp;&nbsp;
 									</td>
 									<td class="cart_description">
-										<h4>Name :<%= product.name %></h4>
+										<h4><%=t :game_name %><%= product.name %></h4>
 										<p>Order ID: <%= order_item.id %></p>
-										Status:
-										<% if order_item.status.to_str == "pending" %>
-											<p style="color:green"> <%= order_item.status %></p>
-										<% else %>
-											<p style="color:blue"> <%= order_item.status %></p>
-										<% end %>
+										<%=t :status %>
+										<p style="color:green"> <%= order_item.status %></p>
 									</td>
 									<td class="cart_price">
 										<p class="cart_total_price"><%= number_to_currency(product.price) %></p>
 									</td>
-									<td class="cart_quantity">
-										<p class="cart_quantity"><%= order_item.quantity %></p>
+									<td class="cart_price">
+										<p class="cart_price"><%= order_item.quantity %></p>
 									</td>
 									<td class="cart_total">
 										<p class="cart_total_price"><%= number_to_currency(order_item.total_price) %></p>
 									</td>
-									<td><%= link_to 'Delete', order_item_path(order_item),
+									<td><%= link_to t('delete'), order_item ,
 						              method: :delete,
-						              data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%>
-		              				</td>
+						              data: { confirm: t('delete_confirmation') } , class: "btn btn-danger"%>
+		              </td>
 								</tr>
 							<% end %>
 						<% end %>
 						<% if @items == 0 %>
 							<td class="cart_description">
-								<h4>Opps! There is no new orders in your shopping cart.</h4>
+								<h4>&nbsp; &nbsp; &nbsp; <%=t :history_warn %></h4>
 							</td>
 						<% end %>
 						<% @vat = 0.1 * @total %>
@@ -76,49 +72,39 @@
 	<section id="do_action">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6">
-					<div class="chose_area">
-						<ul class="user_option">
-							<li>
-								<input type="checkbox">
-								<label>Use Coupon Code</label>
-							</li>
-							<li>
-								<input type="checkbox">
-								<label>Use Gift Voucher</label>
-							</li>
-							<li>
-								<input type="checkbox">
-								<label>Estimate Shipping & Taxes</label>
-							</li>
-						</ul>
-						<ul class="user_info">
-							<li class="single_field">
-								<label>City:</label>
-								<select>
-									<option>Ho Chi Minh city</option>
-									<option>Ha Noi</option>
-									<option>Hai Phong</option>
-								</select>
-							
-							</li>
-							<li class="single_field zip-field">
-								<label>Coupon Code:</label>
-								<input type="text">
-							</li>
-						</ul>
-					</div>
-				</div>
+				
+				
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Total orders <span><%= @items %></span></li>
-							<li>VAT 10% <span><%= number_to_currency(@vat)   %></span></li>
-							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span><%= number_to_currency(@total)  %></span></li>
+							<% flash.each do |key, value| %>
+		    				<div class="<%= flash_class(key) %>">
+			    				<%= value %>
+								</div>
+    					<% end %>
+							<% if current_user.valid_coupon == false %>
+								<%= form_tag homepage_checkout_path, :method => 'get' do %>
+						  	<%= text_field_tag :code, params[:code],placeholder: t('code_holder'),:style=>"width:82%" %>
+								<%= submit_tag t('apply_button'), :name => nil, class: "btn btn-danger" %>
+								<% end %>
+								<%= yield %>
+							<% else %>
+								<li><%=t :coupon_activated %> <span><%=t :discount %></span></li>
+							<% end %>
+							
 						</ul>
-							<a class="btn btn-default update" href="/">Continue shopping</a>
-							<%= link_to 'Check out', homepage_checkout_path, :action => 'checkout',class: "btn btn-default update" %>
+						
+						<ul>
+							<li><%=t :order_total %><span><%= @items %></span></li>
+							<li>VAT 10% <span><%= number_to_currency(@vat)   %></span></li>
+							<li><%=t :shipping_cost %><span><%=t :free %></span></li>
+							<li><%=t :total %><span><%= number_to_currency(@total)  %></span></li>
+							</br>
+							<% if @items > 0 %>
+								<%= link_to  t('checkout'), homepage_checkout_path, :action => 'checkout',class: "btn btn-danger" %>
+							<% end %>
+						</ul>
+						
 					</div>
 				</div>
 			</div>
@@ -127,5 +113,4 @@
 
 	<footer id="footer"><!--Footer-->
 		<%= render 'footer' %>
-		
 	</footer><!--/Footer-->

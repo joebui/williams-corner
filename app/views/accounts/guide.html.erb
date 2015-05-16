@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> All Accounts </title>
+</head>
+<body class="boss_body">
+<div id="main_container">
+
+  <div class="header">
+    <div class="logo"><a href="/"><img src="<%= asset_path('logo.png') %>" alt="" title="" border="0" /></a></div>
+    </div>
+    
+    <div class="main_content">    
+      <div class="menu">
+        <ul>
+          <li><%= link_to 'Games', products_path %></li>
+          <li><%= link_to 'Genres', genres_path %></li>
+          <li><%= link_to 'Accounts', accounts_path %></li>
+          <li><%= link_to 'Orders', order_items_path %></li>
+          <li><%= link_to 'Coupons', coupons_path %></li>
+          <li><%= link_to 'Guide', accounts_guide_path %></li>
+          <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
+        </ul>
+      </div>          
+    <div class="center_content">
+    <div class="right_content">  
+
+    <h2> Admin Guide </h2>     
+    
+    <br/>
+ 
+<div class="category-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="menu">
+							  <li class="active"><a style = "color: #fff;"href="#admin_game" data-toggle="tab">Game</a></li>
+								<li><a style = "color: #fff;" href="#admin_genres" data-toggle="tab">Genres</a></li>
+								<li><a style = "color: #fff;" href="#admin_rating" data-toggle="tab">Rating</a></li>
+								<li><a style = "color: #fff;" href="#admin_account" data-toggle="tab">Account</a></li>
+								<li><a style = "color: #fff;" href="#admin_order" data-toggle="tab">Order</a></li>
+								<li><a style = "color: #fff;" href="#admin_logout" data-toggle="tab">Logout</a></li>
+							</ul>
+							<div class="tab-content">
+
+							<div class="tab-pane fade active in" id="admin_game" >
+							  <p>The first tab in admin page is Game tab</p>
+							  <p>In game tab, you (admin) can type in the name of the game (or part of the game name) then click search</p>
+                <p>The search result display below</p>
+							  <img src="/assets/1.png"><br>
+							  <p></p>
+							  <p>When you click new, the form will appear for you to enter the game information such as name, the image, price, select genre, and description</p>
+							  <img src="/assets/2.png"><br>
+							  <p></p>
+							  <p>After you type in all the details, then click create product, the game will appear in the website</p>
+							  <img src="/assets/2b.png"><br>
+							  <p></p>
+							  <p>When the you click edit, the edit form will apear</p>
+							  <img src="/assets/3.png"><br>
+							  <p></p>
+							  <p>You can edit the details of the game and click Update Product to save</p>
+							  <img src="/assets/3b.png"><br>
+							  <p></p>
+							  <p>When you click remove, the game will remmove from the website</p>
+							  <img src="/assets/4.png"><br>
+							</div>
+							  
+							<div class="tab-pane fade active in" id="admin_genres" >  
+							  <p>In Genres, you can also search the genre of the game</p>
+							  <img src="/assets/5.png"><br>
+							  <p></p>
+							  <p>When the you click new, the genre details will appear for you to add a genre of the game</p>
+							  <img src="/assets/6.png"><br>
+							  <p></p>
+							  <p>After you add a genre name, you click the Create Genres button to create a genre</p>
+							  <img src="/assets/6b.png"><br>
+							  <p></p>
+							  <p>You can click edit , the edit form will appear</p>
+							  <img src="/assets/7.png"><br>
+							  <p></p>
+							  <p>After you edit genre name, click Update Genre button to save it</p>
+							  <img src="/assets/7b.png"><br>
+							  <p></p>
+							  <p>When you click remove, the genre will remmove from the website</p>
+							  <img src="/assets/8.png"><br>
+							</div>
+							
+							<div class="tab-pane fade active in" id="admin_rating" > 
+							  <p>In rating section, you can search the rating and comment of the user by searching his/her name</p>
+							  <img src="/assets/9.png"><br>
+							  <p></p>
+							  <p>You also can delete the comment and rating that you think that inappropriate by click the Delete button</p>
+							  <img src="/assets/10.png"><br>
+							</div>
+							
+							<div class="tab-pane fade active in" id="admin_account" >  
+							  <p>In Account section, you can search the account of the user by searching his/her name</p>
+							  <img src="/assets/11.png"><br>
+							  <p></p>
+							  <p>When you click Edit, the form will appear</p>
+							  <img src="/assets/12.png"><br>
+							  <p></p>
+							  <p>You can make the account become admin or not by select Admin Rights and click Save Account to save it</p>
+							  <img src="/assets/12b.png"><br>
+							  <p></p>
+							  <p>You can delete account by click the Delete button</p>
+							  <img src="/assets/13.png"><br>
+							</div>
+							
+							<div class="tab-pane fade active in" id="admin_order" >  
+							  <p>In Order section, you can search the order of the user by searching his/her name</p>
+							  <img src="/assets/14.png"><br>
+							  <p></p>
+							  <p>You can change the status of the order:</p> 
+							  <p>+ Pending: When user add game into cart</p>
+							  <p>+ In Process: When user check out the item(s)</p>
+							  <p>+ Delivered: When user payed his/her order</p>
+                <img src="/assets/15.png"><br>
+                <p></p>
+                <p>After you  update status, click Update to save the status</p>
+							</div>
+							
+							<div class="tab-pane fade active in" id="admin_logout" >  
+							<p>When you want to logout as Admin, click the logout</p>
+							 <img src="/assets/16.png"><br>
+							</div>
+						</div>
+</div>
+    <br>
+    
+    </div><!-- end of right content-->
+    </div>   <!--end of center content -->               
+    <div class="clear"></div>
+    </div> <!--end of main content-->
+    <div class="footer">
+    </div>
+</div>    
+</body>
+</html>

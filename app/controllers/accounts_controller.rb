@@ -46,7 +46,7 @@ class AccountsController < ApplicationController
 	def index
 		if logged_in? && current_user.is_admin == true
 			if params[:search]
-				@accounts = Account.search(params[:search])
+				@accounts = Account.search(params[:search], params[:type])
 			else
 				@accounts = Account.all
 			end
@@ -68,7 +68,7 @@ class AccountsController < ApplicationController
 
 	private
 	def account_params
-		params.require(:account).permit(:name, :email, :is_admin, :password, :password_confirmation)
+		params.require(:account).permit(:name, :email, :is_admin, :password, :password_confirmation, :language)
 	end
 
 	private	

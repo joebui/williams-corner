@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> All Orders </title>
+    <title><%=t :order_title %></title>
 </head>
 <body class="boss_body">
 <div id="main_container">
@@ -13,52 +13,58 @@
     <div class="main_content">
         <div class="menu">
             <ul>
-                <li><%= link_to 'Games', products_path %></li>
-                <li><%= link_to 'Genres', genres_path %></li>
-                <li><%= link_to 'Ratings', ratings_path %></li>
-                <li><%= link_to 'Accounts', accounts_path %></li>
-                <li><%= link_to 'Orders', order_items_path %></li>
-                <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
+                <li><%= link_to t('admin_game'), products_path %></li>
+                <li><%= link_to t('admin_genre'), genres_path %></li>
+                <li><%= link_to t('admin_account'), accounts_path %></li>
+                <li><%= link_to t('admin_order'), order_items_path %></li>
+                <li><%= link_to t('admin_coupon'), coupons_path %></li>
+                <li><%= link_to t('admin_report'), order_items_report_path %></li>
+                <li><%= link_to t('admin_review'), ratings_path %></li>
+                <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
+                <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
+				<li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
             </ul>
         </div> 
     <div class="center_content">
     <div class="right_content">            
         
-    <h2>List of Orders </h2>  
+    <h2><%=t :order_heading %></h2>  
     <%= form_tag(order_items_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
-        <%= text_field_tag :search, params[:search], placeholder: "Search by owner " %>
-        <%= submit_tag "Search", :name => nil %>
+        <%= text_field_tag :search, params[:search], placeholder: t('search_holder'), onclick: 'javascript: this.value = ""' %>
+        <%= select_tag :type, options_for_select(["Owner", "Game", "Status"]), :selected => "Owner", :style => "max-width: 15%;" %>
+        <%= submit_tag t('search_button'), :name => nil %>
     <% end %>                 
     <%= yield %>
     <br/>
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
         <thead>
             <tr>
-                <th scope="col" class="rounded-company">ID</th>
-                <th scope="col" class="rounded-company">Owner</th>
-                <th scope="col" class="rounded">Game</th>
-                <th scope="col" class="rounded">Total Price</th>
-                <th scope="col" class="rounded">Status</th>
-                <th scope="col" class="rounded-q4">Update</th>
+                <th scope="col" class="rounded-company"><%=t :order_owner %></th>
+                <th scope="col" class="rounded"><%=t :product_game %></th>
+                <th scope="col" class="rounded"><%=t :order_price %></th>
+                <th scope="col" class="rounded"><%=t :order_status %></th>
+                <th scope="col" class="rounded"><%=t :order_update %></th>
+                <th scope="col" class="rounded-q4"><%=t :product_delete %></th>
             </tr>
         </thead>
    
     
         <% @order_items.each do |order| %>
-            <% account = Account.find_by_id(order.owner_id) %>
-            <% product = Product.find_by_id(order.product_id) %>
-
             <%= form_for order do |f| %>
                 <tbody>
-                    <tr>                        
-                        <td scope="col" class="rounded-company"><%= order.id %></td>
-                        <td scope="col" class="rounded-company"><%= account.name %></td>
+                    <tr>
+                        <% product =  Product.find_by_id(order.product_id) %>
+                        <% owner = Account.find_by_id(order.owner_id); %>
+                        <td scope="col" class="rounded-company"><%= owner.name %></td>
                         <td scope="col" class="rounded"><%= product.name%></td>
                         <td scope="col" class="rounded"><%= number_to_currency(order.total_price) %></td>
                         <td scope="col" class="rounded">
                         <%= f.select :status, @status,  :value => order.status.to_str %>
                         </td>
-                        <td scope="col" class="rounded-q4"><%= f.submit "Update", class: "btn btn-danger" %></td>
+                        <td scope="col" class="rounded-q4"><%= f.submit t('order_update'), class: "btn btn-danger" %></td>
+                        <td scope="col" class="rounded-q4"><%= link_to t('delete'), order , method: :delete,
+						              data: { confirm: t('delete_confirmation') } , class: "btn btn-danger"%>
+		              	</td>
                     </tr>
                 </tbody>
             <% end %>

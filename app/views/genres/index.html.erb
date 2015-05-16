@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> All Gernes </title>
+    <title><%=t :genre_title %></title>
 </head>
 <body class="boss_body">
 <div id="main_container">
@@ -12,52 +12,56 @@
     
     <div class="main_content">
         <div class="menu">
-            <ul>                
-                <li><%= link_to 'Games', products_path %></li>
-                <li><%= link_to 'Genres', genres_path %></li>
-                <li><%= link_to 'Ratings', ratings_path %></li>
-                <li><%= link_to 'Accounts', accounts_path %></li>
-                <li><%= link_to 'Orders', order_items_path %></li>
-                <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
+            <ul>
+                <li><%= link_to t('admin_game'), products_path %></li>
+                <li><%= link_to t('admin_genre'), genres_path %></li>
+                <li><%= link_to t('admin_account'), accounts_path %></li>
+                <li><%= link_to t('admin_order'), order_items_path %></li>
+                <li><%= link_to t('admin_coupon'), coupons_path %></li>
+                <li><%= link_to t('admin_report'), order_items_report_path %></li>
+                <li><%= link_to t('admin_review'), ratings_path %></li>
+                <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
+                <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
+        		<li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
             </ul>
         </div> 
     <div class="center_content">
     <div class="right_content">            
         
-    <h2>List of Genres</h2> 
-    
+    <h2><%=t :genre_heading %></h2> 
+
     <%= form_tag(genres_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
-        <%= text_field_tag :search, params[:search], placeholder: "Search by name" %>
-        <%= submit_tag "Search", :name => nil %>
+        <%= text_field_tag :search, params[:search], placeholder: t('search_holder') %>
+        <%= submit_tag t('search_button'), :name => nil %>
     <% end %>                 
     <%= yield %>
 
-    <%= link_to 'New', new_genre_path , class: "btn btn-primary" %>
+    <%= link_to t('new_genre'), new_genre_path , class: "btn btn-primary" %>
     <br><br>
  
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
-    <thead>
-    	<tr>
-            <th width="30%" scope="col" class="rounded-company">ID</th>
-            <th width="30%" scope="col" class="rounded-company">Name</th>
-            <th width="30%" scope="col" class="rounded">Edit</th>
-            <th width="30%" scope="col" class="rounded-q4">Delete</th>
-        </tr>
-    </thead>
-        
-    <tbody>
-        <% @genres.each do |genre| %>
-    	<tr>
-            <td><%= genre.id %></td>
-            <td><%= genre.name %></td>
-		    <td><%= link_to 'Edit', edit_genre_path(genre) , class: "btn btn-primary"%></td>
-		     <td><%= link_to 'Remove', genre_path(genre),
-                method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-primary"%></td>
-        </tr>    
-        <% end %>
-    </tbody>
+        <thead>
+        	<tr>
+                <th width="30%" scope="col" class="rounded-company"><%=t :product_game %></th>
+                <th width="30%" scope="col" class="rounded"><%=t :product_edit %></th>
+                <th width="30%" scope="col" class="rounded-q4"><%=t :product_delete %></th>
+            </tr>
+        </thead>
+            
+        <tbody>
+            <% @genres.each do |genre| %>
+        	<tr>
+                <td><%= genre.name %></td>
+    			      <td><%= link_to t('product_edit'), edit_genre_path(genre) , class: "btn btn-primary"%></td>
+    			      <td><%= link_to t('product_delete'), genre_path(genre),
+                  method: :delete,
+                  data: { confirm: t('delete_confirmation') } , class: "btn btn-primary"%></td>
+            </tr>    
+            <% end %>
+        </tbody>
     
-    </table>    
+    </table>
+    </br>        
     </div><!-- end of right content-->
     </div>   <!--end of center content -->               
     <div class="clear"></div>

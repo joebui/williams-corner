@@ -9,15 +9,19 @@
     <div class="logo"><a href="/"><img src="/assets/logo.png" alt="" title="" border="0" /></a></div>
     </div>    
       <div class="main_content">
-      <% if current_user.is_admin == true %>
+      <% if current_user.name == "admin" %>
         <div class="menu">
           <ul>
-            <li><%= link_to 'Games', products_path %></li>
-            <li><%= link_to 'Genres', genres_path %></li>
+            <li><%= link_to t('admin_game'), products_path %></li>
+            <li><%= link_to t('admin_genre'), genres_path %></li>
+            <li><%= link_to t('admin_account'), accounts_path %></li>
+            <li><%= link_to t('admin_order'), order_items_path %></li>
+            <li><%= link_to t('admin_coupon'), coupons_path %></li>
+            <li><%= link_to t('admin_report'), order_items_report_path %></li>
             <li><%= link_to 'Ratings', ratings_path %></li>
-            <li><%= link_to 'Accounts', accounts_path %></li>
-            <li><%= link_to 'Orders', order_items_path %></li>
-            <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
+            <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
+            <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
+            <li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
           </ul>
         </div> 
       <% else %>
@@ -46,35 +50,25 @@
             </ul>
           </div>
         <% end %>
+        <p>
+          <%= f.label :name %><br>
+          <%= f.text_field :name, :style=>"width:100%" %>
+        </p>
+       
+        <p>
+          <%= f.label :email %><br>
+          <%= f.email_field :email, :style=>"width:100%" %>
+        </p>
 
-        <% if current_user.is_admin == true %>
-          <p>
-            <%= f.label :is_admin, "Admin rights" %><br>
-            <%= f.select :is_admin, options_for_select(["true", "false"]), :prompt => 'Select one' %>
-          </p>
-        <% end %>
+        <p>
+          <%= f.label :password %>
+          <%= f.password_field :password, :style=>"width:100%" %>
+        </p>
 
-        <% if current_user.name == @account.name %>
-          <p>
-            <%= f.label :name %><br>
-            <%= f.text_field :name, :style=>"width:100%" %>
-          </p>
-         
-          <p>
-            <%= f.label :email %><br>
-            <%= f.email_field :email, :style=>"width:100%" %>
-          </p>        
-        
-          <p>
-            <%= f.label :password %>
-            <%= f.password_field :password, :style=>"width:100%" %>
-          </p>
-
-          <p>
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, :style=>"width:100%" %>
-          </p>
-        <% end %>        
+        <p>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, :style=>"width:100%" %>
+        </p>
        
         <p>
           <%= f.submit class: "btn btn-primary" %>

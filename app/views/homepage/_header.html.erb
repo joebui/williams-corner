@@ -10,51 +10,36 @@
 				<div class="col-sm-8">
 					<div class="shop-menu pull-right">
 						<ul class="nav navbar-nav">
-							<li>								
-								<%= form_tag(homepage_search_result_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
-									<!-- <div class="input-group"> -->
-							        	<%= text_field_tag :search, params[:search], placeholder: "Search games" %>	
-							        	<!-- <span class="input-group-btn"> -->
-							        		<%= submit_tag "Search", :name => nil %>								        
-									    <!-- </span> -->
-								    <!-- </div> -->
-				    			<% end %>                 
-				    			<%= yield %>							
-							</li>
-    			          	<li>
-              					<select style="margin-top: 10px">
-              						<option value="english">English</option>
-                  					<option value="vietnamese">Vietnamese</option>
-                  				</select>
-                			</li>                							
-							<!-- <li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li> -->							
-
-							<% if logged_in? %>	<!-- check if user logged in -->							
-								<% if current_user.is_admin == true %>							    	
-								    <li id="fa-user"><a href="#"> Welcome, <strong> <%= current_user.name %> </strong> </a>								
-								        <ul class="dropdown" style="width: 70%; height: 40px;"> 							        	
-								            <li><%= link_to 'Manage', products_path %></li>							            
-								            <li><%= link_to "Logout", logout_path, method: "delete" %></li>
-								        </ul>
-								    </li>							    
-							    <% else %>	
-							    	<li> <%= link_to "History", homepage_history_path %> </li>	
-							    	<li> <%= link_to "My Cart", homepage_cart_path %> </li>	
-							    	<li id="fa-user"><a href="#"> Welcome, <strong> <%= current_user.name %> </strong> </a>								
-								        <ul class="dropdown" style="width: 70%; height: 40px;"> 							        	
-								            <li><%= link_to 'Manage', edit_account_path(current_user) %></li>							            
-								            <li><%= link_to "Logout", logout_path, method: "delete" %></li>
-								        </ul>
-								    </li>			
-								<% end %>			
+							<li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
+							<li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
+							<!-- <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li> -->
+							<!-- <li><a href=""><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
+							<!-- <li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
+							<% if logged_in? %>	<!-- check if user logged in -->		
+								<li> <%= link_to t('history'), homepage_history_path %> </li>	
+								<li> <%= link_to t('cart'), homepage_cart_path %> </li>	
+								<li id="fa-user"><a href="#"> <%=t :welcome %>, <strong> <%= current_user.name %> </strong> </a>									
+							        <ul class="dropdown" style="width: 100%;"> 
+							            <li><%= link_to t('manage'), edit_account_path(current_user) %></li>
+							            <li><%= link_to t('logout'), logout_path, method: "delete" %></li>
+							        </ul>
+							        
+								</li>
+							
 							<% else %>
-								<li><%= link_to 'Sign Up', new_account_path , class: "fa fa-shopping-cart" %></li>
-							    <li> <%= link_to "Sign In", login_path %> </li>				    								    					
+								<li><%= link_to t('signup'), new_account_path , class: "fa fa-shopping-cart" %></li>
+						    	<li> <%= link_to t('signin'), login_path %> </li>				    								    					
 							<% end %>
-
 						</ul>
 					</div>
-				</div>								
+				</div>
+				<div class="pull-right">
+						<%= form_tag(homepage_search_result_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
+	        	<%= text_field_tag :search, params[:search], placeholder: t('search_holder') %>
+	        	<%= submit_tag t('search_button'), :name => nil %>
+	    			<% end %>                 
+	    			<%= yield %>
+					</div>
 			</div>
 		</div>
 	</div><!--/header-middle-->

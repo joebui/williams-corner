@@ -12,8 +12,18 @@ class Account < ActiveRecord::Base
   
   has_secure_password
   
-  def self.search(search)   
-      where("name LIKE ?", "%#{search}%")   
+  def self.search(search, type)   
+      if type == "Name"
+        where("name LIKE ?", "%#{search}%")   
+      elsif type == "Email"
+        where("email LIKE ?", "%#{search}%")   
+      elsif type == "Activated"
+        where("activated = ?", search)    
+      elsif type == "Admin"        
+        where("is_admin = ?", search)   
+      else
+        where("name LIKE ?", "%#{search}%")   
+      end
   end
 
   def Account.digest(string)

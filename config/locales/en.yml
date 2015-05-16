@@ -20,4 +20,260 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  #index
+  en_lan: "English"
+  vi_lan: "Vietnamese"
+  signup: "Sign Up"
+  signin: "Sign In"
+  search_button: "Search"
+  search_holder: "Search by name"
+  get_button: "Get it now"
+  about: "About"
+  company: "Company"
+  policies: "Policies"
+  term_of_use: "Terms of Use"
+  user_guide: "User guides"
+  site_map: "Site map"
+  genres: "Genres"
+  service: "Service"
+  online_help: "Online help"
+  featured_game: "Featured games"
+  show: "Show"
+  #index after logged in
+  history: "History"
+  cart: "Cart"
+  welcome: "Welcome"
+  manage: "Manage"
+  logout: "Logout"
+  
+  #sign up
+  signup_title: "New Account"
+  signup_heading: "Account details"
+  name: "Name"
+  email: "Email"
+  password: "Password"
+  password_confirmation: "Password confirmation"
+  signup_button: "Save Account"
+  homepage_button: "Home Page"
+  account_create_error: "prohibited this account from being created:"
+  return_link: "<< Home Page"
+  
+  #login
+  login_title: "Sign In"
+  login_heading: "Login"
+  login_button: "Log in"
+  login_warn: "Invalid email/password combination"
+  #reuse from sign up
+  name: "Name"
+  password: "Password"
+  
+  #product
+  product_title: "Product page"
+  title: "Game"
+  game_heading: "Product details"
+  price: "Price"
+  detail: "Details"
+  game_warn: "You have to login to order any items"
+  rate_product: "Rate product"
+  comment_holder: "Comment"
+  your_rating: "Your Rating"
+  submit_review_button: "Submit"
+  comments: "Comments"
+  by: "By"
+  on_review: "on"
+  rating: "Rating"
+  #product after logged in
+  add_to_cart: "Add to Cart"
+  
+  #cart
+  cart_title: "Cart page"
+  item: "Item"
+  description: "Description"
+  unit_price: "Unit price"
+  quantity: "Quantity"
+  total: "Total"
+  delete: "Delete"
+  game_name: "Game: "
+  status: "Status: "
+  coupon: "Coupon"
+  code_holder: "Enter code here"
+  apply_button: "Activate"
+  order_total: "Total "
+  shipping_cost: "Shipping Cost"
+  continue_shopping: "Continue shopping"
+  checkout: "Check out"
+  delete_confirmation: "Are you sure?"
+  free: "Free"
+  coupon_activated: "Coupon activated"
+  discount: "Discount: 50%"
+  
+  #history
+  history_title: "History page"
+  clear_history: "Clear history"
+  total_order_done: "Total order done"
+  transaction_date: "Transaction date"
+  total_spent: "Total spent"
+  #reuse from cart
+  item: "Item"
+  description: "Description"
+  unit_price: "Unit price"
+  quantity: "Quantity"
+  total: "Total"
+  game_name: "Game: "
+  delete: "Delete"
+  continue_shopping: "Continue shopping"
+  #history with nothing
+  history_warn: "Oops! you have not bought any game!"
+  
+  #tag label
+  home_tag: "Home"
+  history_tag: "History transaction"
+  cart_tag: "Shopping cart"
+  
+  #search result
+  key: "Key"
+  
+  #user guide
+  guide_title: "User Guide"
+  guide_heading: "User guide"
+  #first tab
+  tabOne: "Login/Sign up"
+  tabOne1: "Login and signup functions are located at the top navigation bar."
+  tabOne2: "If you do not have an account, click Sign Up to register a new one. The website will jump to a new page and you will be prompted to fill out user name, email, password and confirmation."
+  tabOne3: "If you already have an account, click Login to enter your user name and password."
+  #second tab
+  tabTwo: "List products by genre"
+  tabTwo1: "To list products by a genre, you need to click on a genre on the Genre list first."
+  tabTwo2: "A list of games belong to that genre will then be listed on the tab."
+  tabTwo31: "If you are interested in any game, just click"
+  tabTwo32: "button and the game detail will be shown in the"
+  tabTwo33: "page."
+  #third tab
+  tabThree: "Featured games"
+  tabThree1: "This tab shows 4 featured games that belongs in a genre."
+  tabThree31: "If you are interested in any game, just click"
+  tabThree32: "button and the game detail will be shown in the"
+  tabThree33: "page."
+  #fourth tab
+  tabFour: "Latest games"
+  tabFour1: "This slider shows 4 latest games in the shop."
+  tabFour31: "If you are interested in any game, just click"
+  tabFour32: "button and the game detail will be shown in the"
+  tabFour33: "page."
+  #fifth tab
+  tabFive: "Game detail"
+  tabFive1: "This page shows the details of a game such as name, genre, image, description, quantity, review, etc."
+  tabFive2: "If you are interested in purchasing the game, click"
+  #sixth tab
+  tabSix: "Comment/Rating"
+  tabSix1: "If you want to let others know your opinion about the game, type in the comment box then click Submit."
+  tabSix2: "If you want to rate the game, click the rating dropbox and choose between 1 - 5 stars."
+  #seventh tab
+  tabSeven: "Cart"
+  tabSeven1: "You can modify the cart list by removing game"
+  tabSeven2: "If you have a coupon code, you can enter it in the Coupon Code Field and click Activate to gain a discount (if the code is valid)."
+  tabSeven3: "Click Checkout once you are ready to buy. The order will be put in 'processing' state. Awaiting the admin confirmation to be delivered."
+  #eighth tab
+  tabEight: "Search"
+  tabEight1: "Search for the name of the game you want to find by typing in the Search box"
+  
+  #admin section
+  admin_game: "Game"
+  admin_genre: "Genre"
+  admin_account: "Account"
+  admin_order: "Order"
+  admin_coupon: "Coupon"
+  admin_report: "Report"
+  admin_review: "Review"
+  admin_logout: "LOG OUT"
+  
+  #games
+  product_admin_title: "All Games"
+  product_heading: "List of Games"
+  product_game: "Game"
+  product_image: "Image"
+  product_price: "Price"
+  product_genre: "Genre"
+  product_description: "Description"
+  product_edit: "Edit"
+  product_delete: "Delete"
+  new_product: "New Game"
+  #new game
+  new_game_title: "New Game"
+  new_game_heading: "Product details"
+  new_game_name: "Name"
+  new_game_image: "Image URL"
+  new_game_create_button: "Apply"
+  new_game_warn: " error(s) prohibited this article from being created:"
+  #edit game
+  edit_game_title: "Edit Game"
+  #reuse from product
+  product_price: "Price"
+  product_genre: "Genre"
+  product_description: "Description"
+  
+  #genre
+  genre_title: "All Genres"
+  genre_heading: "List of Genres"
+  new_genre: "New Genre"
+  #new genre
+  new_genre_title: "New Genre"
+  new_genre_heading: "Genre details"
+  new_genre_name: "Name"
+  new_genre_create_button: "Apply"
+  new_genre_warn: " error(s) prohibited this article from being created:"
+  #edit genre
+  edit_genre_title: "Edit Genre"
+  #reuse from product
+  product_genre: "Genre"
+  product_edit: "Edit"
+  product_delete: "Delete"
+  
+  #account
+  account_title: "All Accounts"
+  account_heading: "List of Accounts"
+  account_name: "Name"
+  account_email: "Email"
+  account_warning: "Cannot be deleted"
+  #reuse from product
+  product_edit: "Edit"
+  product_delete: "Delete"
+  
+  #order
+  order_title: "All Orders"
+  order_heading: "List of Orders"
+  order_owner: "Owner"
+  order_price: "Total price"
+  order_status: "Status"
+  order_update: "Update"
+  #reuse from product
+  product_game: "Game"
+  product_delete: "Delete"
+  
+  #coupon
+  coupon_title: "All Coupons"
+  coupon_heading: "List of Coupons"
+  coupon_code: "Code"
+  coupon_day: "Effective day"
+  new_coupon: "New Coupon"
+  #reuse from product
+  product_delete: "Delete"
+  
+  #report
+  report_title: "All Reports"
+  report_heading: "List of Reports"
+  report_submit: "Submit"
+  report_quantity: "Quantity"
+  report_revenue: "Total revenue"
+  #reuse from product
+  product_game: "Game"
+
+  #review
+  review_title: "All Review"
+  review_heading: "List of Reviews"
+  review_user: "User"
+  review_star: "Star"
+  review_comment: "Comment"
+  #reuse from product
+  product_game: "Game"
+  product_delete: "Delete"

@@ -1,38 +1,37 @@
-<h2>Account details</h2> 
+<h2><%=t :signup_heading %></h2> 
 <%= form_for :account, url: accounts_path do |f| %>  
   <p>
-    <%= f.label :name %><br>
+    <%= f.label :name, t('name') %><br>
     <%= f.text_field :name, :style=>"width:100%" %>
   </p>
  
   <p>
-    <%= f.label :email %><br>
+    <%= f.label :email, t('email') %><br>
     <%= f.email_field :email, :style=>"width:100%" %>
-  </p>
-
+  </p>  
+  
   <p>
-    <%= f.label :password %>
+    <%= f.label :pasword, t('password') %>
     <%= f.password_field :password, :style=>"width:100%" %>
   </p>
 
   <p>
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, t('password_confirmation') %>
     <%= f.password_field :password_confirmation, :style=>"width:100%" %>
   </p>
  
   <p>
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit t('signup_button'), class: "btn btn-primary" %>
   </p>
 
   <% if @account.errors.any? %>
-    <div>
+    <div id="error_explanation">
       <h2>
-        <%= pluralize(@account.errors.count, "error") %> prohibited
-        this account from being created:
+        <%= pluralize(@account.errors.count, "error") %> <%=t :account_create_error %>
       </h2>
       <ul>
         <% @account.errors.full_messages.each do |msg| %>
-          <li>+ <%= msg %></li>
+          <li><%= msg %></li>
         <% end %>
       </ul>
     </div>

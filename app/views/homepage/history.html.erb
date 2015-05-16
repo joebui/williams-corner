@@ -1,5 +1,5 @@
 <head>
-	<title> History </title>
+	<title><%=t :history_title %></title>
 </head>
 <body>
 	<%= render 'header' %>
@@ -8,50 +8,58 @@
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
 				  <li><a href="/">Home</a></li>
-				  <li class="active">History transaction <%= @name %> </li>
+				  <li class="active"><%=t :history_tag %> <%= @name %> </li>
 				</ol>
 			</div>
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Item</td>
-							<td class="description"> Description</td>
-							<td class="price">Unit price</td>
-							<td class="quantity">Quantity</td>
-							<td class="total">Total</td>
-							<td class="total">Clear history</td>
+							<td class="image"><%=t :description %></td>
+							<td class="name"><%=t :transaction_date %></td>
+							<td class="price"><%=t :unit_price %></td>
+							<td class="quantity"><%=t :quantity %></td>
+							<td class="total"><%=t :total %></td>
+							<td class="total"><%=t :clear_history %></td>
 						</tr>
 					</thead>
 					
 					<tbody>
 						<% @order_items.each do |order_item| %>
-						  <% if order_item.status.to_str == "delivered" %>
+						  <% if order_item.status.to_str != "pending" && order_item.hide == false %>
   						  <% product =  Product.find_by_id(order_item.product_id) %>
   						  <% @items = @items + 1 %>
 							  <% @total = @total + order_item.total_price %>
   							<tr>
   								<td class="cart_product">
-  									<img src="<%= product.img %>" alt="">
+  									<h4>&nbsp; &nbsp;&nbsp;<%=t :game_name %> <%= product.name %></h4>
+  									<p>&nbsp; &nbsp; &nbsp;Order ID: <%= order_item.id %></p>
+  									<p>&nbsp; &nbsp; &nbsp;<%=t :status %></p>
+  									<% if order_item.status == 'in process' %>
+  										<p style="color:blue">&nbsp; &nbsp; &nbsp;<%= order_item.status %></p>
+  									<% else %>
+  										<p style="color:red">&nbsp; &nbsp; &nbsp;<%= order_item.status %></p>
+  									<% end %>
   								</td>
-  								<td class="cart_description">
-  									<h4>Name :<%= product.name %></h4>
-  									<p>Order ID: <%= order_item.id %></p>
-  									Status: <p style="color:red"><%= order_item.status %></p>
+  								
+  								<td class="cart_price">
+  									<p><%= order_item.tran_date %></p>
   								</td>
+  								
   								<td class="cart_price">
   									<p class="cart_total_price"><%= number_to_currency(product.price) %></p>
   								</td>
-  								<td class="cart_quantity">
+  								<td class="cart_price">
   									<p class="cart_quantity"><%= order_item.quantity %></p>
   								</td>
   								<td class="cart_total">
   									<p class="cart_total_price"><%= number_to_currency(order_item.total_price) %></p>
   								</td>
-  								<td><%= link_to 'Delete', order_item_path(order_item),
-						              method: :delete,
-						              data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%>
-		              				</td>
+  								<td>  						
+  									<% if order_item.status == 'delivered' %>
+  										<%= link_to t('delete'), {:controller => "homepage", :action => "history", :order_id => order_item.id }, class: "btn btn-danger" %>
+  									<% end %>
+									</td>
   							</tr>
 							  <% @vat = 0.1 * @total %>
 					      <% @total = @total + @vat %>
@@ -59,7 +67,7 @@
 						  <% end %>
 						  <% if @items == 0 %>
   							<td class="cart_description">
-  								<h4>Opps! You have not bought any games!</h4>
+  								<h4>&nbsp; &nbsp; &nbsp; <%=t :history_warn %></h4>
   							</td>
 						  <% end %>
 					  </tbody>
@@ -74,10 +82,10 @@
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Total orders done <span><%= @items %></span></li>
-							<li>Total used<span><%= number_to_currency(@total)  %></span></li>
+							<li><%=t :total_order_done %><span><%= @items %></span></li>
+							<li><%=t :total_spent %><span><%= number_to_currency(@total)  %></span></li>
 						</ul>
-							<a class="btn btn-default update" href="/">Continue shopping</a>
+							<a class="btn btn-default update" href="/"><%=t :continue_shopping %></a>
 					</div>
 				</div>
 			</div>

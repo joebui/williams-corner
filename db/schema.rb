@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503042504) do
+ActiveRecord::Schema.define(version: 20150516041452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 20150503042504) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "language",          default: "en"
+    t.boolean  "valid_coupon",      default: false
+  end
+
+  create_table "coupons", force: :cascade do |t|
+    t.string   "code"
+    t.string   "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "genres", force: :cascade do |t|
@@ -45,9 +54,12 @@ ActiveRecord::Schema.define(version: 20150503042504) do
     t.integer  "unit_price"
     t.integer  "quantity"
     t.string   "total_price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "status"
+    t.float    "discount"
+    t.boolean  "hide",        default: false
+    t.date     "tran_date",   default: '2015-05-16'
   end
 
   add_index "order_items", ["account_id"], name: "index_order_items_on_account_id", using: :btree
@@ -59,8 +71,10 @@ ActiveRecord::Schema.define(version: 20150503042504) do
     t.string   "img"
     t.string   "genre"
     t.string   "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "viewed",     default: 0
+    t.string   "link"
   end
 
   create_table "ratings", force: :cascade do |t|

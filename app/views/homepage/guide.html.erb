@@ -1,90 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> User Guide </title>
+	<title><%=t :guide_title %></title>
 </head>
 <body class='home_body'>
 	<%= render 'header' %>
-	
 	<section>
 		<div class="container">
 			<div class="row">
 				<div style="margin-bottom: 20px; padding-bottom: 20px;">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">User guide</h2>
+						<h2 class="title text-center"><%=t :guide_heading %></h2>
 					</div><!--features_items-->
 				 
 					<div class="category-tab"><!--category-tab-->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
-							  <li class="active"><a href="#loginsignup" data-toggle="tab">Login/Sign up</a></li>
-								<li><a href="#genres" data-toggle="tab">List products by genre</a></li>
-								<li><a href="#featuredgame" data-toggle="tab">Featured games</a></li>
-								<li><a href="#lastestgame" data-toggle="tab">Lastest games</a></li>
-								<li><a href="#gamedetail" data-toggle="tab">Game detail</a></li>
-								<li><a href="#rating" data-toggle="tab">Comment/Rating</a></li>
-								<li><a href="#addcart" data-toggle="tab">Cart</a></li>
-								<li><a href="#searchgame" data-toggle="tab">Search</a></li>
+							  <li class="active"><a href="#loginsignup" data-toggle="tab"><%=t :tabOne %></a></li>
+								<li><a href="#genres" data-toggle="tab"><%=t :tabTwo %></a></li>
+								<li><a href="#featuredgame" data-toggle="tab"><%=t :tabThree %></a></li>
+								<li><a href="#lastestgame" data-toggle="tab"><%=t :tabFour %></a></li>
+								<li><a href="#gamedetail" data-toggle="tab"><%=t :tabFive %></a></li>
+								<li><a href="#rating" data-toggle="tab"><%=t :tabSix %></a></li>
+								<li><a href="#addcart" data-toggle="tab"><%=t :tabSeven %></a></li>
+								<li><a href="#searchgame" data-toggle="tab"><%=t :tabEight %></a></li>
 							</ul>
 						
 						<div class="tab-content">
 							<div class="tab-pane fade active in" id="loginsignup" >
-							  <p>Login and signup functions are located at navigation bar</p>
+							  <p><%=t :tabOne1 %></p>
 							  <img src="/assets/loginsignup.png"><br>
-							  <p>If you do not have account , click signup to register a new account. The website will automatically link to register page, you will need to fill out user name, email, password and confirmation.</p><br>
-							  
+							  <p><%=t :tabOne2 %></p><br>
 							  <img src="/assets/signup.png"><br>
-							  <p>If you already have account, click Login at nav bar then enter your user name and password.</p><br>
+							  <p><%=t :tabOne3 %></p><br>
 							  <img src="/assets/login.png"><br>
 							</div>
 							
 							<div class="tab-pane fade" id="genres" >
-							  <p>To list products by genres , you need to click on the genre on list first</p><br>
+							  <p><%=t :tabTwo1 %></p><br>
 							  <img src="/assets/genres.png"><br>
-							  <p>then a list of games corresponsed to that genre will be listed on the tab.</p>
+							  <p><%=t :tabTwo2 %></p>
 							  <img src="/assets/listproducts.png"><br>
-							  <p>If you are interested in any games, just click <span style="color: red">Show</span> button then the game detail will be shown <span style="color: red">Game Detail</span> tab.</p>
+							  <p><%=t :tabTwo31 %> <span style="color: red"><%=t :show %></span> <%=t :tabTwo32 %> <span style="color: red"><%=t :game_heading %></span> <%=t :tabTwo33 %></p>
 							</div>
 							
 							<div class="tab-pane fade" id="featuredgame" >
-							  <p>This tab shows randomly 4 featured games in each genre</p>
+							  <p><%=t :tabThree1 %></p>
 							  <img src="/assets/featuredgame.png"><br>
 							  <img src="/assets/listproducts.png"><br>
-							  <p>If you are interested in any games, just click <span style="color: red">Show</span> button then the game detail will be shown <span style="color: red">Game Detail</span> tab.</p>
+							  <p><%=t :tabThree31 %> <span style="color: red"><%=t :show %></span> <%=t :tabThree32 %> <span style="color: red"><%=t :game_heading %></span> <%=t :tabThree33 %></p>
 							</div>
 							
 							<div class="tab-pane fade" id="lastestgame" >
-							  <p>This slider shows 4 lastest games in our shop.</p>
+							  <p><%=t :tabFour1 %></p>
 							  <img src="/assets/lastestgame.png"><br>
-							  <p>If you are interested in any games, just click <span style="color: red">Get it now</span> button then the game detail will be shown at <span style="color: red">Game Detail</span> tab.</p>
+							  <p><%=t :tabFour31 %> <span style="color: red"><%=t :get_button %></span> <%=t :tabFour32 %> <span style="color: red"><%=t :game_heading %></span> <%=t :tabFour33 %></p>
 							  
 							</div>
 							
 							<div class="tab-pane fade" id="gamedetail" >
-							  <p>This page shows the detail of game such name, genre, image and description.</p>
+							  <p><%=t :tabFive1 %></p>
 							  <img src="/assets/gamedetail.png"><br>
-							  <p>If you are interested in purchasing this game, click <span style="color: red">Add to cart</span></p>
+							  <p><%=t :tabFive2 %> <span style="color: red">Add to cart</span></p>
 							</div>
 							
 							<div class="tab-pane fade" id="rating">
-								<p>If you want to let others know what are you thinking about the game, just type in the comment box then click submit</p>
+								<p><%=t :tabSix1 %></p>
 								<img src="/assets/comment.png"><br>
 								<img src="/assets/rating.png"><br>
-								<p>If you want to rate the game, just click the rating dropbox and choose between 1 - 5 stars</p>
+								<p><%=t :tabSix2 %></p>
 							</div>
 							
 							<div class="tab-pane fade" id="addcart">
-								<p>When you click add to cart, the game will add into shopping list</p>
-								<img src="/assets/addcart.png"><br>
-								<p>You can also modify the cart list by remove the game or increase/decrease the quantity of the game</p>
-								<img src="/assets/modifycart.png"><br>
-								<p>When you click ,your order will be process and deliver to your home soon! </p>
-								<img src="/assets/buy.png"><br>
+								<p><%=t :tabSeven1 %></p>
+								<img src="assets/addcart.png"><br>
+								<p><%=t :tabSeven2 %></p>
+								<img src="assets/modifycart.png"><br>
+								<p><%=t :tabSeven3 %></p>
+								<img src="assets/buy.png"><br>
 							</div>
 							
 							<div class="tab-pane fade" id="searchgame">
-								<p>You can search the game to save time when you want to find a game</p>
-								<img src="/assets/search.png"><br>
+								<p><%=t :tabEight1 %></p>
+								<img src="assets/search.png"><br>
 							</div>
 							
 						</div>

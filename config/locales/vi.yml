@@ -1,0 +1,278 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+vi:
+  #index
+  en_lan: "Tiếng Anh"
+  vi_lan: "Tiếng Việt"
+  signup: "Đăng Ký"
+  signin: "Đăng Nhập"
+  search_button: "Tìm kiếm"
+  search_holder: "Tìm"
+  get_button: "Mua ngay"
+  about: "Về chúng tôi"
+  company: "Công ty"
+  policies: "Nguyên tắc chung"
+  term_of_use: "Điều khoản sử dụng"
+  user_guide: "Hướng dẫn người dùng"
+  site_map: "Trang mạng"
+  genres: "Thể Loại"
+  service: "Dịch vụ"
+  online_help: "Trợ giúp trực tuyến"
+  featured_game: "Game nổi bật"
+  show: "Hiển thị"
+  #index after logged in
+  history: "Lịch sử mua"
+  cart: "Giỏ hàng"
+  welcome: "Xin chào"
+  manage: "Chỉnh sửa"
+  logout: "Đăng xuất"
+  
+  #sign up
+  signup_title: "Tài khoản mới"
+  signup_heading: "Thông tin tài khoản"
+  name: "Tên"
+  email: "Email"
+  password: "Mật khẩu"
+  password_confirmation: "Xác nhận mật khẩu"
+  signup_button: "Tạo tài khoản"
+  homepage_button: "Trang Chủ"
+  account_create_error: "khiến tài khoản không thể tạo:"
+  return_link: "<< Trang chủ"
+  
+  #login
+  login_title: "Đăng Nhập"
+  login_heading: "Đăng Nhập"
+  login_button: "Đăng Nhập"
+  login_warn: "Sai email/mật khẩu"
+  #reuse from sign up
+  #name: "Tên"
+  #password: "Mật khẩu"
+  
+  #product
+  product_title: "Game"
+  game_heading: "Thông tin game"
+  price: "Giá:"
+  detail: "Chi tiết"
+  game_warn: "Bạn cần phải đăng nhập để mua game"
+  rate_product: "Đánh giá sản phẩm"
+  comment_holder: "Bình luận"
+  your_rating: "Điểm của bạn"
+  submit_review_button: "Gửi đánh giá"
+  comments: "Bình luận của người dùng"
+  by: "Bởi"
+  on_review: "vào ngày"
+  rating: "Điểm"
+  #product after logged in
+  add_to_cart: "Thêm vào giỏ"
+  
+  #cart
+  cart_title: "Giỏ hàng"
+  item: "Game"
+  description: "Thông tin"
+  unit_price: "Giá"
+  quantity: "Số lượng"
+  total: "Tổng tiền"
+  delete: "Xóa"
+  game_name: "Game: "
+  status: "Trạng thái: "
+  coupon: "Mã khuyến mãi"
+  code_holder: "Nhập mã"
+  apply_button: "Áp dụng"
+  order_total: "Số lượng đơn hàng"
+  shipping_cost: "Phí vận chuyển"
+  continue_shopping: "Tiếp tục xem"
+  checkout: "Thanh toán"
+  delete_confirmation: "Chắc chắn muốn xóa?"
+  free: "Miễn phí"
+  coupon_activated: "Đã áp dụng mã khuyến mãi"
+  discount: "Giảm 50%"
+  
+  #history
+  history_title: "Lịch sử mua"
+  clear_history: "Xóa"
+  total_order_done: "Số lần mua"
+  transaction_date: "Ngày thanh toán"
+  total_spent: "Tổng tiền đã chi"
+  #reuse from cart
+  item: "Game"
+  description: "Thông tin"
+  unit_price: "Giá"
+  quantity: "Số lượng"
+  total: "Tổng tiền"
+  game_name: "Game: "
+  delete: "Xóa"
+  continue_shopping: "Tiếp tục xem"
+  #history with nothing
+  history_warn: "Bạn chưa mua game nào!"
+  
+  #tag label
+  home_tag: "Home"
+  history_tag: "Lịch sử mua"
+  cart_tag: "Giỏ hàng"
+  
+  #search result
+  key: "Key"
+  
+  #user guide
+  guide_title: "Hướng dẫn người dùng"
+  guide_heading: "Hướng dẫn người dùng"
+  #first tab
+  tabOne: "Đăng nhập/Đăng ký"
+  tabOne1: "Nút Đăng nhập và Đăng ký nằm bên phải thanh công cụ ở đầu trang."
+  tabOne2: "Nếu bạn không có tài khoản, ấn nút Đăng ký để tạo mới. Trình duyệt sẽ chuyển sang trang mới và bạn sẽ được yêu cầu điền tên, email, mật khẩu và xác nhận mật khẩu."
+  tabOne3: "Nếu bạn đã có tài khoản, ấn nút Đăng nhập để nhập tên và mật khẩu."
+  #second tab
+  tabTwo: "Liệt kê game theo thể loại"
+  tabTwo1: "Để liệt kê những game theo 1 thể loại, chọn 1 thể loại ở bảng Thể loại."
+  tabTwo2: "Danh sách những game thuộc thể loại đó sẽ được liệt ra ở bảng Game bên cạnh."
+  tabTwo31: "Nếu bạn thấy thích game nào, ấn"
+  tabTwo32: "và thông tin game sẽ được mở ra ở trang"
+  tabTwo33: "mới."
+  #third tab
+  tabThree: "Game nổi bật"
+  tabThree1: "Khung này hiện thị những game thuộc thể loại đã chọn."
+  tabThree31: "Nếu bạn thấy thích game nào, ấn"
+  tabThree32: "và thông tin game sẽ được mở ra ở trang"
+  tabThree33: "mới."
+  #fourth tab
+  tabFour: "Game mới nhất"
+  tabFour1: "Khung này hiển thị 4 game mới nhất."
+  tabFour31: "Nếu bạn thấy thích game nào, ấn"
+  tabFour32: "và thông tin game sẽ được mở ra ở trang"
+  tabFour33: "mới."
+  #fifth tab
+  tabFive: "Thông tin game"
+  tabFive1: "Trang cung cấp thông tin về game như tên, thể loại, hình ảnh minh họa, nội dung, số lượng, đánh giá, etc."
+  tabFive2: "Nếu bạn muốn mua game, ấn"
+  #sixth tab
+  tabSix: "Đánh giá/Điểm"
+  tabSix1: "Nếu bạn muốn cho mọi người biết ý kiến về game, nhập nội dung vào phần Đánh giá rồi ấn Đăng."
+  tabSix2: "Nếu bạn muốn cho Điểm về game, chọn Điểm từ 1 đến 5 ở thang điểm."
+  #seventh tab
+  tabSeven: "Giỏ hàng"
+  tabSeven1: "Bạn có thể bỏ game không muốn mua bằng nút Xóa"
+  tabSeven2: "Nếu bạn có mã khuyến mãi, nhập mã vào ô Nhập mã rồi ấn Áp dụng để nhận khuyến mãi (nếu mã hợp lệ)."
+  tabSeven3: "Ấn nút Thanh toán khi bạn chắc chắn mua. Đơn hàng của bạn sẽ chuyển sang trạng thái 'processing', chờ admin kiểm tra trước khi giao."
+  #eighth tab
+  tabEight: "Tìm kiếm"
+  tabEight1: "Nhập tên game cần tìm vào ô Tìm kiếm."
+  
+  #admin section
+  admin_game: "Game"
+  admin_genre: "Thể loại"
+  admin_account: "Tài khoản"
+  admin_order: "Đơn hàng"
+  admin_coupon: "Mã khuyến mãi"
+  admin_report: "Báo cáo"
+  admin_review: "Nhận xét"
+  admin_logout: "ĐĂNG XUẤT"
+  
+  #games
+  product_admin_title: "Game"
+  product_heading: "Danh sách game"
+  product_game: "Game"
+  product_image: "Hình ảnh"
+  product_price: "Giá"
+  product_genre: "Thể loại"
+  product_description: "Thông tin"
+  product_edit: "Chỉnh sửa"
+  product_delete: "Xóa"
+  new_product: "Tạo Game mới"
+  #new game
+  new_game_title: "Tạo Game mới"
+  new_game_heading: "Chi tiết Game"
+  new_game_name: "Tên game"
+  new_game_image: "Link ảnh game"
+  new_game_create_button: "Cập nhật"
+  new_game_warn: " lỗi sau khiến Game không được phép tạo:"
+  #edit game
+  edit_game_title: "Chỉnh sửa Game"
+  #reuse from product
+  product_price: "Giá"
+  product_genre: "Thể loại"
+  product_description: "Thông tin"
+  
+  #genre
+  genre_title: "Thể loại"
+  genre_heading: "Danh sách thể loại"
+  new_genre: "Tạo thể loại mới"
+  #new genre
+  new_genre_title: "Tạo thể loại mới"
+  new_genre_heading: "Chi tiết thể loại"
+  new_genre_name: "Tên thể loại"
+  new_genre_create_button: "Cập nhật"
+  new_genre_warn: " lỗi sau khiến thể loại này không được phép tạo:"
+  #edit genre
+  edit_genre_title: "Chỉnh sửa thể loại"
+  #reuse from product
+  product_genre: "Thể loại"
+  product_edit: "Chỉnh sửa"
+  product_delete: "Xóa"
+  
+  #account
+  account_title: "Tài khoản"
+  account_heading: "Danh sách thể loại"
+  account_name: "Tên"
+  account_email: "Email"
+  account_warning: "Không thể xóa"
+  #reuse from product
+  product_edit: "Chỉnh sửa"
+  product_delete: "Xóa"
+  
+  #order
+  order_title: "Đơn hàng"
+  order_heading: "Danh sách đơn hàng"
+  order_owner: "Chủ hàng"
+  order_price: "Tổng tiền"
+  order_status: "Trạng thái"
+  order_update: "Cập nhật"
+  #reuse from product
+  product_game: "Game"
+  product_delete: "Xóa"
+  
+  #coupon
+  coupon_title: "Mã khuyến mãi"
+  coupon_heading: "Danh sách mã khuyến mãi"
+  coupon_code: "Mã"
+  coupon_day: "Ngày có hiệu quả"
+  new_coupon: "Mã mới"
+  #reuse from product
+  product_delete: "Xóa"
+  
+  #report
+  report_title: "Báo cáo"
+  report_heading: "Danh sách báo cáo"
+  report_submit: "Kiểm tra"
+  report_quantity: "Số lượng"
+  report_revenue: "Doanh thu"
+  #reuse from product
+  product_game: "Game"
+
+  #review
+  review_title: "Nhận xét"
+  review_heading: "Danh sách nhận xét"
+  review_user: "Người dùng"
+  review_star: "Số sao"
+  review_comment: "Bình luận"
+  #reuse from product
+  product_game: "Game"
+  product_delete: "Xoá"

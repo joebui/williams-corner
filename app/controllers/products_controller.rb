@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
         if logged_in? && current_user.is_admin == true
             if params[:search]
                 @genres = Genre.all.pluck(:name)
-                @products = Product.search(params[:search])
+                @products = Product.search(params[:search], params[:type])
             else
                 @genres = Genre.all.pluck(:name)
                 @products = Product.all
@@ -79,6 +79,6 @@ class ProductsController < ApplicationController
  
     private
     def product_params
-        params.require(:product).permit(:name, :genre, :des, :price, :img)
+        params.require(:product).permit(:name, :genre, :des, :price, :link, :img)
     end
 end

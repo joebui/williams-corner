@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title> Games </title>
-</head>
-<body>
+
 	<div id="header"><!--Header-->
 		<%= render 'header' %>
 	</div><!--/Header-->
@@ -13,7 +8,7 @@
 		<div class="container">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="/">Key:</a></li>
+				  <li><a href="/"><%=t :key %>:</a></li>
 				  <li class="active"><%= @search %></li>
 				</ol>
 			</div>
@@ -22,10 +17,10 @@
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Item</td>
-							<td class="total">Name</td>
-							<td class="description">Description</td>
-							<td class="price">Price</td>
+							<td class="image"><%=t :item %></td>
+							<td class="description"><%=t :description %></td>
+							<td class="visited">Visited</td>
+							<td class="price"><%=t :price %></td>
 						</tr>
 					</thead>
 					<% number =  @products.count %>
@@ -37,21 +32,16 @@
 									<tr>
 										
 										<td class="cart_product">
-											<img src="<%= product.img %>" alt="">
-										</td>
-										<td class="cart_total">
-											<h4><%= product.name %></h4>
+											<img src="<%= product.img %>" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										</td>
 										<td class="cart_description">
-											<% if product.des.size > 50 %>
-												<h4><%= product.des[0, 50] + "..." %></h4>
-											<% else %>
-												<h4><%= product.des %></h4>
-											<% end %>
+											<h4><%=t :name %> : <%= product.name %></h4>
+											<%=t :genres %> : <%= product.genre %>
 										</td>
+										<td> <%= product.viewed %> times </td>
 										<td class="cart_price">
 											<h4>$ <%= product.price %></h4>
-											<%= link_to 'Show', homepage_path(product) ,class: "btn btn-primary"%>
+											<%= link_to t('show'), homepage_path(product) ,class: "btn btn-primary"%>
 										</td>
 									</tr>
 								</tbody>
@@ -67,5 +57,3 @@
 	<div id="footer"><!--Footer-->
 		<%= render 'footer' %>
 	</div><!--/Footer-->
-</body>
-</html>	

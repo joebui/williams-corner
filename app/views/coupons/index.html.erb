@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%=t :coupon_title %></title>
+</head>
+<body class="boss_body">
+<div id="main_container">
+
+	<div class="header">
+    <div class="logo"><a href="/"><img src="<%= asset_path('logo.png') %>" alt="" title="" border="0" /></a></div>
+    </div>
+    
+    <div class="main_content">
+        <div class="menu">
+            <ul>
+                <li><%= link_to t('admin_game'), products_path %></li>
+                <li><%= link_to t('admin_genre'), genres_path %></li>
+                <li><%= link_to t('admin_account'), accounts_path %></li>
+                <li><%= link_to t('admin_order'), order_items_path %></li>
+                <li><%= link_to t('admin_coupon'), coupons_path %></li>
+                <li><%= link_to t('admin_report'), order_items_report_path %></li>
+                <li><%= link_to t('admin_review'), ratings_path %></li>
+                <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
+                <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
+				<li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
+            </ul>
+        </div> 
+    <div class="center_content">
+    <div class="right_content">            
+        
+    <h2><%=t :coupon_heading %></h2> 
+
+    
+    <br/>
+ 
+    <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
+    <thead>
+    	<tr>
+            <th width="30%" scope="col" class="rounded-company"><%=t :coupon_code %></th>
+            <th width="30%" scope="col" class="rounded"><%=t :coupon_day %></th>
+            <th width="30%" scope="col" class="rounded-q4"><%=t :product_delete %></th>
+        </tr>
+    </thead>
+        
+    <tbody>
+        <% @coupons.each do |coupon| %>
+    	<tr>
+            <td><%= coupon.code %></td>
+            <td><%= coupon.date %></td>
+            <td><%= link_to t('product_delete'), coupon_path(coupon),
+              method: :delete,
+              data: { confirm: t('delete_confirmation') } , class: "btn btn-primary"%></td>
+        </tr>    
+        <% end %>
+    </tbody>
+    
+    </table>
+    <br>
+    <%= link_to t('new_coupon'), coupons_create_path , class: "btn btn-primary" %>
+    </div><!-- end of right content-->
+    </div>   <!--end of center content -->               
+    <div class="clear"></div>
+    </div> <!--end of main content-->
+    <div class="footer">
+    </div>
+</div>		
+</body>
+</html>

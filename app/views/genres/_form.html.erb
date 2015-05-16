@@ -6,25 +6,28 @@
     <div class="main_content">
       <div class="menu">
         <ul>
-          <li><%= link_to 'Games', products_path %></li>
-          <li><%= link_to 'Genres', genres_path %></li>
-          <li><%= link_to 'Ratings', ratings_path %></li>
-          <li><%= link_to 'Accounts', accounts_path %></li>
-          <li><%= link_to 'Orders', order_items_path %></li>
-          <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
+          <li><%= link_to t('admin_game'), products_path %></li>
+          <li><%= link_to t('admin_genre'), genres_path %></li>
+          <li><%= link_to t('admin_account'), accounts_path %></li>
+          <li><%= link_to t('admin_order'), order_items_path %></li>
+          <li><%= link_to t('admin_coupon'), coupons_path %></li>
+          <li><%= link_to t('admin_report'), order_items_report_path %></li>
+          <li><%= link_to t('admin_review'), ratings_path %></li>
+          <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
+          <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
+          <li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
         </ul>
       </div> 
     <div class="center_content">
 
    <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h2>Genre detail</h2> 
+      <h2><%=t :new_genre_heading %></h2> 
       <%= form_for @genre do |f| %>
         <% if @genre.errors.any? %>
           <div id="error_explanation">
             <h2>
-              <%= pluralize(@genre.errors.count, "error") %> prohibited
-              this article from being saved:
+              <%= pluralize(@genre.errors.count, "") %><%=t :new_genre_warn %>
             </h2>
             <ul>
               <% @genre.errors.full_messages.each do |msg| %>
@@ -34,11 +37,11 @@
           </div>
       <% end %>
     <p>
-      <%= f.label :Name %><br>
+      <%= f.label t('new_genre_name') %><br>
       <%= f.text_field :name, :style=>"width:100%" %>
     </p>
     <p>
-      <%= f.submit class: "btn btn-primary"%>
+      <%= f.submit t('new_genre_create_button'), class: "btn btn-primary"%>
     </p>
     </div>
   </div>

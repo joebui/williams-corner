@@ -12,3 +12,11 @@ Account.create!(name:  "admin",
              is_admin: true,
              activated: true,
              activated_at: Time.zone.now)
+
+Account.create!(name:  "user",
+             email: "user@example.com",
+             password:              "abc321",
+             password_confirmation: "abc321",
+             is_admin: false,
+             activated: true,
+             activated_at: Time.zone.now)

@@ -1,3 +1,6 @@
+<head>
+	<title> <%= @name %> </title>
+</head>
 
 	<div id="header"><!--Header-->
 		<%= render 'header' %>
@@ -17,10 +20,10 @@
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Item</td>
-							<td class="total">Name</td>
-							<td class="description">Description</td>
-							<td class="price">Price</td>
+							<td class="image"><%=t :item %></td>
+							<td class="total"><%=t :name %></td>
+							<td class="description"><%=t :description %></td>
+							<td class="price"><%=t :price %></td>
 						</tr>
 					</thead>
 					<% number =  @products.where(genre:@name).count %>
@@ -31,23 +34,18 @@
 							<% if product.genre == @name %>
 								<tbody>
 									<tr>
-										
 										<td class="cart_product">
-											<img src="<%= product.img %>" alt="">
+											<img src="<%= product.img %>" alt="">&nbsp;&nbsp;&nbsp;
 										</td>
 										<td class="cart_total">
 											<h4><%= product.name %></h4>
 										</td>
 										<td class="cart_description">
-											<% if product.des.size > 50 %>
-												<h4><%= product.des[0, 50] + "..." %></h4>
-											<% else %>
-												<h4><%= product.des %></h4>
-											<% end %>
+											<h4><%= product.des %></h4>
 										</td>
 										<td class="cart_price">
 											<h4>$ <%= product.price %></h4>
-											<%= link_to 'Show', homepage_path(product) ,class: "btn btn-primary"%>
+											<%= link_to t('show'), homepage_path(product) ,class: "btn btn-primary"%>
 										</td>
 									</tr>
 								</tbody>

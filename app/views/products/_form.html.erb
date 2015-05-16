@@ -6,25 +6,28 @@
     <div class="main_content">
       <div class="menu">
         <ul>
-          <li><%= link_to 'Games', products_path %></li>
-          <li><%= link_to 'Genres', genres_path %></li>
-          <li><%= link_to 'Ratings', ratings_path %></li>
-          <li><%= link_to 'Accounts', accounts_path %></li>
-          <li><%= link_to 'Orders', order_items_path %></li>
-          <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
+          <li><%= link_to t('admin_game'), products_path %></li>
+          <li><%= link_to t('admin_genre'), genres_path %></li>
+          <li><%= link_to t('admin_account'), accounts_path %></li>
+          <li><%= link_to t('admin_order'), order_items_path %></li>
+          <li><%= link_to t('admin_coupon'), coupons_path %></li>
+          <li><%= link_to t('admin_report'), order_items_report_path %></li>
+          <li><%= link_to t('admin_review'), ratings_path %></li>
+          <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
+          <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
+          <li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
         </ul>
       </div> 
     <div class="center_content">
 
    <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h2>Product detail</h2> 
+      <h2><%=t :new_game_heading %></h2> 
       <%= form_for @product do |f| %>
         <% if @product.errors.any? %>
           <div id="error_explanation">
             <h2>
-              <%= pluralize(@product.errors.count, "error") %> prohibited
-              this article from being saved:
+              <%= pluralize(@product.errors.count, "") %><%=t :new_game_warn %>
             </h2>
             <ul>
               <% @product.errors.full_messages.each do |msg| %>
@@ -34,27 +37,33 @@
           </div>
       <% end %>
     <p>
-      <%= f.label :Name %><br>
+      <%= f.label t('new_game_name') %><br>
       <%= f.text_field :name, :style=>"width:100%" %>
     </p>
     <p>
-      <%= f.label :Image_URL %><br>
+      <%= f.label t('new_game_image') %><br>
       <%= f.text_field :img, :style=>"width:100%" %>
     </p>
     <p>
-      <%= f.label :Price %><br>
+      <%= f.label t('product_price') %><br>
       <%= f.text_field :price, :style=>"width:100%" %>
     </p>
     <p>
-      <%= f.label :Genre %><br>
-      <%= f.select :genre, @genres, :prompt => 'Select One' %>
+      <%= f.label t('product_genre') %><br>
+      <%= f.select :genre, @genres, :prompt => t('product_genre') %>
     </p>
+
     <p>
-      <%= f.label :Description %><br>
+      <%= f.label :link, t('Youtube_link') %><br>
+      <%= f.text_field :link, :style=>"width:100%" %>
+    </p>
+
+    <p>
+      <%= f.label t('product_description') %><br>
       <%= f.text_area :des, :rows => "6", :style=>"width:100%" %>
     </p>
     <p>
-      <%= f.submit class: "btn btn-primary"%>
+      <%= f.submit t('new_game_create_button'), class: "btn btn-primary"%>
     </p>
     </div>
   </div>

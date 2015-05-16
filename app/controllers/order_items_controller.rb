@@ -30,6 +30,11 @@ class OrderItemsController < ApplicationController
       @order_item = OrderItem.find(params[:id])            
       @order_item.update_attributes(order_item_params)
       redirect_to order_items_path    
+
+      # send email to confirm delivered product
+      prod = Product.find_by_id(order_item.product_id)      
+      current_user.send_check_out_email(prod.name)
+      redirect_to homepage_cart_path
   end
 
   def destroy

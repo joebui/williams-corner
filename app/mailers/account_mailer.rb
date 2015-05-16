@@ -11,7 +11,7 @@ class AccountMailer < ApplicationMailer
 
   def all_check_out(account, check_out)
     @account = account
-    @check_out = check_out.split(";")
-    mail to: account.email, subject: "Check out product"
+    @check_out = check_out
+    mail to: account.email, subject: "Delivered product"
   end
 end

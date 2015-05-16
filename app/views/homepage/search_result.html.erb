@@ -1,4 +1,8 @@
-
+<html>
+<head>
+	<title> Search result </title>
+</head>
+<body>
 	<div id="header"><!--Header-->
 		<%= render 'header' %>
 	</div><!--/Header-->
@@ -41,7 +45,7 @@
 										<td> <%= product.viewed %> times </td>
 										<td class="cart_price">
 											<h4>$ <%= product.price %></h4>
-											<%= link_to t('show'), homepage_path(product) ,class: "btn btn-primary"%>
+											<%= link_to t('show'), homepage_path(product) ,class: "btn btn-primary", :target => "_blank"%>
 										</td>
 									</tr>
 								</tbody>
@@ -57,3 +61,5 @@
 	<div id="footer"><!--Footer-->
 		<%= render 'footer' %>
 	</div><!--/Footer-->
+</body>
+</html>	

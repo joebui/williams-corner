@@ -2,10 +2,8 @@
 
 <p> Hello <%= @account.name %>, you have just checked out the following games </p>
 
-<ul>
-	<% @check_out.each do |co| %>
-		<li> <%= co %> </li>
-	<% end %>
+<ul>	
+	<li> <%= @check_out %> </li>	
 </ul>
 
 <p> 

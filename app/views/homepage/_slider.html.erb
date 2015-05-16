@@ -17,8 +17,14 @@
 								<div class="col-sm-6">
 									<h1><span>william's</span>CORNER</h1>
 									<h2><%= product.name %></h2>
-									<p><%= product.des %></p>
-									<%= link_to t('get_button'), homepage_path(product) , class: "btn btn-primary"%>
+									<p>
+										<% if product.des.length > 50 %>
+											<%= product.des[0..50] %>
+										<% else %>
+											<%= product.des %>
+										<% end %>
+									</p>
+									<%= link_to t('get_button'), homepage_path(product) , class: "btn btn-primary", :target => "_blank"%>
 								</div>
 								<div class="col-sm-6">
 									<img src="<%= product.img %>" class="girl img-responsive" alt="">
@@ -30,8 +36,14 @@
 									<div class="col-sm-6">
 										<h1><span>william's</span>-CORNER</h1>
 										<h2><%= product.name %></h2>
-										<p><%= product.des %></p>
-										<%= link_to t('get_button'), homepage_path(product) , class: "btn btn-primary"%>
+										<p>
+											<% if product.des.length > 50 %>
+												<%= product.des[0..50] %>
+											<% else %>
+												<%= product.des %>
+											<% end %>
+										</p>
+										<%= link_to t('get_button'), homepage_path(product), class: "btn btn-primary", :target => "_blank" %>
 									</div>
 									<div class="col-sm-6">
 										<img src="<%= product.img %>" class="girl img-responsive" alt="">

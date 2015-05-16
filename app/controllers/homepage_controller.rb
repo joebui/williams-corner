@@ -82,12 +82,7 @@ class HomepageController < ApplicationController
         flash[:alert] = "Invalid coupon code"
       end
     end
-    redirect_to homepage_cart_path
-    # prod = Product.find_by_id(item.product_id)
-      # data = "" + prod.name + " - Quantity: " + item.quantity.to_s + " - Price: " + item.total_price.to_s + ";"
-      # all_check_out.concat data
-    # current_user.send_check_out_email(all_check_out)
-    # redirect_to homepage_cart_path
+    redirect_to homepage_cart_path    
   end
   
   def category

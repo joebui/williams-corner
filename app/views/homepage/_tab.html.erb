@@ -17,7 +17,7 @@
 										<img src="<%= product.img %>" alt="image">
 										<h2>$ <%= product.price %></h2>
 										<p><%= product.name %></p>
-										<%= link_to t('show'), homepage_path(product) , class: "btn btn-primary"%>
+										<%= link_to t('show'), homepage_path(product) , class: "btn btn-primary", :target => "_blank"%>
 									</div>
 								</div>
 							</div>
@@ -40,7 +40,7 @@
 										<img src="<%= product.img %>" alt="image">
 										<h2>$ <%= product.price %></h2>
 										<p><%= product.name %></p>
-										<%= link_to t('show'), homepage_path(product) , class: "btn btn-primary"%>
+										<%= link_to t('show'), homepage_path(product) , class: "btn btn-primary", :target => "_blank" %>
 									</div>
 								</div>
 							</div>

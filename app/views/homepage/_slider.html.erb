@@ -19,7 +19,7 @@
 									<h2><%= product.name %></h2>
 									<p>
 										<% if product.des.length > 50 %>
-											<%= product.des[0..50] %>
+											<%= product.des[0..50] + "..." %>
 										<% else %>
 											<%= product.des %>
 										<% end %>
@@ -38,7 +38,7 @@
 										<h2><%= product.name %></h2>
 										<p>
 											<% if product.des.length > 50 %>
-												<%= product.des[0..50] %>
+												<%= product.des[0..50] + "..." %>
 											<% else %>
 												<%= product.des %>
 											<% end %>

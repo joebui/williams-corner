@@ -43,7 +43,7 @@
 										<td class="cart_description">
 											<h4>
 												<% if product.des.length > 50 %>
-													<%= product.des[0..50] %>
+													<%= product.des[0..50] + "..." %>
 												<% else %>
 													<%= product.des %>
 												<% end %>

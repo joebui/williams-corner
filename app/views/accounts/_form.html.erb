@@ -1,6 +1,5 @@
 <h2><%=t :signup_heading %></h2> 
-<%= form_for :account, url: accounts_path do |f| %>  
-  <% if logged_in? && current_user.name == @account.name %>
+<%= form_for :account, url: accounts_path do |f| %>    
     <p>
       <%= f.label :name, t('name') %><br>
       <%= f.text_field :name, :style=>"width:100%" %>
@@ -10,11 +9,12 @@
       <%= f.label :email, t('email') %><br>
       <%= f.email_field :email, :style=>"width:100%" %>
     </p>  
-
-    <p>
-      <%= f.label :admin_status %> <br>
-      <%= f.select :is_admin, options_for_select(["true", "false"]), :selected => @account.is_admin %>
-    </p>
+    <% if logged_in? && current_user.is_admin == true %>
+      <p>
+        <%= f.label :admin_status %> <br>
+        <%= f.select :is_admin, options_for_select(["true", "false"]), :selected => @account.is_admin %>
+      </p>
+    <% end %>
     
     <p>
       <%= f.label :pasword, t('password') %>
@@ -24,13 +24,7 @@
     <p>
       <%= f.label :password_confirmation, t('password_confirmation') %>
       <%= f.password_field :password_confirmation, :style=>"width:100%" %>
-    </p>
-  <% else %>
-    <p>
-      <%= f.label :admin_status %> <br>
-      <%= f.select :is_admin, options_for_select(["true", "false"]), :selected => @account.is_admin %>
-    </p>
-  <% end %>
+    </p>  
  
   <p>
     <%= f.submit t('signup_button'), class: "btn btn-primary" %>

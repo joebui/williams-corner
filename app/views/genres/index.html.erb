@@ -55,7 +55,7 @@
     			      <td><%= link_to t('product_edit'), edit_genre_path(genre) , class: "btn btn-primary"%></td>
     			      <td><%= link_to t('product_delete'), genre_path(genre),
                   method: :delete,
-                  data: { confirm: t('delete_confirmation') } , class: "btn btn-primary"%></td>
+                  data: { confirm: t('delete_genre_confirmation') } , class: "btn btn-primary"%></td>
             </tr>    
             <% end %>
         </tbody>

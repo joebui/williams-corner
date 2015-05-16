@@ -70,6 +70,17 @@ class ProductsController < ApplicationController
     def destroy
         if logged_in? && current_user.is_admin == true
             @product = Product.find(params[:id])
+
+            @orders = OrderItem.where("product_id = ?", @product.id)
+            @orders.each do |order|
+                order.destroy
+            end
+
+            @ratings = Rating.where("product_id = ?", @product.id)
+            @ratings.each do |rating|
+                rating.destroy
+            end
+
             @product.destroy
             redirect_to products_path
         else

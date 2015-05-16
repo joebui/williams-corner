@@ -54,15 +54,11 @@
         <tr>
           <td><%= account.name %></td>
           <td><%= account.email %></td>          
-          <td><%= account.activated %></td>          
-          <td><%= account.is_admin %></td>          
-          <td><%= link_to t('product_edit'), edit_account_path(account), class: "btn btn-primary" %> </td>
-          <% if account.name == 'admin' %>
-            <td><%=t :account_warning %></td>
-          <% else %>          
-            <td><%= link_to t('product_delete'), account_path(account), method: :delete, data: {confirm: t('delete_confirmation')},
-              class: "btn btn-primary" %> </td>
-          <% end %>
+          <td><b> <%= account.activated %> </b></td> 
+          <td><b> <%= account.is_admin %> </b></td>          
+          <td><%= link_to t('product_edit'), edit_account_path(account), class: "btn btn-primary" %> </td>          
+          <td><%= link_to t('product_delete'), account_path(account), method: :delete, data: {confirm: t('delete_account_confirmation')},
+            class: "btn btn-primary" %> </td>          
         </tr>
     <% end %>
     </tbody>

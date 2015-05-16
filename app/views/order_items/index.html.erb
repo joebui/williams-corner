@@ -58,6 +58,7 @@
                         <td scope="col" class="rounded-company"><%= owner.name %></td>
                         <td scope="col" class="rounded"><%= product.name%></td>
                         <td scope="col" class="rounded"><%= number_to_currency(order.total_price) %></td>
+                        <% @income += order.total_price %>
                         <td scope="col" class="rounded">
                         <%= f.select :status, @status,  :value => order.status.to_str %>
                         </td>
@@ -69,6 +70,8 @@
                 </tbody>
             <% end %>
         <% end %>
+
+        <h2><b> Total income: <%= number_to_currency(@income) %> </b></h2>
     </table>
     <br>
     </div><!-- end of right content-->

@@ -18,11 +18,17 @@ class Account < ActiveRecord::Base
       elsif type == "Email"
         where("email LIKE ?", "%#{search}%")   
       elsif type == "Activated"
-        where("activated = ?", search)    
+        if search == true || search == false
+          where("activated = ?", search)    
+        else
+          all
+        end
       elsif type == "Admin"        
-        where("is_admin = ?", search)   
-      else
-        where("name LIKE ?", "%#{search}%")   
+        if search == true || search == false
+          where("is_admin = ?", search)         
+        else
+          all
+        end
       end
   end
 

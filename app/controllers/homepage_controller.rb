@@ -25,7 +25,7 @@ class HomepageController < ApplicationController
     @product = Product.find(params[:id])
     $product = @product
     @orders = OrderItem.all
-    @url = "https://williams-corner.herokuapp.com/homepage/6"
+    @url = request.original_url
 
     # update number of views
     @product.update_attributes(:viewed => @product.viewed += 1)

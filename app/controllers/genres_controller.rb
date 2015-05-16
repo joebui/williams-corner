@@ -67,10 +67,9 @@ class GenresController < ApplicationController
             genre = @genre
             @products = Product.all
             @products.each do |product|
-                if product.genre == genre.name 
-                    product.update_attributes(:genre => "unknown" )
-                end
+                product.destroy
             end
+            
             @genre.destroy
             redirect_to genres_path
         else

@@ -28,7 +28,7 @@ class AccountsController < ApplicationController
 
 		if logged_in? && current_user.name == @account.name
 			if @account.update_attributes(account_params)				
-				redirect_to root_url				
+				redirect_to accounts_path				
 			else
 			    render 'edit'
 		    end

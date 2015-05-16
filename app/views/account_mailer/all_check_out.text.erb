@@ -1,10 +1,7 @@
-William's Corner - Your check-out games
+William's Corner - Delivered games
 
-Hello <%= @account.name %>, you have just checked out the following games
+Hello <%= @account.name %>, the admin has delivered the following product you ordered:	
 
-<% @check_out.each do |co| %>
-	<%= co %>
-<% end %>
++ <%= @check_out %>
 
-You will need to wait for the admin to confirm your purchase. When your game is delivered, 
-it will be moved to the history page.
+Thank you for choosing William's Corner online game shopping.

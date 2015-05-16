@@ -46,8 +46,9 @@
             <th scope="col" class="rounded-company"><%=t :product_game %></th>
             <th scope="col" class="rounded"><%=t :product_image %></th>
             <th scope="col" class="rounded"><%=t :product_price %></th>
-                  <th scope="col" class="rounded"><%=t :product_genre %></th>
-                <th scope="col" class="rounded"><%=t :product_description %></th>
+            <th scope="col" class="rounded"><%=t :product_genre %></th>
+            <th scope="col" class="rounded"><%=t :product_description %></th>
+            <th scope="col" class="rounded"><%=t :product_visited %></th>
             <th scope="col" class="rounded"><%=t :product_edit %></th>
             <th scope="col" class="rounded-q4"><%=t :product_delete %></th>
         </tr>
@@ -61,10 +62,11 @@
             <td><%= product.price %></td>
             <td><%= product.genre %></td>
             <td><%= product.des %></td>
-                  <td><%= link_to t('product_edit'), edit_product_path(product) , class: "btn btn-primary"%></td>
-                  <td><%= link_to t('product_delete'), product_path(product),
+            <td><%= product.viewed %></td>
+            <td><%= link_to t('product_edit'), edit_product_path(product) , class: "btn btn-primary"%></td>
+            <td><%= link_to t('product_delete'), product_path(product),
               method: :delete,
-              data: { confirm: t('delete_confirmation') } , class: "btn btn-primary"%></td>
+              data: { confirm: t('delete_product_confirmation') } , class: "btn btn-primary"%></td>
         </tr>    
         <% end %>
     </tbody>

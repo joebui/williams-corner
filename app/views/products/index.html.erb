@@ -61,7 +61,11 @@
             <td><img src=<%= product.img %> alt="img" height="100dp" width="100dp" ></td>
             <td><%= product.price %></td>
             <td><%= product.genre %></td>
-            <td><%= product.des %></td>
+            <% if product.des.length > 50 %>
+                <td><%= product.des[0..50] + "..." %></td>
+            <% else %>
+                <td><%= product.des %></td>
+            <% end %>            
             <td><%= product.viewed %></td>
             <td><%= link_to t('product_edit'), edit_product_path(product) , class: "btn btn-primary"%></td>
             <td><%= link_to t('product_delete'), product_path(product),

@@ -1,6 +1,6 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  name: MyString
-  email: MyString
-  password: MyString
+  name: account_test
+  email: rmit@rmit.edu.vn
+  password: password
+  valid_coupon: false
+  language: en

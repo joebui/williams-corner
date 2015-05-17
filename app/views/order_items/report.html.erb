@@ -20,6 +20,7 @@
                 <li><%= link_to t('admin_coupon'), coupons_path %></li>
                 <li><%= link_to t('admin_report'), order_items_report_path %></li>
                 <li><%= link_to t('admin_review'), ratings_path %></li>
+                <li><%= link_to 'Guide', accounts_guide_path %></li>
                 <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
                 <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
 				<li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>

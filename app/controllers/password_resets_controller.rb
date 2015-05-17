@@ -2,10 +2,6 @@ class PasswordResetsController < ApplicationController
 	before_action :get_user,   only: [:edit, :update]
   	before_action :valid_user, only: [:edit, :update]  	
   	# before_action :check_expiration, only: [:edit, :update]
-
-  	def new
-  	end
-
   	def create
 		@account = Account.find_by(email: params[:password_reset][:email].downcase)
 	    if @account
@@ -17,9 +13,6 @@ class PasswordResetsController < ApplicationController
 	      	flash.now[:alert] = "Email address not found"
 	      	render 'new'
 	    end
-  	end
-
-  	def edit  		  		
   	end
 
   	def update

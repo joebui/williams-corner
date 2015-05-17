@@ -186,10 +186,10 @@ vi:
   admin_genre: "Thể loại"
   admin_account: "Tài khoản"
   admin_order: "Đơn hàng"
-  admin_coupon: "Mã khuyến mãi"
+  admin_coupon: "Coupon"
   admin_report: "Báo cáo"
   admin_review: "Nhận xét"
-  admin_logout: "ĐĂNG XUẤT"
+  admin_logout: "Đăng xuất"
   
   #games
   product_admin_title: "Game"
@@ -285,3 +285,45 @@ vi:
   #reuse from product
   product_game: "Game"
   product_delete: "Xoá"
+
+  #admin guide
+  adminTabTwo: "Thể loại"
+  adminTabThree: "Nhận xét"
+  adminTabFour: "Tài khoản"
+  adminTabFive: "Đơn hàng"
+  adminTabSix: "Coupon"
+  adminTabSeven: "Báo cáo"
+  #tab One
+  adminTabOne1: "Ô Tìm kiếm cho phép admin tìm game theo chỉ tiêu ở thanh danh sách lựa chọn."
+  adminTabOne2: "Ấn Tạo Game mới để mở ra trang mới, cho phép admin nhập thông tin game như tên, thể loại, link hình ảnh, etc"
+  adminTabOne3: "Ấn Cập nhật để cho game mới vào cơ sở dữ liệu."
+  adminTabOne4: "Ấn Chỉnh sửa để thay đổi thông tin của game"
+  adminTabOne5: "Ấn Cập nhật để áp dụng thay đổi."
+  adminTabOne6: "Ấn Xoá để loại bỏ game ra khỏi cơ sở dữ liệu. Màn hình xác nhận sẽ hiện ra."
+  #tabTwo
+  adminTabTwo1: "Ô Tìm kiếm cho phép admin tìm thể loại theo chỉ tiêu ở thanh danh sách lựa chọn."
+  adminTabTwo2: "Ấn Tạo thể loại mới để mở ra trang mới, cho phép admin nhập tên thể loại mới."
+  adminTabTwo3: "Ấn Cập nhật để cho thể loại mới vào cơ sở dữ liệu."
+  adminTabTwo4: "Ấn Chỉnh sửa để thay đổi tên thể loại."
+  adminTabTwo5: "Ấn Cập nhật để áp dụng thay đổi."
+  adminTabTwo6: "Ấn Xoá để loại bỏ thể loại ra khỏi cơ sở dữ liệu. Màn hình xác nhận sẽ hiện ra."
+  #tabThree
+  adminTabThree1: "Ô Tìm kiếm cho phép admin tìm nhận xét theo chỉ tiêu ở thanh danh sách lựa chọn."
+  adminTabThree2: "Ấn Xoá để loại bỏ nhận xét ra khỏi cơ sở dữ liệu. Màn hình xác nhận sẽ hiện ra."
+  #tabFour
+  adminTabFour1: "Ô Tìm kiếm cho phép admin tìm tài khoản theo chỉ tiêu ở thanh danh sách lựa chọn."
+  adminTabFour2: "Ấn Cập nhật để mở ra trang mới, cho phép admin thay đổi thông tin tài khoản. Trạng thái lá admin hay không có thể được thay đổi ở đây. Ấn Áp dụng để chấp nhậ thay đổi."
+  adminTabFour3: "Ấn Xoá để loại bỏ tài khoản ra khỏi cơ sở dữ liệu. Màn hình xác nhận sẽ hiện ra."
+  #tabFive
+  adminTabFive1: "Ô Tìm kiếm cho phép admin tìm đơn hàng theo chỉ tiêu ở thanh danh sách lựa chọn."
+  adminTabFive2: "Trạng thái của đơn hàng có thể 1 trong 3 như sau:"
+  adminTabFive3: "pending: Đơn hàng đang ở trong giỏ nhưng chưa tính tiền."
+  adminTabFive4: "in process: Đơn hàng đã chấp nhận thanh toan, và đang chờ ý kiến admin."
+  adminTabFive5: "delivered: Đơn hàng đã được chấp nhận và thanh toán."
+  adminTabFive6: "Ấn Áp dụng để chấp nhận thay dổi."
+  adminTabFive7: "Ấn Xoá để loại bỏ đơn hàng ra khỏi cơ sở dữ liệu. Màn hình xác nhận sẽ hiện ra."
+  #tabSix
+  adminTabSix1: "Ấn Tạo mã mới để máy tính tạo ra mã khuyến mãi ngẫu nhiên."
+  adminTabSix2: "Ấn Xoá để loại bỏ mã khuyến mãi ra khỏi cơ sở dữ liệu."
+  #tabSeven
+  adminTabSeven1: "Nhập ngày/tháng/năm vào 2 ô Tìm kiếm rồi ấn Kiểm tra để tìm tất cả đơn hàng trong thời gian đó."

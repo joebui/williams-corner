@@ -6,7 +6,9 @@ class Account < ActiveRecord::Base
   has_many :order_items, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX }
   validates :password, confirmation: true, presence: true, length: {minimum: 5}, allow_blank: false
   validates :password_confirmation, presence: true
   

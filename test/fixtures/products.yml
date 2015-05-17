@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: game1
+  des: description1
+  img: http://files.softicons.com/download/sport-icons/pretty-office-vii-icons-by-custom-icon-design/png/256x256/Game-playingcards.png
+  genre: RPG
+  price: 100
+
+two:
+  name: MyString
+  des: MyText
+  img: MyString
+  genre: MyString
+  price: MyString

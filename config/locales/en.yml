@@ -190,7 +190,7 @@ en:
   admin_coupon: "Coupon"
   admin_report: "Report"
   admin_review: "Review"
-  admin_logout: "LOG OUT"
+  admin_logout: "Log out"
   
   #games
   product_admin_title: "All Games"
@@ -286,3 +286,45 @@ en:
   #reuse from product
   product_game: "Game"
   product_delete: "Delete"
+
+  #admin guide
+  adminTabTwo: "Genre"
+  adminTabThree: "Review"
+  adminTabFour: "Account"
+  adminTabFive: "Order"
+  adminTabSix: "Coupon"
+  adminTabSeven: "Report"
+  #tab One
+  adminTabOne1: "The Search box allows you to find a game by a specific parameter chosen from the dropdown list."
+  adminTabOne2: "Click New Game to open a new page prompting the admin to fill out the new game's name, genre, image URl, etc."
+  adminTabOne3: "Click Apply when you are ready to accept the new game in the database."
+  adminTabOne4: "Click Edit next to a game to open a new page and change the details of it."
+  adminTabOne5: "Click Update to apply the change."
+  adminTabOne6: "Click Delete to remove the game from the database. There will be a confirmation pop-up."
+  #tabTwo
+  adminTabTwo1: "The Search box allows you to find a genre by its name or parts of its name."
+  adminTabTwo2: "Click New Genre to open a new page prompting the admin to fill out the new genre's name."
+  adminTabTwo3: "Click Apply when you are ready to accept the new genre in the database."
+  adminTabTwo4: "Click Edit next to a genre to open a new page and change its name."
+  adminTabTwo5: "Click Update to apply the change."
+  adminTabTwo6: "Click Delete to remove the genre from the database. There will be a confirmation pop-up."
+  #tabThree
+  adminTabThree1: "The Search box allows you to search for a comment by a specific parameter chosen from the dropdown list."
+  adminTabThree2: "A comment can be removed by clicking Delete. There will be a confirmation pop-up."
+  #tabFour
+  adminTabFour1: "The Search box allows you to find an account by a specific parameter chosen from the dropdown list."
+  adminTabFour2: "Click Edit next to an account open a new page, allowing the admin to change its detail. The status of being an admin can also be changed here. Click Save Account once all changes are ready to be applied."
+  adminTabFour3: "Click Delete next to an account to remove it. There will be a confirmation pop-up."
+  #tabFive
+  adminTabFive1: "The Search box allows you to find an order by a specific parameter chosen from the dropdown list."
+  adminTabFive2: "The status of an order can be changed:"
+  adminTabFive3: "pending: The order is in the cart but not yet checked out."
+  adminTabFive4: "in process: The order is checked out and waiting for the admin to process."
+  adminTabFive5: "delivered: The order is approved by the admin and the transaction is completed."
+  adminTabFive6: "Click Update to apply the change in the status."
+  adminTabFive7: "Click Delete to remove the order from the database."
+  #tabSix
+  adminTabSix1: "Click New Coupon to create a new code, generated randomly by the machine."
+  adminTabSix2: "Click Delete to remove a coupon."
+  #tabSeven
+  adminTabSeven1: "The 2 Search box allows the admin to specify a period of time. Click Submit to show all orders of that time period."

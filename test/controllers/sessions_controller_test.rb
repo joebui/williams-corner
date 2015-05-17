@@ -1,9 +1,10 @@
-require 'test_helper'
-
 class SessionsControllerTest < ActionController::TestCase
-  test "should get new" do
-    get :new
-    assert_response :success
+  def setup
+    @account = accounts(:one)
   end
-
+  
+  test "test create session" do
+    post :create,  session: {:name => "Example User", :email => "user@example.com"}
+    print "Created session successfully"
+  end
 end

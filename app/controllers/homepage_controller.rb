@@ -1,4 +1,4 @@
-$product = nil; # store the current viewed product
+$product_comment = nil; # store the current viewed product
 
 class HomepageController < ApplicationController
   def index
@@ -23,14 +23,14 @@ class HomepageController < ApplicationController
     @count = nil
     @products = Product.all   
     @product = Product.find(params[:id])
-    $product = @product
+    $product_comment = @product
     @orders = OrderItem.all
     @url = request.original_url
 
     # update number of views
     @product.update_attributes(:viewed => @product.viewed += 1)
     # get all the comments of a product
-    @product_ratings = Rating.where(product_id: @product.id).order(:created_at).reverse_order
+    @product_ratings = Rating.where(product_id: $product_comment.id).order(:created_at).reverse_order
   end
 
   def cart

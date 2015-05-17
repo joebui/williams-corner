@@ -31,8 +31,10 @@ class OrderItemsController < ApplicationController
       @order_item.update_attributes(order_item_params)      
 
       # send email to confirm delivered product
-      prod = Product.find_by_id(@order_item.product_id)      
-      current_user.send_check_out_email(prod.name)
+      prod = Product.find_by_id(@order_item.product_id)  
+      if prod    
+        current_user.send_check_out_email(prod.name)
+      end
       redirect_to order_items_path    
   end
 

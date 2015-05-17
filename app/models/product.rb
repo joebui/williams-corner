@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
   	if type == "Name"
     	where("name LIKE ?", "%#{search}%")	  
     elsif type == "Price"
-    	where("price <= ?", search)	  
+    	where("price = ?", search)	  
     elsif type == "Genre"
     	where("genre LIKE ?", "%#{search}%")	      
     elsif type == "Random"

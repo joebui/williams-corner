@@ -27,22 +27,34 @@ $ heroku run rake db:migrate
 $ heroku open
 ```
 
+## Testing the project with Rails
+Unit testing guide :
+Test models:
+run command : bundle exec rake test test/models/[test_file_name].rb
+Test controllers:
+run command : bundle exec rake test test/controllers/[test_file_name].rb
+
+For example : 
+bundle exec rake test test/models/accounts_test.rb
+bundle exec rake test test/controllers/accounts_controller_test.rb
+
+The results appear in log monitor. The failure does not mean the unit has bugs, it mean the [state_ment] is false. For instance, when the account.name is null, the statement @account.valid is fail.
+test "null name" do
+    @account.name = ""
+    assert @account.valid?, "Test succeeded. Reason for Failure: Name is null."
+end
+
 ## Limitations
-Currently this is the sencond phase of the project. Therefore, there are only five domain objects: accounts, products, genres, ratings, order_items.
-Users are not able to change the language to be displayed of the website and to get the coupon. 
+Currently this product is still in beta version. As a result, some information is not available for viewing: Online help, Genres Terms of Use and Company
+in the footer of the main page. These information will be available when we handle the system to the client.
 
 ## Known bugs and workaround
-- In the search function of homepage and admin page, users are still not able to perform case-insensitive searching. For example, 
-if user wants to search for something named "Abc", he/she has to type "Abc" to get the result, typing "abc" won't display the expected result.
-- In the Order page of the admin, in order to update the status of order(s) successfully, the admin has to refresh the page after opening it for 
-the first time.
-
-We are not able to solve the problems by the end of phase 2. The team will be working diligently to solve the problems in phase 3.
+None
 
 ## Link to the website on Heroku 
 https://williams-corner.herokuapp.com
 
-To login as admin, type username as "admin" and password as "aaa". Only admin can access the page to administrate the domian objects listed above.
+To login as admin, type username as "admin" and password as “abc321”. Only admin can access the page to administrate the domian objects listed above.
 
 
 ## References

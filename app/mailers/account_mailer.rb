@@ -14,4 +14,10 @@ class AccountMailer < ApplicationMailer
     @check_out = check_out
     mail to: account.email, subject: "Delivered product"
   end
+
+  def send_coupon(account, code)
+    @account = account;
+    @code = code
+    mail to: account.email, subject: "New coupon"
+  end
 end

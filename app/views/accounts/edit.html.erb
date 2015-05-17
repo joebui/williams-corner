@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Edit Account </title>
+  <title><%=t :edit_account_title %></title>
 </head>
 <body class="boss_body">
 <div id="main_container">
@@ -18,7 +18,7 @@
             <li><%= link_to t('admin_order'), order_items_path %></li>
             <li><%= link_to t('admin_coupon'), coupons_path %></li>
             <li><%= link_to t('admin_report'), order_items_report_path %></li>
-            <li><%= link_to 'Ratings', ratings_path %></li>
+            <li><%= link_to t('admin_review'), ratings_path %></li>
             <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
             <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
             <li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
@@ -35,13 +35,12 @@
 
    <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h2>Account details</h2> 
+      <h2><%=t :edit_account_heading %></h2> 
       <%= form_for :account, url: account_path(@account), method: :patch do |f| %>
         <% if @account.errors.any? %>
           <div id="error_explanation">
             <h2>
-              <%= pluralize(@account.errors.count, "error") %> prohibited
-              this article from being updated:
+              <%= pluralize(@account.errors.count, "") %> <%=t :edit_account_warn %>
             </h2>
             <ul>
               <% @account.errors.full_messages.each do |msg| %>
@@ -62,7 +61,7 @@
 
           <% if logged_in? && current_user.is_admin == true %>
             <p>
-              <%= f.label :admin_status %> <br>
+              <%= f.label :admin? %> <br>
               <%= f.select :is_admin, options_for_select(["true", "false"]), :selected => @account.is_admin %>
             </p>
           <% end %>

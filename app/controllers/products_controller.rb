@@ -72,13 +72,10 @@ class ProductsController < ApplicationController
             @product = Product.find(params[:id])
 
             @orders = OrderItem.where("product_id = ?", @product.id)
-            @orders.each do |order|
-                order.destroy
-            end
-
-            @ratings = Rating.where("product_id = ?", @product.id)
-            @ratings.each do |rating|
-                rating.destroy
+            if @orders != nil
+                @orders.each do |order|
+                    order.destroy
+                end
             end
 
             @product.destroy

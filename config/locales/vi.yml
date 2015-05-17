@@ -133,7 +133,9 @@ vi:
   cart_tag: "Giỏ hàng"
   
   #search result
+  search_result_title: "Kết quả tìm kiếm"
   key: "Key"
+  visited: "Số lượt xem"
   
   #user guide
   guide_title: "Hướng dẫn người dùng"
@@ -233,10 +235,14 @@ vi:
   
   #account
   account_title: "Tài khoản"
-  account_heading: "Danh sách thể loại"
+  account_heading: "Danh sách tài khoản"
   account_name: "Tên"
   account_email: "Email"
   account_warning: "Không thể xóa"
+  account_activated: "Được kích hoạt?"
+  edit_account_title: "Chỉnh sửa tài khoản"
+  edit_account_heading: "Chi tiết tài khoản"
+  edit_account_warn: " lỗi sau khiến tài khoản không thể cập nhật."
   #reuse from product
   product_edit: "Chỉnh sửa"
   product_delete: "Xóa"

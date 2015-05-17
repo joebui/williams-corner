@@ -1,0 +1,2 @@
+class SendCouponsController < ApplicationController
+end

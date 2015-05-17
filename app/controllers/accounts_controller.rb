@@ -57,7 +57,13 @@ class AccountsController < ApplicationController
 
 	def destroy
 		if logged_in? && current_user.is_admin == true
-			@account = Account.find(params[:id])
+			@account = Account.find(params[:id])			
+            @ratings = Rating.where("account_id = ?", @account.id)
+            if @ratings != nil
+                @ratings.each do |rating|
+                    rating.destroy
+                end
+            end
 			@account.destroy
 
 			redirect_to accounts_path		

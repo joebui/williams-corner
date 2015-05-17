@@ -133,8 +133,10 @@ en:
   history_tag: "History transaction"
   cart_tag: "Shopping cart"
   
-  #search result
+  #search resultvisited
+  search_result_title: "Search "
   key: "Key"
+  visited: "Visited"
   
   #user guide
   guide_title: "User Guide"
@@ -238,6 +240,10 @@ en:
   account_name: "Name"
   account_email: "Email"
   account_warning: "Cannot be deleted"
+  account_activated: "Activated"
+  edit_account_title: "Edit Account"
+  edit_account_heading: "Account Details"
+  edit_account_warn: " error(s) prohibited this article from being updated."
   #reuse from product
   product_edit: "Edit"
   product_delete: "Delete"

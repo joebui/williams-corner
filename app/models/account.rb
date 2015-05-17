@@ -18,13 +18,13 @@ class Account < ActiveRecord::Base
       elsif type == "Email"
         where("email LIKE ?", "%#{search}%")   
       elsif type == "Activated"
-        if search == true || search == false
+        if search == "true" || search == "false"
           where("activated = ?", search)    
         else
           all
         end
       elsif type == "Admin"        
-        if search == true || search == false
+        if search == "true" || search == "false"
           where("is_admin = ?", search)         
         else
           all
@@ -88,5 +88,9 @@ class Account < ActiveRecord::Base
 
   def send_check_out_email(check_out)
     AccountMailer.all_check_out(self, check_out).deliver_now
+  end
+
+  def send_coupon_code(code)
+    AccountMailer.send_coupon(self, code).deliver_now
   end
 end

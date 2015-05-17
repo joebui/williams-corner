@@ -63,15 +63,24 @@ class GenresController < ApplicationController
  
     def destroy
         if logged_in? && current_user.is_admin == true
-            @genre = Genre.find(params[:id])
-            genre = @genre
+            @genre = Genre.find(params[:id])            
             @products = Product.all
+            valid = true;
             @products.each do |product|
-                product.destroy
+                if product.genre == @genre.name
+                    valid = false;
+                    break
+                end
             end
-            
-            @genre.destroy
-            redirect_to genres_path
+
+            if valid == false
+                flash[:alert] = "Cannot delete this genre"
+                redirect_to :back
+            else
+                flash[:alert] = "Successfully deleted"
+                @genre.destroy
+                redirect_to genres_path
+            end            
         else
             redirect_to root_url
         end    

@@ -38,6 +38,11 @@
 
     <%= link_to t('new_genre'), new_genre_path , class: "btn btn-primary" %>
     <br><br>
+    <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+              <%= value %>
+        </div>
+    <% end %> <br>
  
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
         <thead>
@@ -55,7 +60,7 @@
     			      <td><%= link_to t('product_edit'), edit_genre_path(genre) , class: "btn btn-primary"%></td>
     			      <td><%= link_to t('product_delete'), genre_path(genre),
                   method: :delete,
-                  data: { confirm: t('delete_genre_confirmation') } , class: "btn btn-primary"%></td>
+                  data: { confirm: t('delete_confirmation') } , class: "btn btn-primary"%></td>
             </tr>    
             <% end %>
         </tbody>

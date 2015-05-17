@@ -12,6 +12,12 @@ class CouponsController < ApplicationController
     @coupon = Coupon.new;
     @coupon.code = random_string;
     @coupon.date = Time.now.strftime("%Y-%m-%d");
+    
+    @accounts = Account.all
+    @accounts.each do |account|
+      account.send_coupon_code(@coupon.code)
+    end
+
     if @coupon.save
       redirect_to coupons_path
     end

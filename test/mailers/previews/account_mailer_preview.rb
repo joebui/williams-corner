@@ -18,4 +18,9 @@ class AccountMailerPreview < ActionMailer::Preview
     user = Account.first    
     AccountMailer.all_check_out(user, "AC IV - Quantity: 1;AC Unity - Quantity: 3")
   end
+
+  def send_coupon
+    user = Account.first
+    AccountMailer.send_coupon(user, "fhjksahfks37498235")
+  end
 end

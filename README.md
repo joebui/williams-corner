@@ -26,6 +26,25 @@ $ git push heroku master
 $ heroku run rake db:migrate
 $ heroku open
 ```
+## Search
+Intelligent search for user, the system searches keywords by tags such as name,genre and description. The results are listed by popularity.
+Advanced search is only available for admin, it allows search by parameters associated with the category in query. These parameters are 
+name, price, genre for Game; name, email, activated, admin for Account; owner, game status for Order; username, game, star for Review.
+
+## Guide
+Guide pages are available for both user and admin. We have 2 versions of guide page. One is user guide, other is admin guide.
+
+## Mail
+Notifications will be announced by emails.For example, when the order is delivered, the system will send an email to user to announce that.
+
+## Coupons
+Coupon code is available for a day, every time coupon is created, the code will be sent to all users. The code will be deleted when it is applied.
+
+## en/vi language interface
+The chosen language for a user is saved for any later access .
+
+## YouTube link
+To get the YouTube video for game detail, get the Embed link from the YouTube video. The Embed button is next to the Share button on a YouTube video.
 
 ## Testing the project with Rails
 Unit testing guide :
@@ -45,8 +64,10 @@ test "null name" do
 end
 
 ## Limitations
-Currently this product is still in beta version. As a result, some information is not available for viewing: Online help, Genres Terms of Use and Company
+As a result, some information is not available for viewing: Online help, Genres Terms of Use and Company
 in the footer of the main page. These information will be available when we handle the system to the client.
+
+Search : the key word is Case sensetive
 
 ## Known bugs and workaround
 None

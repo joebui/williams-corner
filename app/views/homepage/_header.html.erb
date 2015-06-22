@@ -1,46 +1,46 @@
-<header id="header"><!--header-->
-	<div class="header-middle"><!--header-middle-->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="logo pull-left" style="padding-left: 30px">
-						<a href="/"><img src="<%= asset_path('logo_homepage.png') %>" alt="logo_homepage"></a>
-					</div>
-				</div>
-				<div class="col-sm-8">
-					<div class="shop-menu pull-right">
-						<ul class="nav navbar-nav">
-							<li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
-							<li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
-							<!-- <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li> -->
-							<!-- <li><a href=""><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
-							<!-- <li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
-							<% if logged_in? %>	<!-- check if user logged in -->		
-								<li> <%= link_to t('history'), homepage_history_path %> </li>	
-								<li> <%= link_to t('cart'), homepage_cart_path %> </li>	
-								<li id="fa-user"><a href="#"> <%=t :welcome %>, <strong> <%= current_user.name %> </strong> </a>									
-							        <ul class="dropdown" style="width: 100%;"> 
-							            <li><%= link_to t('manage'), edit_account_path(current_user) %></li>
-							            <li><%= link_to t('logout'), logout_path, method: "delete" %></li>
-							        </ul>
-							        
-								</li>
-							
-							<% else %>
-								<li><%= link_to t('signup'), new_account_path , class: "fa fa-shopping-cart" %></li>
-						    	<li> <%= link_to t('signin'), login_path %> </li>				    								    					
-							<% end %>
-						</ul>
-					</div>
-				</div>
-				<div class="pull-right">
-						<%= form_tag(homepage_search_result_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
-	        	<%= text_field_tag :search, params[:search], placeholder: t('search_holder') %>
-	        	<%= submit_tag t('search_button'), :name => nil %>
-	    			<% end %>                 
-	    			<%= yield %>
-					</div>
-			</div>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<a class="navbar-brand" href="/"> WILLIAM'S CORNER </a>
 		</div>
-	</div><!--/header-middle-->
-</header><!--/header-->
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
+				<li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
+				<%= form_tag(homepage_search_result_path, :method => "get", class: "navbar-form navbar-left") do %>
+					<div class="form-group">
+						<%= text_field_tag :search, params[:search], placeholder: t('search_holder'), class: "form-control" %>
+					</div>
+					<%= submit_tag t('search_button'), :name => nil, class: "btn btn-default" %>
+				<% end %>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<% if logged_in? %>	<!-- check if user logged in -->
+					<li> <%= link_to t('history'), homepage_history_path %> </li>
+					<li> <%= link_to t('cart'), homepage_cart_path %> </li>
+					<li id="fa-user">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							<%=t :welcome %>, <strong> <%= current_user.name %> </strong> <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+							<li><%= link_to t('manage'), edit_account_path(current_user) %></li>
+							<li><%= link_to t('logout'), logout_path, method: "delete" %></li>
+						</ul>
+					</li>
+
+				<% else %>
+					<li><%= link_to t('signup'), new_account_path , class: "fa fa-shopping-cart" %></li>
+					<li> <%= link_to t('signin'), login_path %> </li>
+				<% end %>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</nav>
+<br><br><br><br>

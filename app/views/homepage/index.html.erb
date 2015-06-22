@@ -7,11 +7,9 @@
 </head>
 <body class='home_body'>
 	<%= render 'header' %>
-	
-	<section id="slider"><!--slider-->
-		<%= render 'slider' %>
-	</section><!--/slider-->
-	
+
+	<%= render 'slider' %>
+
 	<section>
 		<div class="container">
 			<div class="row">
@@ -20,7 +18,7 @@
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center"><%=t :featured_game %></h2>
 					</div><!--features_items-->
-				 
+
 					<div class="category-tab"><!--category-tab-->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
@@ -31,17 +29,17 @@
 							<%= render 'tab' %>
 						</div>
 					</div><!--/category-tab-->
-				
+
 					<!--/recommended_items-->
-					
+
 				</div>
 			</div>
 		</div>
 	</section>
-	
+
 	<footer id="footer"><!--Footer-->
 		<%= render 'footer' %>
-		
+
 	</footer><!--/Footer-->
 </body>
 </html>

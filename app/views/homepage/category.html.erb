@@ -5,7 +5,7 @@
 	<div id="header"><!--Header-->
 		<%= render 'header' %>
 	</div><!--/Header-->
-	
+
 
 	<section id="cart_items">
 		<div class="container">
@@ -15,9 +15,9 @@
 				  <li class="active"><%= @name %></li>
 				</ol>
 			</div>
-			
+
 			<div class="table-responsive cart_info">
-				<table class="table table-condensed">
+				<table class="table table-hover">
 					<thead>
 						<tr class="cart_menu">
 							<td class="image"><%=t :item %></td>
@@ -65,7 +65,11 @@
 
 	<div id="space">
 	</div>
-	
+
 	<div id="footer"><!--Footer-->
 		<%= render 'footer' %>
 	</div><!--/Footer-->
+
+<a id="scrollUp" href="#" style="position: fixed;">
+	<i class="glyphicon glyphicon-chevron-up"></i>
+</a>

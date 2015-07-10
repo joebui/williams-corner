@@ -21,8 +21,9 @@
 
 en:
   #index
-  en_lan: "English"
-  vi_lan: "Vietnamese"
+  lan: "Language"
+  eng: "English"
+  vn: "Vietnamese"
   signup: "Sign Up"
   signin: "Sign In"
   search_button: "Search"
@@ -45,7 +46,7 @@ en:
   welcome: "Welcome"
   manage: "Manage"
   logout: "Logout"
-  
+
   #sign up
   signup_title: "New Account"
   signup_heading: "Account details"
@@ -57,7 +58,7 @@ en:
   homepage_button: "Home Page"
   account_create_error: "prohibited this account from being created:"
   return_link: "<< Home Page"
-  
+
   #login
   login_title: "Sign In"
   login_heading: "Login"
@@ -66,7 +67,7 @@ en:
   #reuse from sign up
   name: "Name"
   password: "Password"
-  
+
   #product
   product_title: "Product page"
   title: "Game"
@@ -84,7 +85,7 @@ en:
   rating: "Rating"
   #product after logged in
   add_to_cart: "Add to Cart"
-  
+
   #cart
   cart_title: "Cart page"
   item: "Item"
@@ -109,7 +110,7 @@ en:
   free: "Free"
   coupon_activated: "Coupon activated"
   discount: "Discount: 50%"
-  
+
   #history
   history_title: "History page"
   clear_history: "Clear history"
@@ -127,17 +128,17 @@ en:
   continue_shopping: "Continue shopping"
   #history with nothing
   history_warn: "Oops! you have not bought any game!"
-  
+
   #tag label
   home_tag: "Home"
   history_tag: "History transaction"
   cart_tag: "Shopping cart"
-  
+
   #search resultvisited
   search_result_title: "Search "
   key: "Key"
   visited: "Visited"
-  
+
   #user guide
   guide_title: "User Guide"
   guide_heading: "User guide"
@@ -181,7 +182,7 @@ en:
   #eighth tab
   tabEight: "Search"
   tabEight1: "Search for the name of the game you want to find by typing in the Search box"
-  
+
   #admin section
   admin_game: "Game"
   admin_genre: "Genre"
@@ -191,7 +192,7 @@ en:
   admin_report: "Report"
   admin_review: "Review"
   admin_logout: "Log out"
-  
+
   #games
   product_admin_title: "All Games"
   product_heading: "List of Games"
@@ -216,7 +217,7 @@ en:
   product_price: "Price"
   product_genre: "Genre"
   product_description: "Description"
-  
+
   #genre
   genre_title: "All Genres"
   genre_heading: "List of Genres"
@@ -233,7 +234,7 @@ en:
   product_genre: "Genre"
   product_edit: "Edit"
   product_delete: "Delete"
-  
+
   #account
   account_title: "All Accounts"
   account_heading: "List of Accounts"
@@ -247,7 +248,7 @@ en:
   #reuse from product
   product_edit: "Edit"
   product_delete: "Delete"
-  
+
   #order
   order_title: "All Orders"
   order_heading: "List of Orders"
@@ -258,7 +259,7 @@ en:
   #reuse from product
   product_game: "Game"
   product_delete: "Delete"
-  
+
   #coupon
   coupon_title: "All Coupons"
   coupon_heading: "List of Coupons"
@@ -267,7 +268,7 @@ en:
   new_coupon: "New Coupon"
   #reuse from product
   product_delete: "Delete"
-  
+
   #report
   report_title: "All Reports"
   report_heading: "List of Reports"

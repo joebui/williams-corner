@@ -21,8 +21,9 @@
 
 vi:
   #index
-  en_lan: "Tiếng Anh"
-  vi_lan: "Tiếng Việt"
+  lan: "Ngôn ngữ"
+  eng: "Tiếng Anh"
+  vn: "Tiếng Việt"
   signup: "Đăng Ký"
   signin: "Đăng Nhập"
   search_button: "Tìm kiếm"
@@ -45,7 +46,7 @@ vi:
   welcome: "Xin chào"
   manage: "Chỉnh sửa"
   logout: "Đăng xuất"
-  
+
   #sign up
   signup_title: "Tài khoản mới"
   signup_heading: "Thông tin tài khoản"
@@ -57,7 +58,7 @@ vi:
   homepage_button: "Trang Chủ"
   account_create_error: "khiến tài khoản không thể tạo:"
   return_link: "<< Trang chủ"
-  
+
   #login
   login_title: "Đăng Nhập"
   login_heading: "Đăng Nhập"
@@ -66,7 +67,7 @@ vi:
   #reuse from sign up
   #name: "Tên"
   #password: "Mật khẩu"
-  
+
   #product
   product_title: "Game"
   game_heading: "Thông tin game"
@@ -83,7 +84,7 @@ vi:
   rating: "Điểm"
   #product after logged in
   add_to_cart: "Thêm vào giỏ"
-  
+
   #cart
   cart_title: "Giỏ hàng"
   item: "Game"
@@ -102,13 +103,13 @@ vi:
   continue_shopping: "Tiếp tục xem"
   checkout: "Thanh toán"
   delete_confirmation: "Bạn có chắc chắn muốn xóa?"
-  delete_product_confirmation: "Bạn có chắc chắn muốn xóa? Hành động này sẽ xoá toàn bộ các đơn hàng và nhận xét của sản phẩm."  
+  delete_product_confirmation: "Bạn có chắc chắn muốn xóa? Hành động này sẽ xoá toàn bộ các đơn hàng và nhận xét của sản phẩm."
   delete_genre_confirmation: "Bạn có chắc chắn muốn xóa? Hành động này sẽ xoá toàn bộ các game thuộc thể loại này."
-  delete_account_confirmation: "Bạn có chắc chắn muốn xóa? Hành động này sẽ xoá toàn bộ các đơn hàng và nhận xét của tài khoản này."  
+  delete_account_confirmation: "Bạn có chắc chắn muốn xóa? Hành động này sẽ xoá toàn bộ các đơn hàng và nhận xét của tài khoản này."
   free: "Miễn phí"
   coupon_activated: "Đã áp dụng mã khuyến mãi"
   discount: "Giảm 50%"
-  
+
   #history
   history_title: "Lịch sử mua"
   clear_history: "Xóa"
@@ -126,17 +127,17 @@ vi:
   continue_shopping: "Tiếp tục xem"
   #history with nothing
   history_warn: "Bạn chưa mua game nào!"
-  
+
   #tag label
   home_tag: "Home"
   history_tag: "Lịch sử mua"
   cart_tag: "Giỏ hàng"
-  
+
   #search result
   search_result_title: "Kết quả tìm kiếm"
   key: "Key"
   visited: "Số lượt xem"
-  
+
   #user guide
   guide_title: "Hướng dẫn người dùng"
   guide_heading: "Hướng dẫn người dùng"
@@ -180,7 +181,7 @@ vi:
   #eighth tab
   tabEight: "Tìm kiếm"
   tabEight1: "Nhập tên game cần tìm vào ô Tìm kiếm."
-  
+
   #admin section
   admin_game: "Game"
   admin_genre: "Thể loại"
@@ -190,7 +191,7 @@ vi:
   admin_report: "Báo cáo"
   admin_review: "Nhận xét"
   admin_logout: "Đăng xuất"
-  
+
   #games
   product_admin_title: "Game"
   product_heading: "Danh sách game"
@@ -215,7 +216,7 @@ vi:
   product_price: "Giá"
   product_genre: "Thể loại"
   product_description: "Thông tin"
-  
+
   #genre
   genre_title: "Thể loại"
   genre_heading: "Danh sách thể loại"
@@ -232,7 +233,7 @@ vi:
   product_genre: "Thể loại"
   product_edit: "Chỉnh sửa"
   product_delete: "Xóa"
-  
+
   #account
   account_title: "Tài khoản"
   account_heading: "Danh sách tài khoản"
@@ -246,7 +247,7 @@ vi:
   #reuse from product
   product_edit: "Chỉnh sửa"
   product_delete: "Xóa"
-  
+
   #order
   order_title: "Đơn hàng"
   order_heading: "Danh sách đơn hàng"
@@ -257,7 +258,7 @@ vi:
   #reuse from product
   product_game: "Game"
   product_delete: "Xóa"
-  
+
   #coupon
   coupon_title: "Mã khuyến mãi"
   coupon_heading: "Danh sách mã khuyến mãi"
@@ -266,7 +267,7 @@ vi:
   new_coupon: "Mã mới"
   #reuse from product
   product_delete: "Xóa"
-  
+
   #report
   report_title: "Báo cáo"
   report_heading: "Danh sách báo cáo"

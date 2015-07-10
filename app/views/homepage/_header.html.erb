@@ -13,11 +13,11 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li id="fa-user">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-						Language <span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false"> <%= t('lan') %> <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-						<li><%= link_to "ENG",{:controller => "homepage", :action => "index", :language => 'en' } %></li>
-						<li><%= link_to "VN",{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
+						<li><%= link_to t('eng'),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
+						<li><%= link_to t('vn'),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
 					</ul>
 				</li>
 			</ul>

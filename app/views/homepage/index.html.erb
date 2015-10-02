@@ -6,7 +6,7 @@
 	<title> William's Corner </title>
 </head>
 <body class='home_body'>
-	<%= render 'header' %>    
+	<%= render 'header' %>
 	<%= render 'slider' %>
 	<section>
 		<div class="container">
@@ -20,11 +20,66 @@
 					<div class="category-tab"><!--category-tab-->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
-								<%= render 'catetab' %>
+								<% @genres.each do |genre| %>
+									<% if genre == @genres.first %>
+										<li class="active"><a href="#<%= genre.name %>" data-toggle="tab"><%= genre.name %></a></li>
+									<% else %>
+										<li class=""><a href="#<%= genre.name %>" data-toggle="tab"><%= genre.name %></a></li>
+									<% end %>
+								<% end %>
 							</ul>
 						</div>
 						<div class="tab-content">
-							<%= render 'tab' %>
+							<% @genres.each do |genre| %>
+						    	<% number =  @products.where(genre:genre.name).count %>
+						  		<% if genre == @genres.first %>
+						  			<div class="tab-pane fade active in" id="<%= genre.name %>">
+						  				<% @ran_products= Product.where(genre:genre.name).order("RANDOM()").limit(4)%>
+						  				<% if number == 0 %>
+						  					<%= render 'soldout' %>
+						  				<% end %>
+						  				<% @ran_products.each do |product| %>
+						  					<% if product.genre == genre.name %>
+						  						<div class="col-sm-3">
+						  							<div class="product-image-wrapper">
+						  								<div class="single-products">
+						  									<div class="productinfo text-center">
+						  										<img src="<%= product.img %>" alt="image">
+						  										<h2>$ <%= product.price %></h2>
+						  										<p><%= product.name %></p>
+						  										<%= link_to t('show'), homepage_path(product) , class: "btn btn-primary", :target => "_blank"%>
+						  									</div>
+						  								</div>
+						  							</div>
+						  						</div>
+						  					<% end %>
+						  				<% end %>
+						  			</div>
+						  		<% else %>
+						  			<div class="tab-pane fade" id="<%= genre.name %>">
+						  				<% @ran_products= Product.where(genre:genre.name).order("RANDOM()").limit(4)%>
+						  				<% if number == 0 %>
+						  					<%= render 'soldout' %>
+						  				<% end %>
+						  				<% @ran_products.each do |product| %>
+						  					<% if product.genre == genre.name %>
+						  						<div class="col-sm-3">
+						  							<div class="product-image-wrapper">
+						  								<div class="single-products">
+						  									<div class="productinfo text-center">
+						  										<img src="<%= product.img %>" alt="image">
+						  										<h2>$ <%= product.price %></h2>
+						  										<p><%= product.name %></p>
+						  										<%= link_to t('show'), homepage_path(product) , class: "btn btn-primary", :target => "_blank" %>
+						  									</div>
+						  								</div>
+						  							</div>
+						  						</div>
+						  					<% end %>
+						  				<% end %>
+						  			</div>
+						  		<% end %>
+						  	<% end %>
 						</div>
 					</div><!--/category-tab-->
 					<!--/recommended_items-->

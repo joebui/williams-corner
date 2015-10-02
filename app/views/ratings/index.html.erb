@@ -4,83 +4,81 @@
   <title><%=t :review_title %></title>
 </head>
 <body class="boss_body">
-<div id="main_container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">William's Corner</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li><%= link_to t('admin_game'), products_path %></li>
+              <li><%= link_to t('admin_genre'), genres_path %></li>
+              <li><%= link_to t('admin_account'), accounts_path %></li>
+              <li><%= link_to t('admin_order'), order_items_path %></li>
+              <li><%= link_to t('admin_coupon'), coupons_path %></li>
+              <li><%= link_to t('admin_report'), order_items_report_path %></li>
+              <li><%= link_to t('admin_review'), ratings_path %></li>
+              <li><%= link_to 'Guide', accounts_guide_path %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <br><br><br><br>
 
-  <div class="header">
-    <div class="logo"><a href="/"><img src="<%= asset_path('logo.png') %>" alt="" title="" border="0" /></a></div>
-    </div>
-    
-    <div class="main_content">    
-      <div class="menu">
-        <ul>
-          <li><%= link_to t('admin_game'), products_path %></li>
-          <li><%= link_to t('admin_genre'), genres_path %></li>
-          <li><%= link_to t('admin_account'), accounts_path %></li>
-          <li><%= link_to t('admin_order'), order_items_path %></li>
-          <li><%= link_to t('admin_coupon'), coupons_path %></li>
-          <li><%= link_to t('admin_report'), order_items_report_path %></li>
-          <li><%= link_to t('admin_review'), ratings_path %></li>
-          <li><%= link_to 'Guide', accounts_guide_path %></li>
-          <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
-          <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
-          <li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
-        </ul>
-        </ul>
-      </div>          
-    <div class="center_content">
-    <div class="right_content">  
-
-    <h2><%=t :review_heading %></h2>     
-    <%= form_tag(ratings_path, :method => "get", class: "navbar-form") do %>      
-        <%= text_field_tag :search, params[:search], placeholder: t('search_holder'), onclick: 'javascript: this.value = ""' %>
-        <%= select_tag :type, options_for_select(["Username", "Game", "Star"]), 
-            :selected => "Username", style: "max-width:20%;" %>
-        <%= submit_tag t('search_button') %>
-    <% end %>                 
-    <%= yield %>
-    <br/>
- 
-    <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
-    <thead>
-      <tr>
-      		<!-- <th scope="col" class="rounded-company">ID</th> -->
-          <th scope="col" class="rounded-company"><%=t :review_user %></th>
-          <th scope="col" class="rounded"><%=t :product_game %></th>            
-          <th scope="col" class="rounded"><%=t :review_star %></th>            
-          <th scope="col" class="rounded"><%=t :review_comment %></th>                        
-          <th scope="col" class="rounded-q4"><%=t :product_delete %></th>          
-      </tr>
-    </thead>
-        
-    <tbody>
-        <% @ratings.each do |rating| %>
-          <% account = Account.find_by_id(rating.account_id) %>
-          <% product = Product.find_by_id(rating.product_id) %>
-        	<tr>
-            <% if account == nil %>
-              <% rating.destroy %>
-            <% else %>            
-          		<!-- <td><%= rating.id %></td> -->
-          		<td><%= account.name %></td>
-          		<td><%= product.name %></td>
-          		<td><%= rating.stars %></td>
-          		<td><%= rating.comment %></td>
-  				    <td><%= link_to t('product_delete'), rating_path(rating), method: :delete, data: {confirm: t('delete_confirmation')},
-                		class: "btn btn-primary" %> </td>
+    <div class="container">
+        <div class="">
+            <%= form_tag(ratings_path, :method => "get", class: "form") do %>
+                <%= text_field_tag :search, params[:search], placeholder: t('search_holder'), onclick: 'javascript: this.value = ""' %>
+                <%= select_tag :type, options_for_select(["Username", "Game", "Star"]),
+                    :selected => "Username", style: "max-width:20%;" %>
+                <%= submit_tag t('search_button') %>
             <% end %>
-        	</tr>			
-		    <% end %>
-    </tbody>
-    
-    </table>
-    <br>
-    
-    </div><!-- end of right content-->
-    </div>   <!--end of center content -->               
-    <div class="clear"></div>
-    </div> <!--end of main content-->
-    <div class="footer">
+            <%= yield %>
+        </div>
+        <br/>
+
+        <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+          		<!-- <th scope="col" class="rounded-company">ID</th> -->
+              <th scope="col" class="rounded-company"><%=t :review_user %></th>
+              <th scope="col" class="rounded"><%=t :product_game %></th>
+              <th scope="col" class="rounded"><%=t :review_star %></th>
+              <th scope="col" class="rounded"><%=t :review_comment %></th>
+              <th scope="col" class="rounded-q4"><%=t :product_delete %></th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <% @ratings.each do |rating| %>
+              <% account = Account.find_by_id(rating.account_id) %>
+              <% product = Product.find_by_id(rating.product_id) %>
+            	<tr>
+                <% if account == nil %>
+                  <% rating.destroy %>
+                <% else %>
+              		<!-- <td><%= rating.id %></td> -->
+              		<td><%= account.name %></td>
+              		<td><%= product.name %></td>
+              		<td><%= rating.stars %></td>
+              		<td><%= rating.comment %></td>
+      				    <td><%= link_to t('product_delete'), rating_path(rating), method: :delete, data: {confirm: t('delete_confirmation')},
+                    		class: "btn btn-primary" %> </td>
+                <% end %>
+            	</tr>
+    		    <% end %>
+        </tbody>
+
+        </table>
     </div>
-</div>    
 </body>
 </html>

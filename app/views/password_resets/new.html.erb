@@ -1,25 +1,28 @@
 <html>
 <head>
 	<title> Forgot password </title>
+    <link rel="stylesheet" href="http://getbootstrap.com/examples/signin/signin.css">
 </head>
-<body>	
-	<div class="row">
-	  	<div class="col-md-6 col-md-offset-3">
-	  		<h2>Forgot password</h2>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Forgot password</h2>
 
-	    	<%= form_for(:password_reset, url: password_resets_path) do |f| %>
-	      		<%= f.label :email, "Email you used to create the account"%>
-	      		<%= f.email_field :email, class: 'form-control' %>
+                <%= form_for(:password_reset, url: password_resets_path, class: 'form-signin') do |f| %>
+                    <%= f.label :email, "Email you used to create the account"%>
+                    <%= f.email_field :email, class: 'form-control' %>
 
-	      		<%= f.submit "Submit", class: "btn btn-primary" %>
-	    	<% end %>
-	    	<br/>
-		    <% flash.each do |key, value| %>
-			    <div class="<%= flash_class(key) %>">
-			          <%= value %>
-			    </div>
-			<% end %>	
-	  </div>
-	</div>
+                    <%= f.submit "Submit", class: "btn btn-primary" %>
+                <% end %>
+                <br/>
+                <% flash.each do |key, value| %>
+                    <div class="<%= flash_class(key) %>">
+                        <%= value %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

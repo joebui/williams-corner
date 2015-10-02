@@ -4,38 +4,27 @@
 
 	var RGBChange = function() {
 	  $('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
-	};
-
+	};	
+		
 /*scroll to top*/
-!function(a,b,c){a.fn.scrollUp=function(b){a.data(c.body,"scrollUp")||(a.data(c.body,"scrollUp",!0),a.fn.scrollUp.init(b))},a.fn.scrollUp.init=function(d){var e,f=a.fn.scrollUp.settings=a.extend({},a.fn.scrollUp.defaults,d);e=f.scrollTrigger?a(f.scrollTrigger):a("<a/>",{id:f.scrollName,href:"#top"}),f.scrollTitle&&e.attr("title",f.scrollTitle),e.appendTo("body"),f.scrollImg||f.scrollTrigger||e.html(f.scrollText),e.css({display:"none",position:"fixed",zIndex:f.zIndex}),f.activeOverlay&&a("<div/>",{id:f.scrollName+"-active"}).css({position:"absolute",top:f.scrollDistance+"px",width:"100%",borderTop:"1px dotted"+f.activeOverlay,zIndex:f.zIndex}).appendTo("body");var g,h,i,j;switch(f.animation){case"fade":g="fadeIn",h="fadeOut",i=f.animationSpeed;break;case"slide":g="slideDown",h="slideUp",i=f.animationSpeed;break;default:g="show",h="hide",i=0}j="top"===f.scrollFrom?f.scrollDistance:a(c).height()-a(b).height()-f.scrollDistance;var k=!1;scrollEvent=a(b).scroll(function(){a(b).scrollTop()>j?k||(e[g](i),k=!0):k&&(e[h](i),k=!1)});var l;f.scrollTarget?"number"==typeof f.scrollTarget?l=f.scrollTarget:"string"==typeof f.scrollTarget&&(l=Math.floor(a(f.scrollTarget).offset().top)):l=0,e.click(function(b){b.preventDefault(),a("html, body").animate({scrollTop:l},f.scrollSpeed,f.easingType)})},a.fn.scrollUp.defaults={scrollName:"scrollUp",scrollDistance:300,scrollFrom:"top",scrollSpeed:300,easingType:"linear",animation:"fade",animationSpeed:200,scrollTrigger:!1,scrollTarget:!1,scrollText:"Scroll to top",scrollTitle:!1,scrollImg:!1,activeOverlay:!1,zIndex:2147483647},a.fn.scrollUp.destroy=function(d){a.removeData(c.body,"scrollUp"),a("#"+a.fn.scrollUp.settings.scrollName).remove(),a("#"+a.fn.scrollUp.settings.scrollName+"-active").remove(),a.fn.jquery.split(".")[1]>=7?a(b).off("scroll",d):a(b).unbind("scroll",d)},a.scrollUp=a.fn.scrollUp}(jQuery,window,document);
 
-var set_stars = function(form_id, stars) {
-	for(i=1; i <= 5; i++){
-		if(i <= stars){
-			$('#' + form_id + '_' + i).addClass("on");
-		} else {
-			$('#' + form_id + '_' + i).removeClass("on");
-		}
-	}
-}
-
-$(function() {
-	$('.rating_star').click(function() {
-		var star = $(this);
-		var form_id = star.attr("data-form-id");
-		var stars = star.attr("data-stars");
-
-		$('#' + form_id + '_stars').val(stars);
-
-		$.ajax({
-			type: "post",
-			url: $('#' + form_id).attr('action'),
-			data: $('#' + form_id).serialize()
-		})
-	});
-
-	$('.star_rating_form').each(function() {
-		var form_id = $(this).attr('id');
-		set_stars(form_id, $('#' + form_id + '_stars').val());
+$(document).ready(function(){
+	$(function () {
+		$.scrollUp({
+	        scrollName: 'scrollUp', // Element ID
+	        scrollDistance: 300, // Distance from top/bottom before showing element (px)
+	        scrollFrom: 'top', // 'top' or 'bottom'
+	        scrollSpeed: 300, // Speed back to top (ms)
+	        easingType: 'linear', // Scroll to top easing (see http://easings.net/)
+	        animation: 'fade', // Fade, slide, none
+	        animationSpeed: 200, // Animation in speed (ms)
+	        scrollTrigger: false, // Set a custom triggering element. Can be an HTML string or jQuery object
+					//scrollTarget: false, // Set a custom target element for scrolling to the top
+	        scrollText: '<i class="fa fa-angle-up"></i>', // Text for element, can contain HTML
+	        scrollTitle: false, // Set a custom <a> title if required.
+	        scrollImg: false, // Set true to use image
+	        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+	        zIndex: 2147483647 // Z-Index for the overlay
+		});
 	});
 });

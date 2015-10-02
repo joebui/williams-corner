@@ -8,7 +8,7 @@ class PasswordResetsController < ApplicationController
 	      	@account.create_reset_digest
 	      	@account.send_password_reset_email
 	      	flash[:success] = "Email sent with password reset instructions"
-	      	redirect_to homepage_message_path
+	      	redirect_to root_url
 	    else
 	      	flash.now[:alert] = "Email address not found"
 	      	render 'new'

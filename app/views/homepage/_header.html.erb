@@ -1,54 +1,67 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
+<header id="header"><!--header-->
+    <div class="header-middle"><!--header-middle-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="logo pull-left">
+                        <a href="/"><img src="/assets/logo_homepage.png" alt="" /></a>
+                    </div>
+                    <div class="btn-group pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                                Language
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><%= link_to t('eng'),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
+                                <li><%= link_to t('vn'),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="shop-menu pull-right">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <div class="search_box pull-right">
+                                    <%= form_tag(homepage_search_result_path, :method => "get") do %>
+                                        <%= text_field_tag :search, params[:search], placeholder: t('search_holder'), class: "form-control" %>
+                                    <% end %>
+                                </div>
+                            </li>
+                            <% if logged_in? %>	<!-- check if user logged in -->
+                                <li><%= link_to t('history'), homepage_history_path %> </li>
+                                <li><%= link_to t('cart'), homepage_cart_path %> </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <%=t :welcome %>, <strong> <%= current_user.name %> </strong> <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><%= link_to t('manage'), edit_account_path(current_user) %></li>
+                                        <li><%= link_to t('logout'), logout_path, method: "delete" %></li>
+                                    </ul>
+                                </li>
+                            <% else %>
+                                <li><%= link_to t('signup'), new_account_path %></li>
+                                <li> <%= link_to t('signin'), login_path %> </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/header-middle-->
 
-			<a class="navbar-brand" href="/"> WILLIAM'S CORNER </a>
-		</div>
-		<div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li id="fa-user">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false"> <%= t('lan') %> <span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-						<li><%= link_to t('eng'),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
-						<li><%= link_to t('vn'),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
-					</ul>
-				</li>
-			</ul>
-
-			<ul class="nav navbar-nav navbar-right">
-				<%= form_tag(homepage_search_result_path, :method => "get", class: "navbar-form navbar-left") do %>
-					<div class="form-group">
-						<%= text_field_tag :search, params[:search], placeholder: t('search_holder'), class: "form-control" %>
-					</div>
-
-					<%= submit_tag t('search_button'), :name => nil, class: "btn btn-default" %>
-				<% end %>
-
-				<% if logged_in? %>	<!-- check if user logged in -->
-					<li> <%= link_to t('history'), homepage_history_path %> </li>
-					<li> <%= link_to t('cart'), homepage_cart_path %> </li>
-					<li id="fa-user">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							<%=t :welcome %>, <strong> <%= current_user.name %> </strong> <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-							<li><%= link_to t('manage'), edit_account_path(current_user) %></li>
-							<li><%= link_to t('logout'), logout_path, method: "delete" %></li>
-						</ul>
-					</li>
-
-				<% else %>
-					<li><%= link_to t('signup'), new_account_path , class: "fa fa-shopping-cart" %></li>
-					<li> <%= link_to t('signin'), login_path %> </li>
-				<% end %>
-			</ul>
-		</div><!--/.nav-collapse -->
-	</div>
-</nav>
-<br><br><br>
+    <div class="header-bottom"><!--header-bottom-->
+        <div class="container">
+            <div class="row">
+                <% flash.each do |key, value| %>
+                    <div class="<%= flash_class(key)%>" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"
+                            aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <%= value %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div><!--/header-bottom-->
+</header><!--/header-->

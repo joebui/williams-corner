@@ -23,7 +23,7 @@
 							<td class="total"><%=t :delete %></td>
 						</tr>
 					</thead>
-					
+
 					<tbody>
 						<% @order_items.each do |order_item| %>
 							<% if order_item.status.to_str == "pending" %>
@@ -51,7 +51,7 @@
 									</td>
 									<td><%= link_to t('delete'), order_item ,
 						              method: :delete,
-						              data: { confirm: t('delete_confirmation') } , class: "btn btn-danger"%>
+						              data: { confirm: t('delete_confirmation') } , class: "btn btn-default"%>
 		              </td>
 								</tr>
 							<% end %>
@@ -72,16 +72,11 @@
 	<section id="do_action">
 		<div class="container">
 			<div class="row">
-				
-				
+
+
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<% flash.each do |key, value| %>
-		    				<div class="<%= flash_class(key) %>">
-			    				<%= value %>
-								</div>
-    					<% end %>
 							<% if current_user.valid_coupon == false %>
 								<%= form_tag homepage_checkout_path, :method => 'get' do %>
 						  	<%= text_field_tag :code, params[:code],placeholder: t('code_holder'),:style=>"width:82%" %>
@@ -91,9 +86,8 @@
 							<% else %>
 								<li><%=t :coupon_activated %> <span><%=t :discount %></span></li>
 							<% end %>
-							
+
 						</ul>
-						
 						<ul>
 							<li><%=t :order_total %><span><%= @items %></span></li>
 							<li>VAT 10% <span><%= number_to_currency(@vat)   %></span></li>
@@ -104,7 +98,7 @@
 								<%= link_to  t('checkout'), homepage_checkout_path, :action => 'checkout',class: "btn btn-danger" %>
 							<% end %>
 						</ul>
-						
+
 					</div>
 				</div>
 			</div>

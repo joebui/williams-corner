@@ -16,7 +16,7 @@ class OrderItemsController < ApplicationController
       redirect_to root_url
     end
   end
-  
+
   def report
     @order_items = OrderItem.where("tran_date >= :start_date AND tran_date <= :end_date",
     {start_date: params[:start_date], end_date: params[:end_date]})
@@ -26,16 +26,16 @@ class OrderItemsController < ApplicationController
     end
   end
 
-  def update                
-      @order_item = OrderItem.find(params[:id])            
-      @order_item.update_attributes(order_item_params)      
+  def update
+      @order_item = OrderItem.find(params[:id])
+      @order_item.update_attributes(order_item_params)
 
       # send email to confirm delivered product
-      prod = Product.find_by_id(@order_item.product_id)  
-      if prod    
+      prod = Product.find_by_id(@order_item.product_id)
+      if prod
         current_user.send_check_out_email(prod.name)
       end
-      redirect_to order_items_path    
+      redirect_to order_items_path
   end
 
   def destroy
@@ -47,14 +47,14 @@ class OrderItemsController < ApplicationController
       redirect_to order_items_path
     end
   end
-  
+
   def create
     #@article = Article.find(params[:article_id])
     @current_order = current_user.order_items.create(order_item_params)
     @current_order.save
     redirect_to homepage_cart_path
   end
- 
+
   private
     def order_item_params
       params.require(:order_item).permit(:owner_id, :quantity, :product_id, :status, :discount, :hide, :tran_date)

@@ -1,40 +1,42 @@
+<!DOCTYPE html>
+<html>
 <head>
 	<title><%=t :login_title %></title>
-	<link rel="stylesheet" href="http://getbootstrap.com/examples/signin/signin.css">
 </head>
+<body>
+    <div class="container">
+		<div class="row">
+		  	<div class="col-md-6 col-md-offset-3">
+			    <%= form_for(:session, url: login_path, class: "form-signin") do |f| %>
+					<h1 class="form-signin-heading"><%=t :login_heading %></h1>
+			      	<%= f.label :name, t('name') %>
+			      	<%= f.text_field :name, class: 'form-control', :style=>"width:100%" %>
 
-<div class="main_container">
-	<div class="row">
-	  	<div class="col-md-6 col-md-offset-3">
-		    <%= form_for(:session, url: login_path, class: "form-signin") do |f| %>
-				<h1 class="form-signin-heading"><%=t :login_heading %></h1>
-		      	<%= f.label :name, t('name') %>
-		      	<%= f.text_field :name, class: 'form-control', :style=>"width:100%" %>
+			      	<br/>
 
-		      	<br/>
-
-		      	<%= f.label :password, t('password') %>
-		      	<%= link_to "(Forgot password)", new_password_reset_path %>
-		      	<%= f.password_field :password, class: 'form-control', :style=>"width:100%" %>
+			      	<%= f.label :password, t('password') %>
+			      	<%= link_to "(Forgot password)", new_password_reset_path %>
+			      	<%= f.password_field :password, class: 'form-control', :style=>"width:100%" %>
 
 
-				<div class="checkbox">
-		          	<label>
-						<%= f.check_box :remember_me %> Remember me
-		          	</label>
-		        </div>
+					<div class="checkbox">
+			          	<label>
+							<%= f.check_box :remember_me %> Remember me
+			          	</label>
+			        </div>
 
-		      	<%= f.submit t('login_button'), class: "btn btn-lg btn-primary btn-block" %>
-		    <% end %>
-		    <br/>
-		    <% flash.each do |key, value| %>
-			    <div class="<%= flash_class(key) %>", role="alert">
-					<button type="button" class="close" data-dismiss="alert"
-						aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        	<%= value %>
-			    </div>
-			<% end %>
-		    <%= link_to t('return_link'), root_url %>
-	  	</div>
+			      	<%= f.submit t('login_button'), class: "btn btn-lg btn-primary btn-block" %>
+			    <% end %>
+			    <br/>
+			    <% flash.each do |key, value| %>
+				    <div class="<%= flash_class(key) %>", role="alert">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        	<%= value %>
+				    </div>
+				<% end %>
+		  	</div>
+		</div>
 	</div>
-</div>
+</body>
+</html>

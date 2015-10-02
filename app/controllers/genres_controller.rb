@@ -73,7 +73,7 @@ class GenresController < ApplicationController
                 end
             end
 
-            if valid == false
+            if !valid
                 flash[:alert] = "Cannot delete this genre"
                 redirect_to :back
             else

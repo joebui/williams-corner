@@ -4,76 +4,72 @@
   <title><%=t :account_title %></title>
 </head>
 <body class="boss_body">
-<div id="main_container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">William's Corner</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li><%= link_to t('admin_game'), products_path %></li>
+              <li><%= link_to t('admin_genre'), genres_path %></li>
+              <li><%= link_to t('admin_account'), accounts_path %></li>
+              <li><%= link_to t('admin_order'), order_items_path %></li>
+              <li><%= link_to t('admin_coupon'), coupons_path %></li>
+              <li><%= link_to t('admin_report'), order_items_report_path %></li>
+              <li><%= link_to t('admin_review'), ratings_path %></li>
+              <li><%= link_to 'Guide', accounts_guide_path %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <br><br><br><br>
 
-  <div class="header">
-    <div class="logo"><a href="/"><img src="<%= asset_path('logo.png') %>" alt="" title="" border="0" /></a></div>
+    <div class="container">
+        <div>
+            <%= form_tag(accounts_path, :method => "get", class: "form", id: "search-form") do %>
+                <%= text_field_tag :search, params[:search], placeholder: t('search_holder'), onclick: 'javascript: this.value = ""' %>
+                <%= select_tag :type, options_for_select(["Name", "Email", "Activated", "Admin"]), :selected => "Name", :style => "max-width: 15%;" %>
+                <%= submit_tag t('search_button'), :name => nil %>
+            <% end %>
+            <%= yield %>
+        </div>
+        <br/>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="rounded-company"><%=t :account_name %></th>
+                    <th scope="col" class="rounded"><%=t :account_email %></th>
+                    <th scope="col" class="rounded"><%=t :account_activated %></th>
+                    <th scope="col" class="rounded">Admin?</th>
+                    <th scope="col" class="rounded"><%=t :product_edit %></th>
+                    <th scope="col" class="rounded-q4"><%=t :product_delete %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @accounts.each do |account| %>
+                    <tr>
+                        <td><%= account.name %></td>
+                        <td><%= account.email %></td>
+                        <td><b> <%= account.activated %> </b></td>
+                        <td><b> <%= account.is_admin %> </b></td>
+                        <td><%= link_to t('product_edit'), edit_account_path(account), class: "btn btn-primary" %> </td>
+                        <td><%= link_to t('product_delete'), account_path(account), method: :delete, data: {confirm: t('delete_account_confirmation')},
+                            class: "btn btn-primary" %> </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
     </div>
-    
-    <div class="main_content">    
-      <div class="menu">
-        <ul>
-          <li><%= link_to t('admin_game'), products_path %></li>
-          <li><%= link_to t('admin_genre'), genres_path %></li>
-          <li><%= link_to t('admin_account'), accounts_path %></li>
-          <li><%= link_to t('admin_order'), order_items_path %></li>
-          <li><%= link_to t('admin_coupon'), coupons_path %></li>
-          <li><%= link_to t('admin_report'), order_items_report_path %></li>
-          <li><%= link_to t('admin_review'), ratings_path %></li>
-          <li><%= link_to 'Guide', accounts_guide_path %></li>
-          <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
-          <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
-	        <li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
-
-        </ul>
-      </div>          
-    <div class="center_content">
-    <div class="right_content">  
-
-    <h2><%=t :account_heading %></h2>     
-    <%= form_tag(accounts_path, :method => "get", class: "navbar-form", id: "search-form") do %>      
-        <%= text_field_tag :search, params[:search], placeholder: t('search_holder'), onclick: 'javascript: this.value = ""' %>
-        <%= select_tag :type, options_for_select(["Name", "Email", "Activated", "Admin"]), :selected => "Name", :style => "max-width: 15%;" %>
-        <%= submit_tag t('search_button'), :name => nil %>
-    <% end %>                 
-    <%= yield %>
-    <br/>
- 
-    <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
-    <thead>
-      <tr>
-            <th scope="col" class="rounded-company"><%=t :account_name %></th>
-            <th scope="col" class="rounded"><%=t :account_email %></th>            
-            <th scope="col" class="rounded"><%=t :account_activated %></th>
-            <th scope="col" class="rounded">Admin?</th>
-            <th scope="col" class="rounded"><%=t :product_edit %></th>
-            <th scope="col" class="rounded-q4"><%=t :product_delete %></th>          
-      </tr>
-    </thead>
-        
-    <tbody>
-        <% @accounts.each do |account| %>
-        <tr>
-          <td><%= account.name %></td>
-          <td><%= account.email %></td>          
-          <td><b> <%= account.activated %> </b></td> 
-          <td><b> <%= account.is_admin %> </b></td>          
-          <td><%= link_to t('product_edit'), edit_account_path(account), class: "btn btn-primary" %> </td>          
-          <td><%= link_to t('product_delete'), account_path(account), method: :delete, data: {confirm: t('delete_account_confirmation')},
-            class: "btn btn-primary" %> </td>          
-        </tr>
-    <% end %>
-    </tbody>
-    
-    </table>
-    <br>
-    
-    </div><!-- end of right content-->
-    </div>   <!--end of center content -->               
-    <div class="clear"></div>
-    </div> <!--end of main content-->
-    <div class="footer">
-    </div>
-</div>    
 </body>
 </html>

@@ -1,27 +1,27 @@
 class AccountsController < ApplicationController
-	def new
-		@account = Account.new
-	end
+	  def new
+		  @account = Account.new
+	  end
 
-	def edit				
-		if logged_in? && (current_user.name == Account.find(params[:id]).name || current_user.is_admin == true)
-			@account = Account.find(params[:id])
-		else
-			redirect_to root_url
-		end
-	end
+    def edit
+        if logged_in? && (current_user.name == Account.find(params[:id]).name || current_user.is_admin == true)
+            @account = Account.find(params[:id])
+        else
+            redirect_to root_url
+        end
+    end
 
-	def create
-		@account = Account.new(account_params)
-		@account.is_admin = false
-		if @account.save
-			@account.send_activation_email
-      		flash[:notice] = "Please check your email to activate your account."      
-			redirect_to homepage_message_path			
-		else
-			render 'new'
-		end	
-	end	
+    def create
+        @account = Account.new(account_params)
+        @account.is_admin = false
+        if @account.save
+            @account.send_activation_email
+            flash[:notice] = 'Please check your email to activate your account.'
+            redirect_to root_url
+        else
+            render 'new'
+        end
+    end
 
 	def update
 		@account = Account.find(params[:id])

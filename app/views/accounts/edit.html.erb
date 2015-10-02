@@ -4,89 +4,83 @@
   <title><%=t :edit_account_title %></title>
 </head>
 <body class="boss_body">
-<div id="main_container">
-  <div class="header">
-    <div class="logo"><a href="/"><img src="/assets/logo.png" alt="" title="" border="0" /></a></div>
-    </div>    
-      <div class="main_content">
-      <% if current_user.name == "admin" %>
-        <div class="menu">
-          <ul>
-            <li><%= link_to t('admin_game'), products_path %></li>
-            <li><%= link_to t('admin_genre'), genres_path %></li>
-            <li><%= link_to t('admin_account'), accounts_path %></li>
-            <li><%= link_to t('admin_order'), order_items_path %></li>
-            <li><%= link_to t('admin_coupon'), coupons_path %></li>
-            <li><%= link_to t('admin_report'), order_items_report_path %></li>
-            <li><%= link_to t('admin_review'), ratings_path %></li>
-            <li><%= link_to 'Guide', accounts_guide_path %></li>
-            <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
-            <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
-            <li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
-       
-          </ul>
-        </div> 
-      <% else %>
-        <div class="menu">
-          <ul>
-            <li></li>            
-          </ul>
-        </div> 
-      <% end %>
-    <div class="center_content">    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">William's Corner</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <% if current_user.name == "admin" %>
+                <ul class="nav navbar-nav">
+                    <li><%= link_to t('admin_game'), products_path %></li>
+                    <li><%= link_to t('admin_genre'), genres_path %></li>
+                    <li><%= link_to t('admin_account'), accounts_path %></li>
+                    <li><%= link_to t('admin_order'), order_items_path %></li>
+                    <li><%= link_to t('admin_coupon'), coupons_path %></li>
+                    <li><%= link_to t('admin_report'), order_items_report_path %></li>
+                    <li><%= link_to t('admin_review'), ratings_path %></li>
+                    <li><%= link_to 'Guide', accounts_guide_path %></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
+                </ul>
+            <% end %>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <br><br><br><br>
 
-   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h2><%=t :edit_account_heading %></h2> 
-      <%= form_for :account, url: account_path(@account), method: :patch do |f| %>
-        <% if @account.errors.any? %>
-          <div id="error_explanation">
-            <h2>
-              <%= pluralize(@account.errors.count, "") %> <%=t :edit_account_warn %>
-            </h2>
-            <ul>
-              <% @account.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>       
-          <p>
-            <%= f.label :name, t('name') %><br>
-            <%= f.text_field :name, :style=>"width:100%" %>
-          </p>
-         
-          <p>
-            <%= f.label :email, t('email') %><br>
-            <%= f.email_field :email, :style=>"width:100%" %>
-          </p>  
-
-          <% if logged_in? && current_user.is_admin == true %>
-            <p>
-              <%= f.label :admin? %> <br>
-              <%= f.select :is_admin, options_for_select(["true", "false"]), :selected => @account.is_admin %>
-            </p>
+    <div class="container">
+        <%= form_for :account, url: account_path(@account), method: :patch do |f| %>
+          <% if @account.errors.any? %>
+            <div id="error_explanation">
+              <h2>
+                <%= pluralize(@account.errors.count, "") %> <%=t :edit_account_warn %>
+              </h2>
+              <ul>
+                <% @account.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
           <% end %>
-          
-          <p>
-            <%= f.label :pasword, t('password') %>
-            <%= f.password_field :password, :style=>"width:100%" %>
-          </p>
+            <p>
+              <%= f.label :name, t('name') %><br>
+              <%= f.text_field :name, :style=>"width:100%", class: "form-control" %>
+            </p>
 
-          <p>
-            <%= f.label :password_confirmation, t('password_confirmation') %>
-            <%= f.password_field :password_confirmation, :style=>"width:100%" %>
-          </p>
-        
-          <p>
-            <%= f.submit t('signup_button'), class: "btn btn-primary" %>
-          </p>
-      <% end %>
-    </div>   <!--end of center content -->               
-    <div class="clear"></div>
-    </div> <!--end of main content-->
-    
-</div>    
+            <p>
+              <%= f.label :email, t('email') %><br>
+              <%= f.email_field :email, :style=>"width:100%", class: "form-control" %>
+            </p>
+
+            <% if logged_in? && current_user.is_admin == true %>
+              <p>
+                <%= f.label :admin? %> <br>
+                <%= f.select :is_admin, options_for_select(["true", "false"]), :selected => @account.is_admin %>
+              </p>
+            <% end %>
+
+            <p>
+              <%= f.label :pasword, t('password') %>
+              <%= f.password_field :password, :style=>"width:100%", class: "form-control" %>
+            </p>
+
+            <p>
+              <%= f.label :password_confirmation, t('password_confirmation') %>
+              <%= f.password_field :password_confirmation, :style=>"width:100%", class: "form-control" %>
+            </p>
+
+            <p>
+              <%= f.submit t('signup_button'), class: "btn btn-primary" %>
+            </p>
+        <% end %>
+    </div>
 </body>
 </html>
-

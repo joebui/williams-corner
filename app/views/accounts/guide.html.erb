@@ -4,139 +4,135 @@
   <title> All Accounts </title>
 </head>
 <body class="boss_body">
-<div id="main_container">
-
-  <div class="header">
-    <div class="logo"><a href="/"><img src="<%= asset_path('logo.png') %>" alt="" title="" border="0" /></a></div>
-    </div>
-    
-    <div class="main_content">    
-      <div class="menu">
-        <ul>
-          	<li><%= link_to t('admin_game'), products_path %></li>
-            <li><%= link_to t('admin_genre'), genres_path %></li>
-            <li><%= link_to t('admin_account'), accounts_path %></li>
-            <li><%= link_to t('admin_order'), order_items_path %></li>
-            <li><%= link_to t('admin_coupon'), coupons_path %></li>
-            <li><%= link_to t('admin_report'), order_items_report_path %></li>
-            <li><%= link_to t('admin_review'), ratings_path %></li>
-            <li><%= link_to 'Guide', accounts_guide_path %></li>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">William's Corner</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li><%= link_to t('admin_game'), products_path %></li>
+              <li><%= link_to t('admin_genre'), genres_path %></li>
+              <li><%= link_to t('admin_account'), accounts_path %></li>
+              <li><%= link_to t('admin_order'), order_items_path %></li>
+              <li><%= link_to t('admin_coupon'), coupons_path %></li>
+              <li><%= link_to t('admin_report'), order_items_report_path %></li>
+              <li><%= link_to t('admin_review'), ratings_path %></li>
+              <li><%= link_to 'Guide', accounts_guide_path %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
             <li><%= link_to t('admin_logout'), logout_path, method: "delete" %></li>
-            <li><%= link_to image_tag("flag_usa.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'en' } %></li>
-            <li><%= link_to image_tag("flag_vietnam.png", :border => 0),{:controller => "homepage", :action => "index", :language => 'vi' } %></li>
-        </ul>
-      </div>          
-    <div class="center_content">
-    	<div class="right_content">  
-    		<h2> Admin Guide </h2>     
-				<div class="category-tab"><!--category-tab-->
-					<div class="col-sm-12">
-						<ul class="menu">
-						  <li class="active"><a style = "color: #fff;"href="#admin_game" data-toggle="tab">Game</a></li>
-							<li><a style = "color: #fff;" href="#admin_genres" data-toggle="tab"><%=t :adminTabTwo %></a></li>
-							<li><a style = "color: #fff;" href="#admin_rating" data-toggle="tab"><%=t :adminTabThree %></a></li>
-							<li><a style = "color: #fff;" href="#admin_account" data-toggle="tab"><%=t :adminTabFour %></a></li>
-							<li><a style = "color: #fff;" href="#admin_order" data-toggle="tab"><%=t :adminTabFive %></a></li>
-							<li><a style = "color: #fff;" href="#admin_coupon" data-toggle="tab"><%=t :adminTabSix %></a></li>
-							<li><a style = "color: #fff;" href="#admin_report" data-toggle="tab"><%=t :adminTabSeven %></a></li>
-						</ul>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="admin_game" >
-			          <p><%=t :adminTabOne1 %></p>
-							  <img src="/assets/1.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabOne2 %></p>
-							  <img src="/assets/2.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabOne3 %></p>
-							  <img src="/assets/3.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabOne4 %></p>
-							  <img src="/assets/4.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabOne5 %></p>
-							  <img src="/assets/5.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabOne6 %></p>
-							  <img src="/assets/6.png"><br>
-							</div>
-							  
-							<div class="tab-pane fade" id="admin_genres" >  
-							  <p><%=t :adminTabTwo1 %></p>
-							  <img src="/assets/7.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabTwo2 %></p>
-							  <img src="/assets/8.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabTwo3 %></p>
-							  <img src="/assets/9.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabTwo4 %></p>
-							  <img src="/assets/10.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabTwo5 %></p>
-							  <img src="/assets/11.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabTwo6 %></p>
-							  <img src="/assets/12.png"><br>
-							</div>
-							
-							<div class="tab-pane fade" id="admin_rating" > 
-							  <p><%=t :adminTabThree1 %></p>
-							  <img src="/assets/13.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabThree2 %></p>
-							  <img src="/assets/14.png"><br>
-							</div>
-							
-							<div class="tab-pane fade " id="admin_account" >
-							  <p><%=t :adminTabFour1 %></p>
-							  <img src="/assets/15.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabFour2 %></p>
-							  <img src="/assets/16.png"><br>
-							  <p></p>
-							  <img src="/assets/17.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabFour3 %></p>
-							  <img src="/assets/18.png"><br>
-							</div>
-							
-							<div class="tab-pane fade " id="admin_order" >  
-							  <p><%=t :adminTabFive1 %></p>
-							  <img src="/assets/19.png"><br>
-							  <p></p>
-							  <p><%=t :adminTabFive2 %></p> 
-							  <p><%=t :adminTabFive3 %></p>
-							  <p><%=t :adminTabFive4 %></p>
-							  <p><%=t :adminTabFive5 %></p>
-			          		  <img src="/assets/20.png"><br>
-			          		  <p></p>
-			          		  <p><%=t :adminTabFive6 %></p>
-			          		  <p><%=t :adminTabFive7 %></p>
-							</div>
-							
-							<div class="tab-pane fade" id="admin_coupon" >  
-								<p><%=t :adminTabSix1 %></p>
-								<img src="/assets/21.png"><br>
-								<p><%=t :adminTabSix2 %></p>
-							</div>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <br><br><br><br>
 
-							<div class="tab-pane fade " id="admin_report" >  
-								<p><%=t :adminTabSeven1 %></p>
-								<img src="/assets/22.png"><br>
-							</div>
-					</div> <!-- end of tab content-->
-					
-				</div> <!-- end of tab column-->
- 			</div> <!-- end of category-->
-    
-    </div><!-- end of right content-->
-    </div>   <!--end of center content -->               
-    <div class="clear"></div>
-    </div> <!--end of main content-->
-    <div class="footer">
+    <div class="container">
+        <div class="category-tab"><!--category-tab-->
+            <ul class="nav nav-tabs">
+                <li class="active"><a style = "color: #fff;"href="#admin_game" data-toggle="tab">Game</a></li>
+                <li><a style = "color: #fff;" href="#admin_genres" data-toggle="tab"><%=t :adminTabTwo %></a></li>
+                <li><a style = "color: #fff;" href="#admin_rating" data-toggle="tab"><%=t :adminTabThree %></a></li>
+                <li><a style = "color: #fff;" href="#admin_account" data-toggle="tab"><%=t :adminTabFour %></a></li>
+                <li><a style = "color: #fff;" href="#admin_order" data-toggle="tab"><%=t :adminTabFive %></a></li>
+                <li><a style = "color: #fff;" href="#admin_coupon" data-toggle="tab"><%=t :adminTabSix %></a></li>
+                <li><a style = "color: #fff;" href="#admin_report" data-toggle="tab"><%=t :adminTabSeven %></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="admin_game" >
+          <p><%=t :adminTabOne1 %></p>
+                  <img src="/assets/1.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabOne2 %></p>
+                  <img src="/assets/2.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabOne3 %></p>
+                  <img src="/assets/3.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabOne4 %></p>
+                  <img src="/assets/4.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabOne5 %></p>
+                  <img src="/assets/5.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabOne6 %></p>
+                  <img src="/assets/6.png"><br>
+                </div>
+
+                <div class="tab-pane fade" id="admin_genres" >
+                  <p><%=t :adminTabTwo1 %></p>
+                  <img src="/assets/7.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabTwo2 %></p>
+                  <img src="/assets/8.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabTwo3 %></p>
+                  <img src="/assets/9.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabTwo4 %></p>
+                  <img src="/assets/10.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabTwo5 %></p>
+                  <img src="/assets/11.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabTwo6 %></p>
+                  <img src="/assets/12.png"><br>
+                </div>
+
+                <div class="tab-pane fade" id="admin_rating" >
+                  <p><%=t :adminTabThree1 %></p>
+                  <img src="/assets/13.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabThree2 %></p>
+                  <img src="/assets/14.png"><br>
+                </div>
+
+                <div class="tab-pane fade " id="admin_account" >
+                  <p><%=t :adminTabFour1 %></p>
+                  <img src="/assets/15.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabFour2 %></p>
+                  <img src="/assets/16.png"><br>
+                  <p></p>
+                  <img src="/assets/17.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabFour3 %></p>
+                  <img src="/assets/18.png"><br>
+                </div>
+
+                <div class="tab-pane fade " id="admin_order" >
+                  <p><%=t :adminTabFive1 %></p>
+                  <img src="/assets/19.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabFive2 %></p>
+                  <p><%=t :adminTabFive3 %></p>
+                  <p><%=t :adminTabFive4 %></p>
+                  <p><%=t :adminTabFive5 %></p>
+                  <img src="/assets/20.png"><br>
+                  <p></p>
+                  <p><%=t :adminTabFive6 %></p>
+                  <p><%=t :adminTabFive7 %></p>
+                </div>
+
+                <div class="tab-pane fade" id="admin_coupon" >
+                    <p><%=t :adminTabSix1 %></p>
+                    <img src="/assets/21.png"><br>
+                    <p><%=t :adminTabSix2 %></p>
+                </div>
+
+                <div class="tab-pane fade " id="admin_report" >
+                    <p><%=t :adminTabSeven1 %></p>
+                    <img src="/assets/22.png"><br>
+                </div>
+            </div> <!-- end of tab content-->
+        </div> <!-- end of tab column-->
     </div>
-</div>    
 </body>
 </html>

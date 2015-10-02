@@ -2,61 +2,58 @@
 <html>
 <head>
 	<title><%=t :signup_title %></title>
-	<link rel="stylesheet" href="http://getbootstrap.com/examples/signin/signin.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-	<div class="main_container">
-	<div class="row">
-	    <div class="col-md-6 col-md-offset-3">
-	     	 <%= form_for(:account, url: accounts_path, class: "form-signin") do |f| %>
-				<h1 class="form-signin-heading"><%=t :signup_heading %></h1>
-			    <p>
-			      <%= f.label :name, t('name') %>
-			      <%= f.text_field :name, :style=>"width:100%", class: 'form-control' %>
-			    </p>
+	<div class="container">
+		<div class="row">
+		    <div class="col-md-6 col-md-offset-3">
+		     	 <%= form_for(:account, url: accounts_path, class: "form-signin") do |f| %>
+					<h1 class="form-signin-heading"><%=t :signup_heading %></h1>
+				    <p>
+				      <%= f.label :name, t('name') %>
+				      <%= f.text_field :name, :style=>"width:100%", class: 'form-control' %>
+				    </p>
 
-			    <p>
-			      <%= f.label :email, t('email') %>
-			      <%= f.email_field :email, :style=>"width:100%", class: 'form-control' %>
-			    </p>
-			    <% if logged_in? && current_user.is_admin == true %>
-			      <p>
-			        <%= f.label :admin_status %>
-			        <%= f.select :is_admin, options_for_select(["true", "false"]), :selected => @account.is_admin, class: 'form-control' %>
-			      </p>
-			    <% end %>
+				    <p>
+				      <%= f.label :email, t('email') %>
+				      <%= f.email_field :email, :style=>"width:100%", class: 'form-control' %>
+				    </p>
+				    <% if logged_in? && current_user.is_admin == true %>
+				      <p>
+				        <%= f.label :admin_status %>
+				        <%= f.select :is_admin, options_for_select(["true", "false"]), :selected => @account.is_admin, class: 'form-control' %>
+				      </p>
+				    <% end %>
 
-			    <p>
-			      <%= f.label :pasword, t('password') %>
-			      <%= f.password_field :password, :style=>"width:100%", class: 'form-control' %>
-			    </p>
+				    <p>
+				      <%= f.label :pasword, t('password') %>
+				      <%= f.password_field :password, :style=>"width:100%", class: 'form-control' %>
+				    </p>
 
-			    <p>
-			      <%= f.label :password_confirmation, t('password_confirmation') %>
-			      <%= f.password_field :password_confirmation, :style=>"width:100%", class: 'form-control' %>
-			    </p>
+				    <p>
+				      <%= f.label :password_confirmation, t('password_confirmation') %>
+				      <%= f.password_field :password_confirmation, :style=>"width:100%", class: 'form-control' %>
+				    </p>
 
-			  <p>
-			    <%= f.submit t('signup_button'), class: "btn btn-lg btn-primary btn-block" %>
-			  </p>
+				  <p>
+				    <%= f.submit t('signup_button'), class: "btn btn-lg btn-primary btn-block" %>
+				  </p>
 
-			  <% if @account.errors.any? %>
-			    <div id="error_explanation">
-			      <h2>
-			        <%= pluralize(@account.errors.count, "error") %> <%=t :account_create_error %>
-			      </h2>
-			      <ul>
-			        <% @account.errors.full_messages.each do |msg| %>
-			          <li><%= msg %></li>
-			        <% end %>
-			      </ul>
-			    </div>
-			  <% end %>
-			<% end %>
-
-	     	 <%= link_to t('return_link'), root_url %>
-	    </div>
+				  <% if @account.errors.any? %>
+				    <div class="alert alert-danger" role="alert">
+				      	<h2>
+				        	<%= pluralize(@account.errors.count, "error") %> <%=t :account_create_error %>
+				      	</h2>
+				      	<ul>
+				        	<% @account.errors.full_messages.each do |msg| %>
+				          		<li>+ <%= msg %></li>
+				        	<% end %>
+				      	</ul>
+				    </div>
+				  <% end %>
+				<% end %>
+		    </div>
+		</div>
 	</div>
-</div>
 </body>
 </html>

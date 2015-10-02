@@ -26,7 +26,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -76,10 +76,10 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.assets.compile = ['*.js', '*.css']
   config.active_support.deprecation = :silence
- 
+
   # email configuration
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp  
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'https://williams-corner.herokuapp.com' }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',

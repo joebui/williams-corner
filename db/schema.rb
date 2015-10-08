@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150516041452) do
     t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.boolean  "is_admin"
+    t.boolean  "is_admin",          default: false
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20150516041452) do
     t.string   "status"
     t.float    "discount"
     t.boolean  "hide",        default: false
-    t.date     "tran_date",   default: '2015-05-16'
+    t.date     "tran_date",   default: '2015-10-08'
   end
 
   add_index "order_items", ["account_id"], name: "index_order_items_on_account_id", using: :btree

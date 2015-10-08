@@ -14,14 +14,14 @@ class HomepageController < ApplicationController
     @current = nil
     @count = nil
     @ran_products = nil
-    @new_products = Product.all.last(4)
+    @new_products = Product.all.last(3)
   end
 
   def show
     @genres = Genre.all
     @current = nil
     @count = nil
-    @products = Product.all   
+    @products = Product.all
     @product = Product.find(params[:id])
     $product_comment = @product
     @orders = OrderItem.all
@@ -34,7 +34,7 @@ class HomepageController < ApplicationController
   end
 
   def cart
-    @order_items = current_user.order_items 
+    @order_items = current_user.order_items
     if current_user.valid_coupon == true
       @order_items.each do |item|
         item.update_attributes(:discount => '0.5')
@@ -58,7 +58,7 @@ class HomepageController < ApplicationController
   end
 
   def checkout
-    
+
     @coupons = Coupon.all
     @coupon = Coupon.find_by_code(params[:code])
     @order_items = current_user.order_items
@@ -69,7 +69,7 @@ class HomepageController < ApplicationController
         end
       end
       current_user.update_attribute(:valid_coupon, false)
-    else 
+    else
       if @coupon
         if Date.parse(@coupon.date) == Date.today
           current_user.update_attribute(:valid_coupon, true)
@@ -82,9 +82,9 @@ class HomepageController < ApplicationController
         flash[:alert] = "Invalid coupon code"
       end
     end
-    redirect_to homepage_cart_path    
+    redirect_to homepage_cart_path
   end
-  
+
   def category
     @products = Product.all
     @genres = Genre.all
@@ -93,10 +93,10 @@ class HomepageController < ApplicationController
     @name = @url.split('.').last
   end
 
-  def search_result    
-    if params[:search]      
+  def search_result
+    if params[:search]
       @products = Product.search(params[:search], "Random").order(:viewed).reverse_order
-    else      
+    else
       @products = Product.all.order(:viewed).reverse_order
     end
   end
